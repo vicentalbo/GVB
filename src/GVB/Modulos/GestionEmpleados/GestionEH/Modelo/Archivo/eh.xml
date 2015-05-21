@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list>
+  <EmpleadoHoras>
+    <nombre>Irene</nombre>
+    <dNi>48603721S</dNi>
+    <telef>666666666</telef>
+    <edad>24</edad>
+    <Fnac>
+      <fecha>10/10/1990</fecha>
+      <dia>10</dia>
+      <mes>10</mes>
+      <anno>1990</anno>
+    </Fnac>
+    <Fcontr>
+      <fecha>11/11/2011</fecha>
+      <dia>11</dia>
+      <mes>11</mes>
+      <anno>2011</anno>
+    </Fcontr>
+    <sueldohoras>6.5</sueldohoras>
+    <horas>30</horas>
+  </EmpleadoHoras>
+  <EmpleadoHoras>
+    <nombre>Jose</nombre>
+    <dNi>52712277A</dNi>
+    <telef>666555444</telef>
+    <edad>36</edad>
+    <Fnac>
+      <fecha>10/02/1979</fecha>
+      <dia>10</dia>
+      <mes>2</mes>
+      <anno>1979</anno>
+    </Fnac>
+    <Fcontr>
+      <fecha>11/11/2014</fecha>
+      <dia>11</dia>
+      <mes>11</mes>
+      <anno>2014</anno>
+    </Fcontr>
+    <sueldohoras>6.33</sueldohoras>
+    <horas>50</horas>
+  </EmpleadoHoras>
+</list>
