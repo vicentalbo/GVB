@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package GVB.Modulos.GestionProductos.Modelo.Classe;
+package GVB.Modulos.GestionProd.GestionProductos.Modelo.Classe;
 
 import java.util.ArrayList;
 

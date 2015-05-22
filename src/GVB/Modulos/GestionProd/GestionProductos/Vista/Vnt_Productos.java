@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package GVB.Modulos.GestionProductos.Vista;
+package GVB.Modulos.GestionProd.GestionProductos.Vista;
 
 /**
  *
@@ -32,14 +32,14 @@ public class Vnt_Productos extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
+        TxtStock = new javax.swing.JTextField();
+        TxtNombre = new javax.swing.JTextField();
+        TxtPrecio = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        TxtDescri = new javax.swing.JTextArea();
         jLabel6 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox();
-        jLabel7 = new javax.swing.JLabel();
+        ComboTipo = new javax.swing.JComboBox();
+        Imagen = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
@@ -90,19 +90,19 @@ public class Vnt_Productos extends javax.swing.JFrame {
         jLabel5.setText("Tipo: ");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 200, -1, 20));
 
-        jTextField1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 150, 120, -1));
+        TxtStock.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        getContentPane().add(TxtStock, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 150, 120, -1));
 
-        jTextField2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 50, 120, -1));
+        TxtNombre.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        getContentPane().add(TxtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 50, 120, -1));
 
-        jTextField3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        getContentPane().add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 100, 120, -1));
+        TxtPrecio.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        getContentPane().add(TxtPrecio, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 100, 120, -1));
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jTextArea1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jScrollPane1.setViewportView(jTextArea1);
+        TxtDescri.setColumns(20);
+        TxtDescri.setRows(5);
+        TxtDescri.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jScrollPane1.setViewportView(TxtDescri);
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 260, -1, -1));
 
@@ -110,12 +110,12 @@ public class Vnt_Productos extends javax.swing.JFrame {
         jLabel6.setText("Stock: ");
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 150, -1, 20));
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Hamburguesa", "Ensalada", "Bebida" }));
-        getContentPane().add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 200, 120, -1));
+        ComboTipo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Hamburguesa", "Ensalada", "Bebida" }));
+        getContentPane().add(ComboTipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 200, 120, -1));
 
-        jLabel7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(326, 36, 90, 100));
-        jLabel7.getAccessibleContext().setAccessibleName("Photo");
+        Imagen.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        getContentPane().add(Imagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(326, 36, 90, 100));
+        Imagen.getAccessibleContext().setAccessibleName("Photo");
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GVB/img/fondo_degradado2.jpeg"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -371,19 +371,23 @@ public class Vnt_Productos extends javax.swing.JFrame {
     public javax.swing.JMenuItem CONF_MONEDA_DOLAR;
     public javax.swing.JMenuItem CONF_MONEDA_EURO;
     public javax.swing.JMenuItem CONF_MONEDA_LIBRA;
+    public static javax.swing.JComboBox ComboTipo;
     public javax.swing.JMenuItem FormaJson;
     public javax.swing.JMenuItem FormaTxt;
     public javax.swing.JMenuItem FormaXml;
-    private javax.swing.JButton Guardar;
+    public static javax.swing.JButton Guardar;
+    public static javax.swing.JLabel Imagen;
     public javax.swing.JMenuItem MenuGuardar;
-    private javax.swing.JComboBox jComboBox1;
+    public static javax.swing.JTextArea TxtDescri;
+    public static javax.swing.JTextField TxtNombre;
+    public static javax.swing.JTextField TxtPrecio;
+    public static javax.swing.JTextField TxtStock;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
@@ -393,9 +397,5 @@ public class Vnt_Productos extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JPopupMenu.Separator jSeparator1;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
     // End of variables declaration//GEN-END:variables
 }
