@@ -15,6 +15,7 @@ import GVB.Modulos.GestionEmpleados.GestionEH.Modelo.Classe.ArrayListEH;
 import GVB.Modulos.GestionEmpleados.GestionEH.Modelo.Classe.EmpleadoHoras;
 import GVB.Modulos.GestionEmpleados.GestionET.Modelo.Classe.ArrayListET;
 import GVB.Modulos.GestionEmpleados.GestionET.Modelo.Classe.EmpleadoTemp;
+import GVB.Modulos.GestionProd.GestionProductos.Modelo.Classe.Productos;
 
 import com.google.gson.Gson;
 
@@ -118,6 +119,35 @@ public class json {
 
 	}
 
-	
+	public static void generajsonProd() {// Guarda Json de producte
+		String PATH = null;
+		try {
+			XStream xstreamjson = new XStream(new JettisonMappedXmlDriver());
+			xstreamjson.setMode(XStream.NO_REFERENCES);
+			xstreamjson.alias("Productos", Productos.class);
+
+			JFileChooser fileChooser = new JFileChooser();
+			fileChooser.setAcceptAllFileFilterUsed(false);
+			fileChooser.addChoosableFileFilter(new FileNameExtensionFilter("JSON (*.json)", "json"));
+			int seleccion = fileChooser.showSaveDialog(null);
+			if (seleccion == JFileChooser.APPROVE_OPTION) {
+				File JFC = fileChooser.getSelectedFile();
+				PATH = JFC.getAbsolutePath();
+				PATH = PATH + ".json";
+
+				Gson gson1 = new Gson();
+				String json = gson1.toJson(ArrayListEF.efi);
+				FileWriter fileXml = new FileWriter(PATH);
+				fileXml.write(json.toString());
+				fileXml.close();
+
+				JOptionPane.showMessageDialog(null, "Archivo JSON guardado con exito", "Archivo JSON",
+						JOptionPane.INFORMATION_MESSAGE);
+			}
+		} catch (Exception e) {
+			JOptionPane.showMessageDialog(null, "Error al grabar el JSON", "Error", JOptionPane.ERROR_MESSAGE);
+		}
+
+	}
 
 }

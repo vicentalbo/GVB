@@ -49,7 +49,6 @@ public class Paginador extends javax.swing.JFrame {
         Proceds = new javax.swing.JTextField();
         buscador = new javax.swing.JTextField();
         Refresh = new javax.swing.JButton();
-        ComboProceds = new javax.swing.JComboBox();
         btnTxt = new javax.swing.JButton();
         btnJson = new javax.swing.JButton();
         btnXml = new javax.swing.JButton();
@@ -169,7 +168,7 @@ public class Paginador extends javax.swing.JFrame {
         getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 444, 534, -1));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel1.setText("Filtrar por DNI");
+        jLabel1.setText("Filtrar por ID");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 500, 95, -1));
 
         VOLVER.setText("Volver");
@@ -291,9 +290,6 @@ public class Paginador extends javax.swing.JFrame {
         Refresh.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GVB/img/refresh.jpg"))); // NOI18N
         Refresh.setOpaque(false);
         getContentPane().add(Refresh, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 10, 20, 20));
-
-        ComboProceds.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Usuarios Activos" }));
-        getContentPane().add(ComboProceds, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 470, 130, -1));
 
         btnTxt.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GVB/img/photos/Txt.png"))); // NOI18N
         btnTxt.setOpaque(false);
@@ -653,7 +649,6 @@ public class Paginador extends javax.swing.JFrame {
     public javax.swing.JMenuItem CONF_MONEDA_DOLAR;
     public javax.swing.JMenuItem CONF_MONEDA_EURO;
     public javax.swing.JMenuItem CONF_MONEDA_LIBRA;
-    public static javax.swing.JComboBox ComboProceds;
     public javax.swing.JButton Crear;
     public javax.swing.JButton Eliminar;
     public javax.swing.JMenuItem FormaJson;

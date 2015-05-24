@@ -49,6 +49,9 @@ public class Productos implements Comparable<Productos>, Serializable {
         this.Imagen = Imagen;
     }
 
+    public Productos(int ID){
+        this.ID=ID;
+    }
     public int getID() {
         return ID;
     }

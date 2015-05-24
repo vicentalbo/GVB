@@ -5,12 +5,10 @@
  */
 package GVB.Modulos.GestionProd.Pager.Modelo;
 
-import GVB.Modulos.GestionEmpleados.Pager.Vista.Paginador;
-import GVB.Modulos.GestionEmpleados.GestionE.Modelo.Classe.SimpleTableModel_E;
-import GVB.Modulos.GestionEmpleados.Pager.Controlador.BLLControllerPaginador;
-import static GVB.Modulos.GestionEmpleados.Pager.Modelo.pagina.box;
-import static GVB.Modulos.GestionEmpleados.Pager.Modelo.pagina.itemsPerPage;
-import static GVB.Modulos.GestionEmpleados.Pager.Modelo.pagina.maxPageIndex;
+
+import GVB.Modulos.GestionProd.GestionProductos.Modelo.Classe.SimpleTableModel_P;
+import GVB.Modulos.GestionProd.Pager.Controlador.BLLControllerPaginador;
+import GVB.Modulos.GestionProd.Pager.Vista.Paginador;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
@@ -41,7 +39,7 @@ public class pagina {
         int rowCount;
         //   switch (ppal.singleton_vtna){
         //      case "interfaz_actor":
-        rowCount = ((SimpleTableModel_E) BLLControllerPaginador.Pag.TABLA.getModel()).getRowCount();
+        rowCount = ((SimpleTableModel_P) BLLControllerPaginador.Pag.TABLA.getModel()).getRowCount();
         //             break;
         //  case "interfaz_peli": 
         //          rowCount = ((SimpleTableModel_EH)pager.modules.pelis.interfaz_peli.TABLA.getModel()).getRowCount();
@@ -112,7 +110,7 @@ public class pagina {
         int rowCount;
         //  switch (ppal.singleton_vtna){
         //     case "interfaz_actor":
-        rowCount = ((SimpleTableModel_E) GVB.Modulos.GestionEmpleados.Pager.Vista.Paginador.TABLA.getModel()).getRowCount();
+        rowCount = ((SimpleTableModel_P) GVB.Modulos.GestionProd.Pager.Vista.Paginador.TABLA.getModel()).getRowCount();
         /**
          * break; case "interfaz_peli": rowCount =
          * ((miniSimpleTableModel_peli)pager.modules.pelis.interfaz_peli.TABLA.getModel()).getRowCount();
@@ -144,11 +142,11 @@ public class pagina {
      //       switch (ppal.singleton_vtna){
     //        case "interfaz_actor":
                 //actualizar botones y caja: desactivarlos
-                GVB.Modulos.GestionEmpleados.Pager.Vista.Paginador.primero.setEnabled(false);
-            GVB.Modulos.GestionEmpleados.Pager.Vista.Paginador.ANTERIOR.setEnabled(false);
-            GVB.Modulos.GestionEmpleados.Pager.Vista.Paginador.SIGUIENTE.setEnabled(false);
-            GVB.Modulos.GestionEmpleados.Pager.Vista.Paginador.ultimo.setEnabled(false);
-            GVB.Modulos.GestionEmpleados.Pager.Vista.Paginador.CAJA.setText("");
+                GVB.Modulos.GestionProd.Pager.Vista.Paginador.primero.setEnabled(false);
+            GVB.Modulos.GestionProd.Pager.Vista.Paginador.ANTERIOR.setEnabled(false);
+            GVB.Modulos.GestionProd.Pager.Vista.Paginador.SIGUIENTE.setEnabled(false);
+            GVB.Modulos.GestionProd.Pager.Vista.Paginador.ultimo.setEnabled(false);
+            GVB.Modulos.GestionProd.Pager.Vista.Paginador.CAJA.setText("");
         //          break;
         /**
          * case "interfaz_peli": //actualizar botones y caja: desactivarlos
@@ -199,11 +197,11 @@ public class pagina {
                 break;
            case "interfaz_socio": 
      **/           //actualizar botones y caja: desactivarlos
-                GVB.Modulos.GestionEmpleados.Pager.Vista.Paginador.primero.setEnabled(false);
-            GVB.Modulos.GestionEmpleados.Pager.Vista.Paginador.ANTERIOR.setEnabled(false);
-            GVB.Modulos.GestionEmpleados.Pager.Vista.Paginador.SIGUIENTE.setEnabled(false);
-            GVB.Modulos.GestionEmpleados.Pager.Vista.Paginador.ultimo.setEnabled(false);
-            GVB.Modulos.GestionEmpleados.Pager.Vista.Paginador.CAJA.setText("");
+                GVB.Modulos.GestionProd.Pager.Vista.Paginador.primero.setEnabled(false);
+            GVB.Modulos.GestionProd.Pager.Vista.Paginador.ANTERIOR.setEnabled(false);
+            GVB.Modulos.GestionProd.Pager.Vista.Paginador.SIGUIENTE.setEnabled(false);
+            GVB.Modulos.GestionProd.Pager.Vista.Paginador.ultimo.setEnabled(false);
+            GVB.Modulos.GestionProd.Pager.Vista.Paginador.CAJA.setText("");
         //      break;
         // }
         //actualizar enlaces: no hay enlaces
@@ -238,11 +236,11 @@ public class pagina {
                     pager.modules.pelis.interfaz_peli.CAJA.setText(Integer.toString(currentPageIndex) + String.format(" / %d", maxPageIndex));
                     break;
                 case "interfaz_socio": 
-    **/               GVB.Modulos.GestionEmpleados.Pager.Vista.Paginador.primero.setEnabled(currentPageIndex > 1);
-            GVB.Modulos.GestionEmpleados.Pager.Vista.Paginador.ANTERIOR.setEnabled(currentPageIndex > 1);
-            GVB.Modulos.GestionEmpleados.Pager.Vista.Paginador.SIGUIENTE.setEnabled(currentPageIndex < maxPageIndex);
-            GVB.Modulos.GestionEmpleados.Pager.Vista.Paginador.ultimo.setEnabled(currentPageIndex < maxPageIndex);
-            GVB.Modulos.GestionEmpleados.Pager.Vista.Paginador.CAJA.setText(Integer.toString(currentPageIndex) + String.format(" / %d", maxPageIndex));
+    **/               GVB.Modulos.GestionProd.Pager.Vista.Paginador.primero.setEnabled(currentPageIndex > 1);
+            GVB.Modulos.GestionProd.Pager.Vista.Paginador.ANTERIOR.setEnabled(currentPageIndex > 1);
+            GVB.Modulos.GestionProd.Pager.Vista.Paginador.SIGUIENTE.setEnabled(currentPageIndex < maxPageIndex);
+            GVB.Modulos.GestionProd.Pager.Vista.Paginador.ultimo.setEnabled(currentPageIndex < maxPageIndex);
+            GVB.Modulos.GestionProd.Pager.Vista.Paginador.CAJA.setText(Integer.toString(currentPageIndex) + String.format(" / %d", maxPageIndex));
         //    break;
         //  }
 

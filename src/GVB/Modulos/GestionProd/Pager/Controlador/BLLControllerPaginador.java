@@ -5,21 +5,20 @@
  */
 package GVB.Modulos.GestionProd.Pager.Controlador;
 
-import GVB.Modulos.GestionEmpleados.GestionE.Controlador.BLLControllerVntEmp;
-import GVB.Modulos.GestionEmpleados.GestionE.Modelo.BLL.BLL;
-import GVB.Modulos.GestionEmpleados.GestionE.Modelo.BLL.BLLGraficoE;
-import GVB.Modulos.GestionEmpleados.GestionE.Modelo.Classe.SimpleTableModel_E;
-import GVB.Modulos.GestionEmpleados.GestionE.Vista.Vnt_Empleados;
-import GVB.Modulos.GestionEmpleados.GestionEF.Modelo.BLL.EFBLLBD;
-import GVB.Modulos.GestionEmpleados.GestionEF.Modelo.Classe.ArrayListEF;
-import GVB.Modulos.GestionEmpleados.GestionEF.Modelo.Classe.EmpleadoFijo;
-import GVB.Modulos.GestionEmpleados.Pager.Modelo.pagina;
 
-import GVB.Modulos.GestionEmpleados.Pager.Vista.Paginador;
-import static GVB.Modulos.GestionEmpleados.Pager.Vista.Paginador.MuestraSelected;
-import static GVB.Modulos.GestionEmpleados.Pager.Vista.Paginador.MuestraSelected2;
+
+
+import GVB.Modulos.GestionEmpleados.GestionE.Modelo.BLL.BLL;
+import static GVB.Modulos.GestionProd.Pager.Vista.Paginador.MuestraSelected;
+import static GVB.Modulos.GestionProd.Pager.Vista.Paginador.MuestraSelected2;
 import GVB.Modulos.GestionLogin.Controlador.BLLControllerLogin;
 import GVB.Modulos.GestionLogin.Vista.Login;
+import GVB.Modulos.GestionProd.GestionProductos.Modelo.BLL.BLLBDProd;
+import GVB.Modulos.GestionProd.GestionProductos.Modelo.Classe.ArrayListPro;
+import GVB.Modulos.GestionProd.GestionProductos.Modelo.Classe.Productos;
+import GVB.Modulos.GestionProd.GestionProductos.Modelo.Classe.SimpleTableModel_P;
+import GVB.Modulos.GestionProd.Pager.Modelo.pagina;
+import GVB.Modulos.GestionProd.Pager.Vista.Paginador;
 import GVB.Modulos.Menu.Controlador.BLLControllerAbout;
 import GVB.Modulos.Menu.Controlador.BLLControllerPpal;
 import GVB.Modulos.Menu.Vista.About;
@@ -54,8 +53,8 @@ import javax.swing.table.TableRowSorter;
  */
 public class BLLControllerPaginador implements ActionListener, KeyListener, MouseListener {
 
-    public static ArrayList<EmpleadoFijo> datos = new ArrayList();
-    public static ArrayList<EmpleadoFijo> datosaux = new ArrayList();
+    public static ArrayList<Productos> datos = new ArrayList();
+    public static ArrayList<Productos> datosaux = new ArrayList();
 
     public static Paginador Pag = new Paginador();
 
@@ -106,7 +105,7 @@ public class BLLControllerPaginador implements ActionListener, KeyListener, Mous
 
     }
     public static AutocompleteJComboBox combo = null;
-    public static TableRowSorter<TableModel> sorter = new TableRowSorter<>(new SimpleTableModel_E());
+    public static TableRowSorter<TableModel> sorter = new TableRowSorter<>(new SimpleTableModel_P());
 
     public void Iniciar() {
 
@@ -118,8 +117,8 @@ public class BLLControllerPaginador implements ActionListener, KeyListener, Mous
         Pag.setIconImage(Toolkit.getDefaultToolkit().getImage("src/GVB/img/V.jpg"));
 
         Pag.NoSelected.setVisible(false);
-        Pag.TABLA.setModel(new SimpleTableModel_E());
-        ((SimpleTableModel_E) Pag.TABLA.getModel()).cargar();
+        Pag.TABLA.setModel(new SimpleTableModel_P());
+        ((SimpleTableModel_P) Pag.TABLA.getModel()).cargar();
         Pag.TABLA.setFillsViewportHeight(true);
         Pag.TABLA.setRowSorter(sorter);
         
@@ -136,8 +135,8 @@ if(ArrayListEF.us.getTipo().equals("user")){
         pagina.inicializa();
         pagina.initLinkBox();
         List<String> myWords = new ArrayList<>();
-        for (int i = 0; i <= ArrayListEF.efi.size() - 1; i++) {
-            myWords.add(ArrayListEF.efi.get(i).getdNi());
+        for (int i = 0; i <= ArrayListPro.pro.size() - 1; i++) {
+            myWords.add(ArrayListPro.pro.get(i).getID()+"");
         }
 
         addWindowListener(new WindowAdapter() {
@@ -232,8 +231,7 @@ if(ArrayListEF.us.getTipo().equals("user")){
         this.Pag.Refresh.setActionCommand("_REFRESH");
         this.Pag.Refresh.addActionListener(this);
         
-        this.Pag.ComboProceds.setActionCommand("_PROCEDS");
-        this.Pag.ComboProceds.addActionListener(this);
+        
         
         this.Pag.btnXml.setActionCommand("_XML");
         this.Pag.btnXml.addActionListener(this);
@@ -295,7 +293,7 @@ if(ArrayListEF.us.getTipo().equals("user")){
                 break;
 
             case _MODIFICAR:
-                if (ArrayListEF.e != null) {
+                if (ArrayListPro.p != null) {
                     this.Pag.NoSelected.setVisible(false);
                     BLLControllerVntEmp.mod = 11;
                     Pag.dispose();
@@ -306,13 +304,13 @@ if(ArrayListEF.us.getTipo().equals("user")){
                 break;
 
             case _ELIMINAR:
-                if (ArrayListEF.e != null) {
+                if (ArrayListPro.p != null) {
 
                     this.Pag.NoSelected.setVisible(false);
                     BLLGraficoE.eliminador();
                     //Pag.dispose();
                    // new BLLControllerPaginador(new Paginador()).Iniciar();
-                    ((SimpleTableModel_E) Pag.TABLA.getModel()).cargar();
+                    ((SimpleTableModel_P) Pag.TABLA.getModel()).cargar();
                     pagina.inicializa();
         pagina.initLinkBox();
                 } else {
@@ -393,51 +391,41 @@ if(ArrayListEF.us.getTipo().equals("user")){
             case _BUSCADOR:
 
                 pagina.currentPageIndex = 1;
-                ((SimpleTableModel_E) this.Pag.TABLA.getModel()).filtrar();
+                ((SimpleTableModel_P) this.Pag.TABLA.getModel()).filtrar();
                 break;
                 
             case _REFRESH:
-                ((SimpleTableModel_E) Pag.TABLA.getModel()).cargar();
+                ((SimpleTableModel_P) Pag.TABLA.getModel()).cargar();
                 pagina.inicializa();
         pagina.initLinkBox();
                 break;
                 
-            case _PROCEDS:
-                String type, cad="";
-
-                
-                type=this.Pag.ComboProceds.getSelectedItem().toString();
-                if(type.equalsIgnoreCase("Usuarios Activos")){
-                    cad=EFBLLBD.Proced_Activos();
-                }
-                this.Pag.Proceds.setText(cad);
-                break;
                 
             case _XML:
                 int opc;
-                String[] eleccion={"DNI", "edad"};
+                String[] eleccion={"ID", "Tipo"};
                 BLLGraficoE.Saves(2);
                 
                 opc=Menus.menu2("Seleccione como desea ordenar los datos", eleccion);
-                EFBLLBD.ImprimirDNI(opc);
+                BLLBDProd.ImprimirID(opc);
                 break;
                 
             case _JSON:
                 int opc1;
-                String[] eleccion1={"DNI", "edad"};
+                String[] eleccion1={"ID", "Tipo"};
                 BLLGraficoE.Saves(1);
                 
                 opc1=Menus.menu2("Seleccione como desea ordenar los datos", eleccion1);
-                EFBLLBD.ImprimirDNI(opc1);
+                BLLBDProd.ImprimirID(opc1);
                 break;
                 
             case _TXT:
                 int opc2;
-                String[] eleccion2={"DNI", "edad"};
+                String[] eleccion2={"ID", "Tipo"};
                 BLLGraficoE.Saves(3);
                 
                 opc2=Menus.menu2("Seleccione como desea ordenar los datos", eleccion2);
-                EFBLLBD.ImprimirDNI(opc2);
+                BLLBDProd.ImprimirID(opc2);
         }
     }
 
@@ -456,7 +444,7 @@ if(ArrayListEF.us.getTipo().equals("user")){
         switch (BLLControllerPaginador.Accion.valueOf(e.getComponent().getName())){
             case _BUSCADOR:
                 pagina.currentPageIndex = 1;
-                ((SimpleTableModel_E) this.Pag.TABLA.getModel()).filtrar();
+                ((SimpleTableModel_P) this.Pag.TABLA.getModel()).filtrar();
                 break;
         }
 
@@ -472,7 +460,7 @@ if(ArrayListEF.us.getTipo().equals("user")){
                  selection,
                  inicio,
                  selection1;
-                n = ((SimpleTableModel_E) Paginador.TABLA.getModel()).getRowCount();
+                n = ((SimpleTableModel_P) Paginador.TABLA.getModel()).getRowCount();
 
                 if (n != 0) {
 
@@ -480,13 +468,14 @@ if(ArrayListEF.us.getTipo().equals("user")){
                     selection = Paginador.TABLA.getSelectedRow();
                     selection1 = inicio + selection;
 
-                    ArrayListEF.e = new EmpleadoFijo((String) Pag.TABLA.getModel().getValueAt(selection1, 0));
-                    EFBLLBD.buscarPorDniBLL();
+
+                    ArrayListPro.p = new Productos(Integer.parseInt((String)( Pag.TABLA.getModel().getValueAt(selection1, 0))));
+                    BLLBDProd.buscarPorIDBLL();
                     //BLLGraficoE.pos = BLL.buscar(ArrayListEF.e, 1);
                    // ArrayListEF.e = (EmpleadoFijo) BLL.Obtener(BLLGraficoE.pos, 1);
 
-                    MuestraSelected.setText(" Nombre= " + ArrayListEF.e.getNombre() + "\n" + " Telefono= " + ArrayListEF.e.getTelef() + "\n" + " Sueldo anual= " + ArrayListEF.e.getSueldoh() + Config.getMoneda() + "\n" + " Fecha de Contratación= " + ArrayListEF.e.getFcontr().toString() + "\n" + " Antigüedad= " + ArrayListEF.e.getAntig() + "\n" + " User= " + ArrayListEF.e.getUsuario());
-                    MuestraSelected2.setText("     DNI= " + ArrayListEF.e.getdNi() + "\n" + "     Sueldo básico= " + ArrayListEF.e.getSueldof() + Config.getMoneda() + "\n" + "     Fecha de Nacimiento= " + ArrayListEF.e.getFnac().toString() + "\n" + "     Edad= " + ArrayListEF.e.getEdad() + "\n" + "     Email= " + ArrayListEF.e.getEmail() + "\n" + "     Tipo= " + ArrayListEF.e.getTipo());
+                    MuestraSelected.setText(" Nombre= " + ArrayListPro.p.getNombre() + "\n" + " Precio= " + ArrayListPro.p.getPrecio()+ Config.getMoneda() + "\n" + " Tipo= " + ArrayListPro.p.getTipo() );
+                    MuestraSelected2.setText("     ID= " + ArrayListPro.p.getID() + "\n" + "     Stock= " + ArrayListPro.p.getStock()  + "\n" + "     Descripcion= " + ArrayListPro.p.getDescripcion() );
 
                 }
                 break;
