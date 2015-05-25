@@ -14,6 +14,7 @@ import static GVB.Modulos.GestionProd.Pager.Vista.Paginador.MuestraSelected2;
 import GVB.Modulos.GestionLogin.Controlador.BLLControllerLogin;
 import GVB.Modulos.GestionLogin.Vista.Login;
 import GVB.Modulos.GestionProd.GestionProductos.Modelo.BLL.BLLBDProd;
+import GVB.Modulos.GestionProd.GestionProductos.Modelo.BLL.BLLGraficoP;
 import GVB.Modulos.GestionProd.GestionProductos.Modelo.Classe.ArrayListPro;
 import GVB.Modulos.GestionProd.GestionProductos.Modelo.Classe.Productos;
 import GVB.Modulos.GestionProd.GestionProductos.Modelo.Classe.SimpleTableModel_P;
@@ -287,17 +288,17 @@ if(ArrayListEF.us.getTipo().equals("user")){
                 break;
 
             case _CREAR:
-                BLLControllerVntEmp.mod = 1;
+                BLLControllerVntPro.mod = 1;
                 Pag.dispose();
-                new BLLControllerVntEmp(new Vnt_Empleados()).iniciar();
+                new BLLControllerVntPro(new Vnt_Productos()).iniciar();
                 break;
 
             case _MODIFICAR:
                 if (ArrayListPro.p != null) {
                     this.Pag.NoSelected.setVisible(false);
-                    BLLControllerVntEmp.mod = 11;
+                    BLLControllerVntPro.mod = 11;
                     Pag.dispose();
-                    new BLLControllerVntEmp(new Vnt_Empleados()).iniciar();
+                    new BLLControllerVntPro(new Vnt_Productos()).iniciar();
                 } else {
                     this.Pag.NoSelected.setVisible(true);
                 }
@@ -307,7 +308,7 @@ if(ArrayListEF.us.getTipo().equals("user")){
                 if (ArrayListPro.p != null) {
 
                     this.Pag.NoSelected.setVisible(false);
-                    BLLGraficoE.eliminador();
+                    BLLGraficoP.eliminador();
                     //Pag.dispose();
                    // new BLLControllerPaginador(new Paginador()).Iniciar();
                     ((SimpleTableModel_P) Pag.TABLA.getModel()).cargar();
@@ -329,15 +330,15 @@ if(ArrayListEF.us.getTipo().equals("user")){
                 break;
 
             case Forma_Json:
-                BLLGraficoE.Saves(1);
+                BLLGraficoP.Saves(1);
                 break;
 
             case Forma_Xml:
-                BLLGraficoE.Saves(2);
+                BLLGraficoP.Saves(2);
                 break;
 
             case Forma_Txt:
-                BLLGraficoE.Saves(3);
+                BLLGraficoP.Saves(3);
                 break;
 
             case _CONF_MONEDA_EURO:
@@ -404,7 +405,7 @@ if(ArrayListEF.us.getTipo().equals("user")){
             case _XML:
                 int opc;
                 String[] eleccion={"ID", "Tipo"};
-                BLLGraficoE.Saves(2);
+                BLLGraficoP.Saves(2);
                 
                 opc=Menus.menu2("Seleccione como desea ordenar los datos", eleccion);
                 BLLBDProd.ImprimirID(opc);
@@ -413,7 +414,7 @@ if(ArrayListEF.us.getTipo().equals("user")){
             case _JSON:
                 int opc1;
                 String[] eleccion1={"ID", "Tipo"};
-                BLLGraficoE.Saves(1);
+                BLLGraficoP.Saves(1);
                 
                 opc1=Menus.menu2("Seleccione como desea ordenar los datos", eleccion1);
                 BLLBDProd.ImprimirID(opc1);
@@ -422,7 +423,7 @@ if(ArrayListEF.us.getTipo().equals("user")){
             case _TXT:
                 int opc2;
                 String[] eleccion2={"ID", "Tipo"};
-                BLLGraficoE.Saves(3);
+                BLLGraficoP.Saves(3);
                 
                 opc2=Menus.menu2("Seleccione como desea ordenar los datos", eleccion2);
                 BLLBDProd.ImprimirID(opc2);

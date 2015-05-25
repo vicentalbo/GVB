@@ -40,6 +40,8 @@ public class Vnt_Productos extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         ComboTipo = new javax.swing.JComboBox();
         Imagen = new javax.swing.JLabel();
+        Limpiar = new javax.swing.JButton();
+        Volver = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
@@ -72,7 +74,7 @@ public class Vnt_Productos extends javax.swing.JFrame {
 
         Guardar.setText("Guardar");
         Guardar.setOpaque(false);
-        getContentPane().add(Guardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 360, -1, -1));
+        getContentPane().add(Guardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 370, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel2.setText("Precio: ");
@@ -116,6 +118,14 @@ public class Vnt_Productos extends javax.swing.JFrame {
         Imagen.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         getContentPane().add(Imagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(326, 36, 90, 100));
         Imagen.getAccessibleContext().setAccessibleName("Photo");
+
+        Limpiar.setText("Limpiar");
+        Limpiar.setOpaque(false);
+        getContentPane().add(Limpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 370, -1, -1));
+
+        Volver.setText("Volver");
+        Volver.setOpaque(false);
+        getContentPane().add(Volver, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 370, -1, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GVB/img/fondo_degradado2.jpeg"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -377,11 +387,13 @@ public class Vnt_Productos extends javax.swing.JFrame {
     public javax.swing.JMenuItem FormaXml;
     public static javax.swing.JButton Guardar;
     public static javax.swing.JLabel Imagen;
+    public static javax.swing.JButton Limpiar;
     public javax.swing.JMenuItem MenuGuardar;
     public static javax.swing.JTextArea TxtDescri;
     public static javax.swing.JTextField TxtNombre;
     public static javax.swing.JTextField TxtPrecio;
     public static javax.swing.JTextField TxtStock;
+    public static javax.swing.JButton Volver;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

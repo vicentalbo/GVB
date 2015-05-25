@@ -102,25 +102,10 @@ if(val==1){
         if ((val == 1) && (valc == 0)) {
             e = new EmpleadoFijo(nom, dNI, telf, fnac, fcontr, email, password, estado, tipo, Avatar, sueldof, antig);
         }
-        if ((val == 2) && (valc == 0)) {
-         //   e = new EmpleadoHoras(nom, dNI, telf, fnac, fcontr, sueldohoras, horas);
-        }
-        if ((val == 3) && (valc == 0)) {
-          //  e = new EmpleadoTemp(nom, dNI, telf, fnac, fcontr, sueldoM, Ffinal);
-        }
+       
 
         return e;
     }
 
-   /* public static void imprimir(ArrayList<? extends Empleado> l) {
-        Empleado ef;
-        String cad="";
-        Iterator<Empleado> it = (Iterator<Empleado>) l.iterator();
-        while (it.hasNext()) {
-            ef = it.next();
-            cad=cad+ef.toString()+"\n"+"\n";
-            
-        }
-Vnt_Imprimir.Impresor.setText(cad);
-    }*/
+
 }
