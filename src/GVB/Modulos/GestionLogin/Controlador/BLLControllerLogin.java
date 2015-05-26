@@ -50,7 +50,7 @@ public class BLLControllerLogin implements ActionListener, MouseListener {
         this.Log.setLocationRelativeTo(null);
         this.Log.setVisible(true);
         this.Log.setResizable(false);
-        Image icono = Toolkit.getDefaultToolkit().getImage("src/GVB/img/V.jpg");
+        Image icono = Toolkit.getDefaultToolkit().getImage("src/GVB/img/FastBurger.jpg");
         this.Log.setIconImage(icono);
 this.Log.setSize(370, 475);
         

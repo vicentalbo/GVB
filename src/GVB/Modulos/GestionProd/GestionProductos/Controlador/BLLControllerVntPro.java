@@ -116,7 +116,7 @@ public static String Img = "";
         this.VntPro.setLocationRelativeTo(null);
         this.VntPro.setVisible(true);
         this.VntPro.setResizable(false);
-        Image icono = Toolkit.getDefaultToolkit().getImage("src/GVB/img/V.jpg");
+        Image icono = Toolkit.getDefaultToolkit().getImage("src/GVB/img/IconFast.jpg");
         this.VntPro.setIconImage(icono);
 
         this.VntPro.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);

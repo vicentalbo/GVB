@@ -9,6 +9,7 @@ import GVB.Librerias.Funcions;
 import GVB.Modulos.GestionEmpleados.GestionEF.Modelo.BLL.EFBLLBD;
 import GVB.Modulos.GestionEmpleados.GestionEF.Modelo.Classe.ArrayListEF;
 import GVB.Modulos.GestionProd.GestionProductos.Modelo.Classe.ArrayListPro;
+import static GVB.classes.Files_Usuario.PATH_auto;
 import java.awt.Image;
 import java.awt.image.BufferedImage;
 import java.io.File;
@@ -29,28 +30,31 @@ public class Files_Usuario {
     public static String PATH_auto = "";
 
     public static void pintar(JLabel etiqueta, JLabel etiNom) {
-        ImageIcon icon = new ImageIcon(ArrayListEF.us.getAvatar());
+        ImageIcon icon;
+        
+        
+         icon = new ImageIcon(ArrayListEF.us.getAvatar());
+        
         Image img = icon.getImage();
-        Image newimg = img.getScaledInstance(60, 60, java.awt.Image.SCALE_SMOOTH);
+        Image newimg = img.getScaledInstance(60,60, java.awt.Image.SCALE_SMOOTH);
         ImageIcon newIcon = new ImageIcon(newimg);
         etiqueta.setIcon(newIcon);
 
         etiNom.setText(ArrayListEF.us.getNombre());
     }
-    
-     public static void pintar_Pro(JLabel etiqueta) {
+
+    public static void pintar_Pro(JLabel etiqueta) {
         ImageIcon icon = new ImageIcon(ArrayListPro.p.getImagen());
         Image img = icon.getImage();
         Image newimg = img.getScaledInstance(150, 150, java.awt.Image.SCALE_SMOOTH);
         ImageIcon newIcon = new ImageIcon(newimg);
         etiqueta.setIcon(newIcon);
 
-        
     }
-    public static String pintar_String(JLabel etiqueta, int ancho, int alto){
-        
-        
-         String ruta, totalpath="";
+
+    public static String pintar_String(JLabel etiqueta, int ancho, int alto) {
+
+        String ruta, totalpath = "";
         File imagen;
         BufferedImage image;
         String extension;
@@ -81,22 +85,26 @@ public class Files_Usuario {
                     extension = fileChooser.getSelectedFile().toURL().toString().substring(
                             fileChooser.getSelectedFile().toURL().toString().length() - 3);
                     String cad = Funcions.getCadenaAleatoria2(5);
-
-                    PATH_auto = new java.io.File("") + "src/GVB/img/Prods/" + cad + "." + extension;
+                    if (GVB.Modulos.GestionProd.GestionProductos.Controlador.BLLControllerVntPro.VntPro.isVisible()) {
+                        PATH_auto = new java.io.File("") + "src/GVB/img/Prods/" + cad + "." + extension;
+                    } else {
+                        PATH_auto = new java.io.File("") + "src/GVB/img/Avatar/" + cad + "." + extension;
+                    }
                     File f = new File(PATH_auto);
                     ImageIO.write(image, extension, f);
-                    
-                        totalpath=("src/GVB/img/Prods/" + cad + "." + extension);
-                        
+
+                    totalpath = ("src/GVB/img/Prods/" + cad + "." + extension);
+
                 } catch (Exception ex) {
                     JOptionPane.showMessageDialog(null, "Error upload imagen", "Error", JOptionPane.ERROR_MESSAGE);
                 }
             }
         }
-        
+
         return totalpath;
-        
+
     }
+
     public static void pintar_guardar_imag(JLabel etiqueta, int ancho, int alto, int i) {
         String ruta;
         File imagen;
@@ -137,8 +145,8 @@ public class Files_Usuario {
                         ArrayListEF.us.setAvatar("src/GVB/img/Avatar/" + cad + "." + extension);
                         ArrayListEF.e = ArrayListEF.us;
                         EFBLLBD.modificarEFBLL();
-                    
-                    }else{
+
+                    } else {
                         ArrayListEF.e.setAvatar("src/GVB/img/Avatar/" + cad + "." + extension);
                         EFBLLBD.modificarEFBLL();
                     }
@@ -147,10 +155,8 @@ public class Files_Usuario {
                 }
             }
         }
-   
+
     }
-
-
 
     public static void lista_blanca(JFileChooser buscador) {
         buscador.setAcceptAllFileFilterUsed(false);

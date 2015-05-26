@@ -31,7 +31,7 @@ import com.toedter.calendar.JTextFieldDateEditor;
 public class DAOGraficoE {
 
     public static void crearEF() {
-        String DNI, nombre, telef, email, password, tipo="user", Avatar, encpassword;
+        String DNI, nombre, telef, email, password, tipo = "user", Avatar, encpassword;
         int estado = 0;
         float sueldo;
         Fechas f;
@@ -80,18 +80,19 @@ public class DAOGraficoE {
         }
         password = VntEmp.Password.getText();
         encpassword = Funcions.encriptarTokenMD5(password);
-        
+
         f = introFnac(0);
         fc = introFnac(1);
 
 //creaEmp
         if ((VntEmp.NoDNI.isVisible() == false) && (VntEmp.NoNom.isVisible() == false) && (VntEmp.NoTelef.isVisible() == false) && (VntEmp.NoSueldo.isVisible() == false) && (VntEmp.NoFnac.isVisible() == false) && (VntEmp.NoFcontr.isVisible() == false) && (VntEmp.NoEmail.isVisible() == false) && (VntEmp.Password.getText().isEmpty() == false)) {
-            if(BLLControllerVntEmp.Img.equals(""))
-                     Avatar= "src/GVB/img/Avatar/user-defec.png";
-                else
-                    Avatar=BLLControllerVntEmp.Img;
+            if (BLLControllerVntEmp.Img.equals("")) {
+                Avatar = "src/GVB/img/Avatar/user-defec.png";
+            } else {
+                Avatar = BLLControllerVntEmp.Img;
+            }
             if (BLLControllerVntEmp.mod == 1) {
-                
+
                 ArrayListEF.e = (EmpleadoFijo) DAOEmp.IntroEmp(1, 0, ArrayListEF.e, nombre, DNI, telef, sueldo, f, fc, email, encpassword, estado, tipo, Avatar);
                 BLLControllerVntEmp.veri = true;
 
@@ -107,8 +108,8 @@ public class DAOGraficoE {
                 ArrayListEF.e = (EmpleadoFijo) DAOEmp.IntroEmp(1, 0, ArrayListEF.e, nombre, DNI, telef, sueldo, f, fc, email, encpassword, estado, tipo, Avatar);
                 String message = "Se ha registrado exitosamente en nuestra aplicación" + "\n" + "Usuario: " + ArrayListEF.e.getUsuario() + "\n" + "Contraseña: " + password + "\n" + "\n" + "Gracias por usar la aplicación";
                 Mail correo = new Mail("1erdaw2015@gmail.com", "villadaw", email, nombre, message);
-                String correoStr=correo.send();
-                if(correoStr.equals("")){
+                String correoStr = correo.send();
+                if (correoStr.equals("")) {
                     Funcions.result("Se le ha enviado un email con los datos para verificar su cuenta");
                 }
                 BLLControllerVntEmp.veri = true;

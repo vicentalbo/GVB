@@ -122,7 +122,7 @@ public class BLLControllerPaginador implements ActionListener, KeyListener, Mous
         Pag.setVisible(true);
         Pag.setResizable(false);
 
-        Pag.setIconImage(Toolkit.getDefaultToolkit().getImage("src/GVB/img/V.jpg"));
+        Pag.setIconImage(Toolkit.getDefaultToolkit().getImage("src/GVB/img/IconFast.jpg"));
 
         Pag.NoSelected.setVisible(false);
         Pag.TABLA.setModel(new SimpleTableModel_P());
@@ -479,12 +479,15 @@ if(ArrayListEF.us.getTipo().equals("user")){
  
                     ArrayListPro.p = new Productos(Integer.parseInt( Pag.TABLA.getModel().getValueAt(selection1, 0).toString()));
                     BLLBDProd.buscarPorIDBLL();
-                    //BLLGraficoE.pos = BLL.buscar(ArrayListEF.e, 1);
-                   // ArrayListEF.e = (EmpleadoFijo) BLL.Obtener(BLLGraficoE.pos, 1);
+                    
 
                     MuestraSelected.setText(" Nombre= " + ArrayListPro.p.getNombre() + "\n" + " Precio= " + ArrayListPro.p.getPrecio()+ Config.getMoneda() + "\n" + " Tipo= " + ArrayListPro.p.getTipo() );
                     MuestraSelected2.setText("     ID= " + ArrayListPro.p.getID() + "\n" + "     Stock= " + ArrayListPro.p.getStock()  + "\n" + "     Descripcion= " + ArrayListPro.p.getDescripcion() );
-
+try{
+    Files_Usuario.pintar_Pro(Pag.ImgPro);
+}catch(Exception ec){
+    
+}
                 }
                 break;
                 case USUARIO:

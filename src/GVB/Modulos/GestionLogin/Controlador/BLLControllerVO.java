@@ -50,7 +50,7 @@ if(i==1)
         Ver.setVisible(true);
         Ver.setResizable(false);
 
-        Ver.setIconImage(Toolkit.getDefaultToolkit().getImage("src/GVB/img/V.jpg"));
+        Ver.setIconImage(Toolkit.getDefaultToolkit().getImage("src/GVB/img/IconFast.jpg"));
          addWindowListener(new WindowAdapter() {
             @Override
             public void windowClosing(WindowEvent e) {

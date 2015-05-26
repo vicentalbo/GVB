@@ -131,7 +131,7 @@ public static String Img = "";
         this.VntEmp.setLocationRelativeTo(null);
         this.VntEmp.setVisible(true);
         this.VntEmp.setResizable(false);
-        Image icono = Toolkit.getDefaultToolkit().getImage("src/GVB/img/V.jpg");
+        Image icono = Toolkit.getDefaultToolkit().getImage("src/GVB/img/FastBurger.jpg");
         this.VntEmp.setIconImage(icono);
 
         this.VntEmp.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
@@ -289,12 +289,12 @@ VntEmp.UsOk.setVisible(false);
                 break;
                 
                 case IMAGEN:
-                    String avatar;
-                    if(mod>0)
+                    
+                    if(mod>10)
                     Files_Usuario.pintar_guardar_imag(VntEmp.Imagen, 60, 60, 1);
                     else{
                         
-                        Img=Files_Usuario.pintar_String(VntEmp.Imagen, 150 , 150);
+                        Img=Files_Usuario.pintar_String(VntEmp.Imagen, 60  , 60);
                     }
                     break;
         }

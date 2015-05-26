@@ -45,7 +45,7 @@ public BLLControllerPpal(JFrame Ppal1) {
         Ppal.setVisible(true);
         Ppal.setSize(480, 320);//ancho x alto
         Ppal.setResizable(false);
-        Image icono = Toolkit.getDefaultToolkit().getImage("src/GVB/img/V.jpg");
+        Image icono = Toolkit.getDefaultToolkit().getImage("src/GVB/img/IconFast.jpg");
         Ppal.setIconImage(icono);
 
        

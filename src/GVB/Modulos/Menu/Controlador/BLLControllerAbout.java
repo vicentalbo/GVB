@@ -36,7 +36,7 @@ public class BLLControllerAbout {
         Ab.setLocationRelativeTo(null);
         Ab.setResizable(true);
         Ab.setVisible(true);
-        Image icono = Toolkit.getDefaultToolkit().getImage("src/GVB/img/V.jpg");
+        Image icono = Toolkit.getDefaultToolkit().getImage("src/GVB/img/IconFast.jpg");
         Ab.setIconImage(icono);
        
 
