@@ -5,10 +5,12 @@
  */
 package GVB.Modulos.GestionProd.GestionProductos.Modelo.Classe;
 
-import static GVB.Modulos.GestionEmpleados.Pager.Controlador.BLLControllerPaginador.Pag;
 
-import GVB.Modulos.GestionEmpleados.Pager.Modelo.pagina;
+
+
 import GVB.Modulos.GestionProd.GestionProductos.Modelo.BLL.BLLBDProd;
+import static GVB.Modulos.GestionProd.Pager.Controlador.BLLControllerPaginador.Pag;
+import GVB.Modulos.GestionProd.Pager.Modelo.pagina;
 import java.util.ArrayList;
 
 import javax.swing.table.AbstractTableModel;

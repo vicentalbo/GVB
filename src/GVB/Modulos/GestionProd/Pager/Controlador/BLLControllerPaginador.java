@@ -8,16 +8,23 @@ package GVB.Modulos.GestionProd.Pager.Controlador;
 
 
 
-import GVB.Modulos.GestionEmpleados.GestionE.Modelo.BLL.BLL;
+
+import GVB.Librerias.Funcions;
+import GVB.Modulos.GestionEmpleados.GestionE.Controlador.BLLControllerVntEmp;
+import GVB.Modulos.GestionEmpleados.GestionE.Vista.Vnt_Empleados;
+import GVB.Modulos.GestionEmpleados.GestionEF.Modelo.Classe.ArrayListEF;
 import static GVB.Modulos.GestionProd.Pager.Vista.Paginador.MuestraSelected;
 import static GVB.Modulos.GestionProd.Pager.Vista.Paginador.MuestraSelected2;
 import GVB.Modulos.GestionLogin.Controlador.BLLControllerLogin;
 import GVB.Modulos.GestionLogin.Vista.Login;
+import GVB.Modulos.GestionProd.GestionProductos.Controlador.BLLControllerVntPro;
+import GVB.Modulos.GestionProd.GestionProductos.Modelo.BLL.BLL;
 import GVB.Modulos.GestionProd.GestionProductos.Modelo.BLL.BLLBDProd;
 import GVB.Modulos.GestionProd.GestionProductos.Modelo.BLL.BLLGraficoP;
 import GVB.Modulos.GestionProd.GestionProductos.Modelo.Classe.ArrayListPro;
 import GVB.Modulos.GestionProd.GestionProductos.Modelo.Classe.Productos;
 import GVB.Modulos.GestionProd.GestionProductos.Modelo.Classe.SimpleTableModel_P;
+import GVB.Modulos.GestionProd.GestionProductos.Vista.Vnt_Productos;
 import GVB.Modulos.GestionProd.Pager.Modelo.pagina;
 import GVB.Modulos.GestionProd.Pager.Vista.Paginador;
 import GVB.Modulos.Menu.Controlador.BLLControllerAbout;
@@ -469,8 +476,8 @@ if(ArrayListEF.us.getTipo().equals("user")){
                     selection = Paginador.TABLA.getSelectedRow();
                     selection1 = inicio + selection;
 
-
-                    ArrayListPro.p = new Productos(Integer.parseInt((String)( Pag.TABLA.getModel().getValueAt(selection1, 0))));
+ 
+                    ArrayListPro.p = new Productos(Integer.parseInt( Pag.TABLA.getModel().getValueAt(selection1, 0).toString()));
                     BLLBDProd.buscarPorIDBLL();
                     //BLLGraficoE.pos = BLL.buscar(ArrayListEF.e, 1);
                    // ArrayListEF.e = (EmpleadoFijo) BLL.Obtener(BLLGraficoE.pos, 1);

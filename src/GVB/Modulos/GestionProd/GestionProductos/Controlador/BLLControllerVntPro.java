@@ -81,7 +81,6 @@ public static String Img = "";
         btn_Guardar,
         btn_Limpiar,
         Txt_Nom,
-        
         Txt_Precio,
         Txt_Stock,
         _VOLVER,
@@ -102,7 +101,6 @@ public static String Img = "";
         _CONF_FECHA_4,
         _CONF_FECHA_5,
         _CONF_FECHA_6,
-        _TIPO, 
         IMAGEN
 
     }
@@ -170,17 +168,18 @@ public static String Img = "";
         this.VntPro.TxtNombre.setActionCommand("Txt_Nom");
         this.VntPro.TxtNombre.addActionListener(this);
         this.VntPro.TxtNombre.addKeyListener(this);
-
+this.VntPro.TxtNombre.setName("Txt_Nom");
      
 
         this.VntPro.TxtPrecio.setActionCommand("Txt_Precio");
         this.VntPro.TxtPrecio.addActionListener(this);
         this.VntPro.TxtPrecio.addKeyListener(this);
-
+this.VntPro.TxtPrecio.setName("Txt_Precio");
+        
         this.VntPro.TxtStock.setActionCommand("Txt_Stock");
         this.VntPro.TxtStock.addActionListener(this);
         this.VntPro.TxtStock.addKeyListener(this);
-
+this.VntPro.TxtStock.setName("Txt_Stock");
         
 
         this.VntPro.Volver.setActionCommand("_VOLVER");
@@ -273,12 +272,8 @@ public static String Img = "";
         switch (BLLControllerVntPro.Accion.valueOf(e.getActionCommand())) {
 
             case btn_Guardar:
-                BLLGraficoEF.crearEF();
-                if ((mod == -1) && (veri = true)) {
-                    ArrayListEF.us = ArrayListEF.e;
-                    VntEmp.dispose();
-                    new BLLControllerLogin(new Login()).iniciar();
-                }
+                BLLGraficoP.crearPro();
+                
                 break;
 
             case btn_Limpiar:
@@ -376,9 +371,6 @@ public static String Img = "";
                 break;
 
 
-            case _TIPO:
-
-                break;
         }
     }
 }

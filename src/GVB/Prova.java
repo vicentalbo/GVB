@@ -10,7 +10,17 @@ import GVB.Modulos.GestionEmpleados.GestionE.Modelo.Classe.Empleado;
 import GVB.Modulos.GestionEmpleados.GestionEF.Modelo.BLL.EFBLLBD;
 import GVB.Modulos.GestionEmpleados.GestionEF.Modelo.Classe.ArrayListEF;
 import GVB.Modulos.GestionEmpleados.GestionEF.Modelo.Classe.EmpleadoFijo;
+import GVB.Modulos.GestionProd.GestionProductos.Modelo.BLL.BLLBDProd;
+import GVB.Modulos.GestionProd.GestionProductos.Modelo.Classe.ArrayListPro;
+import GVB.Modulos.GestionProd.GestionProductos.Modelo.Classe.Productos;
+import GVB.Modulos.GestionProd.GestionProductos.Modelo.DAO.DAOBDProd;
+import GVB.classes.Conexion;
 import GVB.classes.Fechas;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import javax.swing.JOptionPane;
 
 
 /**
@@ -23,28 +33,45 @@ public class Prova {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Fechas f, fn, faux;
-            
-            int i=7;
-             for (int j = 0; j <  i; j++) {
-           f = Funcions.getFechaAleatoria();
-            fn = Funcions.getFechaAleatoria();
-            if (f.StringtoCalendar().before(fn.StringtoCalendar())) {
-                faux = f;
-                f = fn;
-                fn = faux;
-            }//String nombre, String dNi, String telef, Fechas fnac, Fechas fcontr, String email, String password, int estado, String tipo, String Avatar, float sueldof, int antig
-            String email=Funcions.getCadenaAleatoria2(3)+"@"+Funcions.getCadenaAleatoria2(3)+".com";
-            ArrayListEF.e = new EmpleadoFijo(Funcions.getCadenaAleatoria1(8), Funcions.getCadenaAleatoria2(9), Funcions.getCadenaAleatoria2(9), fn, f, email, "1234", 0, "user","src/GVB/img/Avatar/user-defec.png", 1200, f.restaFechasEdad());
-            EFBLLBD.nuevoEFBLL();
-            
-            try {
-                Thread.sleep(1); //1 milliseconds
-            } catch (Exception e) {
-                System.out.println(e);
-            }
+        ArrayListPro.pro.add(new Productos(1));
+        ArrayListPro.pro.clear();
+      /*Connection _con;
+        Conexion _conexion_DB = new Conexion();
+
+        _con = _conexion_DB.AbrirConexion();
         
-    }
-    
-    }
+       ResultSet rs;
+        PreparedStatement stmt = null;
+
+        
+        try {
+            stmt = _con.prepareStatement("SELECT * FROM gvbbdd.productos");
+            rs = stmt.executeQuery();
+            Productos pr;
+            while (rs.next()) {
+
+                pr = new Productos(0);
+                pr.setID(rs.getInt("ID"));
+                pr.setNombre(rs.getString("Nombre"));
+                pr.setPrecio(rs.getFloat("Precio"));
+                pr.setStock(rs.getInt("Stock"));
+                pr.setTipo(rs.getString("Tipo"));
+                pr.setDescripcion(rs.getString("Descripcion"));
+                pr.setImagen(rs.getString("Imagen"));
+                ArrayListPro.pro.add(pr);
+
+            }
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Ha habido un problema al obtener los productos!");
+        } finally {
+            if (stmt != null) {
+                try {
+                    stmt.close();
+                } catch (SQLException ex) {
+                    JOptionPane.showMessageDialog(null, "Ha habido un error Logger!");
+                }
+            }
+        _conexion_DB.CerrarConexion(_con);
+    }*/
+}
 }

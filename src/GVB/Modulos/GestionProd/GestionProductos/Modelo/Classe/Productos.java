@@ -19,34 +19,37 @@ public class Productos implements Comparable<Productos>, Serializable {
     private int ID;
     @XStreamAlias("Nombre")
     private String Nombre;
-    @XStreamAlias("Tipo")
-    private String Tipo;
     @XStreamAlias("Precio")
     private float Precio;
     @XStreamAlias("Stock")
     private int Stock;
+     @XStreamAlias("Tipo")
+    private String Tipo;
     @XStreamAlias("Descripcion")
     private String Descripcion;
     @XStreamAlias("Imagen")
     private String Imagen;
 
-    public Productos(int ID, String Nombre, String Tipo, float Precio, int Stock, String Descripcion, String Imagen) {
+    public Productos(int ID, String Nombre, float Precio, int Stock, String Tipo,  String Descripcion, String Imagen) {
         this.ID = ID;
         this.Nombre = Nombre;
-        this.Tipo = Tipo;
+        
         this.Precio = Precio;
         this.Stock = Stock;
+        this.Tipo = Tipo;
         this.Descripcion = Descripcion;
         this.Imagen = Imagen;
     }
 
-    public Productos(String Nombre, String Tipo, float Precio, int Stock, String Descripcion, String Imagen) {
+    public Productos(String Nombre, float Precio, int Stock, String Tipo, String Descripcion, String Imagen) {
         this.Nombre = Nombre;
-        this.Tipo = Tipo;
+        
         this.Precio = Precio;
         this.Stock = Stock;
+        this.Tipo = Tipo;
         this.Descripcion = Descripcion;
         this.Imagen = Imagen;
+        
     }
 
     public Productos(int ID){

@@ -50,7 +50,7 @@ CREATE TABLE `empleados` (
 
 LOCK TABLES `empleados` WRITE;
 /*!40000 ALTER TABLE `empleados` DISABLE KEYS */;
-INSERT INTO `empleados` VALUES ('Prova','11122211P','111111111',23,'11/10/1990','10/2/2014','asd@gmail.com','asd','81dc9bdb52d04dc20036dbd8313ed055',0,'user','src/GVB/img/Avatar/user-defec.png',1000,14000,1),('UFhHOCnP','1hn6cvx51','unnlynrt0',49,'3/7/1965','9/8/2007','1hn@gmail.com','1hn','81dc9bdb52d04dc20036dbd8313ed055',0,'user','src/GVB/img/Avatar/user-defec.png',1200,20160,6),('Santiago','41424344M','659000325',40,'11/2/1975','20/10/2013','vinche777@gmail.com','vinche777','81dc9bdb52d04dc20036dbd8313ed055',1,'user','src/GVB/img/Avatar/w1krc.png',1257,3449210,0),('Yolandaqq','44445522M','654301248',34,'11/11/1980','10/10/2010','yy@gmail.com','yy','81dc9bdb52d04dc20036dbd8313ed055',0,'user','src/GVB/img/Avatar/user-defec.png',1200,16800,3),('ProvaAa','44558899P','123456789',23,'10/10/1990','9/9/2013','ppsd@gmail.com','ppsd','81dc9bdb52d04dc20036dbd8313ed055',0,'user','src/GVB/img/Avatar/user-defec.png',1000,14000,0),('Paco','45454545P','654321301',35,'11/12/1979','13/11/2011','Paco@gmail.com','Paco','81dc9bdb52d04dc20036dbd8313ed055',0,'user','src/GVB/img/Avatar/user-defec.png',1230,17220,2),('Pepe','48484848A','666555444',38,'1/2/1970','1/2/2010','pepe@gmail.com','pepe','81dc9bdb52d04dc20036dbd8313ed055',0,'user','src/GVB/img/Avatar/user-defec.png',1000,14000,5),('Vicent','48607270J','659032587',21,'12/4/1990','12/4/2015','vicent.albo@gmail.com','vv','81dc9bdb52d04dc20036dbd8313ed055',1,'Admin','src/GVB/img/Avatar/TOTIA.png',1200,16800,0),('JrPwyiON','rwy1iwhj1','rwy1iwhj1',62,'7/7/1952','19/8/1972','rwy@gmail.com','rwy','81dc9bdb52d04dc20036dbd8313ed055',0,'user','src/GVB/img/Avatar/user-defec.png',1200,23520,41),('WsaKermK','sa42erm9c','sa42erm9c',59,'4/11/1955','7/6/2007','sa4@gmail.com','sa4','ec6a6536ca304edf844d1d248a4f08dc',0,'user','src/GVB/img/Avatar/user-defec.png',1200,20160,6),('uEGesbso','uesbs5oc0','uesbs5oc0',58,'5/11/1956','6/1/2007','ues@gmail.com','ues','81dc9bdb52d04dc20036dbd8313ed055',0,'user','src/GVB/img/Avatar/user-defec.png',1200,20160,8);
+INSERT INTO `empleados` VALUES ('Prova','11122211P','111111111',23,'11/10/1990','10/2/2014','asd@gmail.com','asd','81dc9bdb52d04dc20036dbd8313ed055',0,'user','src/GVB/img/Avatar/user-defec.png',1000,14000,1),('UFhHOCnP','1hn6cvx51','unnlynrt0',49,'3/7/1965','9/8/2007','1hn@gmail.com','1hn','81dc9bdb52d04dc20036dbd8313ed055',0,'user','src/GVB/img/Avatar/user-defec.png',1200,20160,6),('Santiago','41424344M','659000325',40,'11/2/1975','20/10/2013','vinche777@gmail.com','vinche777','732de10628e62a82fde4924334b28217',1,'user','src/GVB/img/Avatar/w1krc.png',1257,48288900,0),('DAW','44110258C','658700000',32,'12/12/1982','10/10/2012','1erdaw2015@gmail.com','1erdaw2015','81dc9bdb52d04dc20036dbd8313ed055',0,'user','src/GVB/img/Avatar/csuoq.jpg',1200,235200,0),('ProvaAa','44558899P','123456789',23,'10/10/1990','9/9/2013','ppsd@gmail.com','ppsd','81dc9bdb52d04dc20036dbd8313ed055',0,'user','src/GVB/img/Avatar/user-defec.png',1000,14000,0),('Paco','45454545P','654321301',35,'11/12/1979','13/11/2011','Paco@gmail.com','Paco','81dc9bdb52d04dc20036dbd8313ed055',0,'user','src/GVB/img/Avatar/user-defec.png',1230,17220,2),('Pepe','48484848A','666555444',38,'1/2/1970','1/2/2010','pepe@gmail.com','pepe','81dc9bdb52d04dc20036dbd8313ed055',0,'user','src/GVB/img/Avatar/user-defec.png',1000,14000,5),('Vicent','48607270J','659032587',21,'12/4/1990','12/4/2015','vicent.albo@gmail.com','vv','81dc9bdb52d04dc20036dbd8313ed055',1,'Admin','src/GVB/img/Avatar/TOTIA.png',1200,16800,0),('JrPwyiON','rwy1iwhj1','rwy1iwhj1',62,'7/7/1952','19/8/1972','rwy@gmail.com','rwy','81dc9bdb52d04dc20036dbd8313ed055',0,'user','src/GVB/img/Avatar/user-defec.png',1200,23520,41),('WsaKermK','sa42erm9c','sa42erm9c',59,'4/11/1955','7/6/2007','sa4@gmail.com','sa4','ec6a6536ca304edf844d1d248a4f08dc',0,'user','src/GVB/img/Avatar/user-defec.png',1200,20160,6),('uEGesbso','uesbs5oc0','uesbs5oc0',58,'5/11/1956','6/1/2007','ues@gmail.com','ues','81dc9bdb52d04dc20036dbd8313ed055',0,'user','src/GVB/img/Avatar/user-defec.png',1200,20160,8);
 /*!40000 ALTER TABLE `empleados` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
@@ -136,7 +136,7 @@ CREATE TABLE `logempleado_cambio` (
   `oldTipo` varchar(45) DEFAULT NULL,
   `nuevoTipo` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=47 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=63 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -145,7 +145,7 @@ CREATE TABLE `logempleado_cambio` (
 
 LOCK TABLES `logempleado_cambio` WRITE;
 /*!40000 ALTER TABLE `logempleado_cambio` DISABLE KEYS */;
-INSERT INTO `logempleado_cambio` VALUES (2,'2015-04-23 19:59:25','root@localhost','48607270J','Vicent','Vicent','659032587','659032587','12/4/1994','12-04-1990','12/4/2015','12/4/2015','vv@gmail.com','vv@gmail.com','Admin','Admin'),(3,'2015-04-27 11:51:05','root@localhost','48484848A','Pepe','Pepe','666555444','666555444','1/2/1970','1/2/1970','1/2/2010','1/2/2010','pepe@pepe.com','pepe@pepe.com','user','user'),(4,'2015-04-29 17:42:25','root@localhost','48525252A','Yolanda','Yolandaqq','654321025','654321025','4/4/1980','4/4/1980','5/4/2014','5/4/2014','yy@dd.com','yy@dd.com','user','user'),(5,'2015-04-29 17:45:09','root@localhost','44445522M','Yolanda','Yolandaqq','654301248','654301248','11/11/1980','11/11/1980','10/10/2010','10/10/2010','yy@ll.com','yy@ll.com','user','user'),(6,'2015-04-30 19:43:11','root@localhost','48607270J','Vicent','Vicent','659032587','659032587','12-04-1990','12-04-1990','12/4/2015','12/4/2015','vv@gmail.com','vv@gmail.com','Admin','Admin'),(7,'2015-05-04 20:39:25','root@localhost','1hn6cvx51','UFhHOCnP','UFhHOCnP','unnlynrt0','unnlynrt0','3/7/1965','3/7/1965','9/8/2007','9/8/2007','1hn@1hn.com','1hn@gmail.com','user','user'),(8,'2015-05-04 20:39:25','root@localhost','44445522M','Yolandaqq','Yolandaqq','654301248','654301248','11/11/1980','11/11/1980','10/10/2010','10/10/2010','yy@ll.com','yy@gmail.com','user','user'),(9,'2015-05-04 20:39:25','root@localhost','48484848A','Pepe','Pepe','666555444','666555444','1/2/1970','1/2/1970','1/2/2010','1/2/2010','pepe@pepe.com','pepe@gmail.com','user','user'),(10,'2015-05-04 20:39:25','root@localhost','rwy1iwhj1','JrPwyiON','JrPwyiON','rwy1iwhj1','rwy1iwhj1','7/7/1952','7/7/1952','19/8/1972','19/8/1972','rwy@rwy.com','rwy@gmail.com','user','user'),(11,'2015-05-04 20:39:25','root@localhost','sa42erm9c','WsaKermK','WsaKermK','sa42erm9c','sa42erm9c','4/11/1955','4/11/1955','7/6/2007','7/6/2007','sa4@sa4.com','sa4@gmail.com','user','user'),(12,'2015-05-04 20:39:25','root@localhost','uesbs5oc0','uEGesbso','uEGesbso','uesbs5oc0','uesbs5oc0','5/11/1956','5/11/1956','6/1/2007','6/1/2007','ues@ues.com','ues@gmail.com','user','user'),(13,'2015-05-05 17:38:42','root@localhost','11122211P','Prova','Prova','111111111','111111111','11/10/1990','11/10/1990','10/2/2014','10/2/2014','asd@gmail.com','asd@gmail.com','user','user'),(14,'2015-05-05 17:39:07','root@localhost','1hn6cvx51','UFhHOCnP','UFhHOCnP','unnlynrt0','unnlynrt0','3/7/1965','3/7/1965','9/8/2007','9/8/2007','1hn@gmail.com','1hn@gmail.com','user','user'),(15,'2015-05-05 17:39:27','root@localhost','44445522M','Yolandaqq','Yolandaqq','654301248','654301248','11/11/1980','11/11/1980','10/10/2010','10/10/2010','yy@gmail.com','yy@gmail.com','user','user'),(16,'2015-05-05 17:49:42','root@localhost','11122211P','Prova','Prova','111111111','111111111','11/10/1990','11/10/1990','10/2/2014','10/2/2014','asd@gmail.com','asd@gmail.com','user','user'),(17,'2015-05-05 17:49:54','root@localhost','1hn6cvx51','UFhHOCnP','UFhHOCnP','unnlynrt0','unnlynrt0','3/7/1965','3/7/1965','9/8/2007','9/8/2007','1hn@gmail.com','1hn@gmail.com','user','user'),(18,'2015-05-05 17:50:05','root@localhost','44445522M','Yolandaqq','Yolandaqq','654301248','654301248','11/11/1980','11/11/1980','10/10/2010','10/10/2010','yy@gmail.com','yy@gmail.com','user','user'),(19,'2015-05-05 17:50:31','root@localhost','45454545P','Paco','Paco','654321301','654321301','11/12/1979','11/12/1979','13/11/2011','13/11/2011','Paco@gmail.com','Paco@gmail.com','user','user'),(20,'2015-05-05 17:50:41','root@localhost','48484848A','Pepe','Pepe','666555444','666555444','1/2/1970','1/2/1970','1/2/2010','1/2/2010','pepe@gmail.com','pepe@gmail.com','user','user'),(21,'2015-05-05 17:50:47','root@localhost','48607270J','Vicent','Vicent','659032587','659032587','12-04-1990','12/4/1990','12/4/2015','12/4/2015','vv@gmail.com','vv@gmail.com','Admin','Admin'),(22,'2015-05-05 17:55:24','root@localhost','11122211P','Prova','Prova','111111111','111111111','11/10/1990','11/10/1990','10/2/2014','10/2/2014','asd@gmail.com','asd@gmail.com','user','user'),(23,'2015-05-05 17:55:36','root@localhost','1hn6cvx51','UFhHOCnP','UFhHOCnP','unnlynrt0','unnlynrt0','3/7/1965','3/7/1965','9/8/2007','9/8/2007','1hn@gmail.com','1hn@gmail.com','user','user'),(24,'2015-05-05 17:55:42','root@localhost','44445522M','Yolandaqq','Yolandaqq','654301248','654301248','11/11/1980','11/11/1980','10/10/2010','10/10/2010','yy@gmail.com','yy@gmail.com','user','user'),(25,'2015-05-05 17:55:50','root@localhost','44558899P','ProvaAa','ProvaAa','123456789','123456789','10/10/1990','10/10/1990','9/9/2013','9/9/2013','ppsd@gmail.com','ppsd@gmail.com','user','user'),(26,'2015-05-05 17:55:57','root@localhost','48484848A','Pepe','Pepe','666555444','666555444','1/2/1970','1/2/1970','1/2/2010','1/2/2010','pepe@gmail.com','pepe@gmail.com','user','user'),(27,'2015-05-05 17:56:02','root@localhost','48607270J','Vicent','Vicent','659032587','659032587','12/4/1990','12/4/1990','12/4/2015','12/4/2015','vv@gmail.com','vv@gmail.com','Admin','user'),(28,'2015-05-05 17:56:08','root@localhost','rwy1iwhj1','JrPwyiON','JrPwyiON','rwy1iwhj1','rwy1iwhj1','7/7/1952','7/7/1952','19/8/1972','19/8/1972','rwy@gmail.com','rwy@gmail.com','user','user'),(29,'2015-05-05 17:56:16','root@localhost','sa42erm9c','WsaKermK','WsaKermK','sa42erm9c','sa42erm9c','4/11/1955','4/11/1955','7/6/2007','7/6/2007','sa4@gmail.com','sa4@gmail.com','user','user'),(30,'2015-05-05 17:56:21','root@localhost','sa42erm9c','WsaKermK','WsaKermK','sa42erm9c','sa42erm9c','4/11/1955','4/11/1955','7/6/2007','7/6/2007','sa4@gmail.com','sa4@gmail.com','user','user'),(31,'2015-05-05 17:57:16','root@localhost','45454545P','Paco','Paco','654321301','654321301','11/12/1979','11/12/1979','13/11/2011','13/11/2011','Paco@gmail.com','Paco@gmail.com','user','user'),(32,'2015-05-05 17:57:16','root@localhost','uesbs5oc0','uEGesbso','uEGesbso','uesbs5oc0','uesbs5oc0','5/11/1956','5/11/1956','6/1/2007','6/1/2007','ues@gmail.com','ues@gmail.com','user','user'),(33,'2015-05-05 17:57:16','root@localhost','44558899P','ProvaAa','ProvaAa','123456789','123456789','10/10/1990','10/10/1990','9/9/2013','9/9/2013','ppsd@gmail.com','ppsd@gmail.com','user','user'),(34,'2015-05-05 19:04:59','root@localhost','48607270J','Vicent','Vicent','659032587','659032587','12/4/1990','12/4/1990','12/4/2015','12/4/2015','vv@gmail.com','vv@gmail.com','user','user'),(35,'2015-05-06 18:52:25','root@localhost','48607270J','Vicent','Vicent','659032587','659032587','12/4/1990','12/4/1990','12/4/2015','12/4/2015','vv@gmail.com','vv@gmail.com','user','Admin'),(36,'2015-05-06 18:53:28','root@localhost','48607270J','Vicent','Vicent','659032587','659032587','12/4/1990','12/4/1990','12/4/2015','12/4/2015','vv@gmail.com','vv@gmail.com','Admin','Admin'),(37,'2015-05-06 18:54:38','root@localhost','48607270J','Vicent','Vicent','659032587','659032587','12/4/1990','12/4/1990','12/4/2015','12/4/2015','vv@gmail.com','vv@gmail.com','Admin','Admin'),(38,'2015-05-10 17:55:55','root@localhost','48607270J','Vicent','Vicent','659032587','659032587','12/4/1990','12/4/1990','12/4/2015','12/4/2015','vv@gmail.com','vicent.albo@gmail.com','Admin','Admin'),(39,'2015-05-10 18:14:46','root@localhost','48607270J','Vicent','Vicent','659032587','659032587','12/4/1990','12/4/1990','12/4/2015','12/4/2015','vicent.albo@gmail.com','vicent.albo@gmail.com','Admin','Admin'),(40,'2015-05-10 18:21:20','root@localhost','48607270J','Vicent','Vicent','659032587','659032587','12/4/1990','12/4/1990','12/4/2015','12/4/2015','vicent.albo@gmail.com','vicent.albo@gmail.com','Admin','Admin'),(41,'2015-05-10 18:22:08','root@localhost','48607270J','Vicent','Vicent','659032587','659032587','12/4/1990','12/4/1990','12/4/2015','12/4/2015','vicent.albo@gmail.com','vicent.albo@gmail.com','Admin','Admin'),(42,'2015-05-10 18:25:36','root@localhost','48607270J','Vicent','Vicent','659032587','659032587','12/4/1990','12/4/1990','12/4/2015','12/4/2015','vicent.albo@gmail.com','vicent.albo@gmail.com','Admin','Admin'),(43,'2015-05-10 18:27:02','root@localhost','48607270J','Vicent','Vicent','659032587','659032587','12/4/1990','12/4/1990','12/4/2015','12/4/2015','vicent.albo@gmail.com','vicent.albo@gmail.com','Admin','Admin'),(44,'2015-05-10 18:35:17','root@localhost','41424344M','Santiago','Santiago','659000325','659000325','11/2/1975','11/2/1975','20/10/2013','20/10/2013','vinche777@gmail.com','vinche777@gmail.com','user','user'),(45,'2015-05-10 18:35:41','root@localhost','41424344M','Santiago','Santiago','659000325','659000325','11/2/1975','11/2/1975','20/10/2013','20/10/2013','vinche777@gmail.com','vinche777@gmail.com','user','user'),(46,'2015-05-10 18:43:25','root@localhost','41424344M','Santiago','Santiago','659000325','659000325','11/2/1975','11/2/1975','20/10/2013','20/10/2013','vinche777@gmail.com','vinche777@gmail.com','user','user');
+INSERT INTO `logempleado_cambio` VALUES (2,'2015-04-23 19:59:25','root@localhost','48607270J','Vicent','Vicent','659032587','659032587','12/4/1994','12-04-1990','12/4/2015','12/4/2015','vv@gmail.com','vv@gmail.com','Admin','Admin'),(3,'2015-04-27 11:51:05','root@localhost','48484848A','Pepe','Pepe','666555444','666555444','1/2/1970','1/2/1970','1/2/2010','1/2/2010','pepe@pepe.com','pepe@pepe.com','user','user'),(4,'2015-04-29 17:42:25','root@localhost','48525252A','Yolanda','Yolandaqq','654321025','654321025','4/4/1980','4/4/1980','5/4/2014','5/4/2014','yy@dd.com','yy@dd.com','user','user'),(5,'2015-04-29 17:45:09','root@localhost','44445522M','Yolanda','Yolandaqq','654301248','654301248','11/11/1980','11/11/1980','10/10/2010','10/10/2010','yy@ll.com','yy@ll.com','user','user'),(6,'2015-04-30 19:43:11','root@localhost','48607270J','Vicent','Vicent','659032587','659032587','12-04-1990','12-04-1990','12/4/2015','12/4/2015','vv@gmail.com','vv@gmail.com','Admin','Admin'),(7,'2015-05-04 20:39:25','root@localhost','1hn6cvx51','UFhHOCnP','UFhHOCnP','unnlynrt0','unnlynrt0','3/7/1965','3/7/1965','9/8/2007','9/8/2007','1hn@1hn.com','1hn@gmail.com','user','user'),(8,'2015-05-04 20:39:25','root@localhost','44445522M','Yolandaqq','Yolandaqq','654301248','654301248','11/11/1980','11/11/1980','10/10/2010','10/10/2010','yy@ll.com','yy@gmail.com','user','user'),(9,'2015-05-04 20:39:25','root@localhost','48484848A','Pepe','Pepe','666555444','666555444','1/2/1970','1/2/1970','1/2/2010','1/2/2010','pepe@pepe.com','pepe@gmail.com','user','user'),(10,'2015-05-04 20:39:25','root@localhost','rwy1iwhj1','JrPwyiON','JrPwyiON','rwy1iwhj1','rwy1iwhj1','7/7/1952','7/7/1952','19/8/1972','19/8/1972','rwy@rwy.com','rwy@gmail.com','user','user'),(11,'2015-05-04 20:39:25','root@localhost','sa42erm9c','WsaKermK','WsaKermK','sa42erm9c','sa42erm9c','4/11/1955','4/11/1955','7/6/2007','7/6/2007','sa4@sa4.com','sa4@gmail.com','user','user'),(12,'2015-05-04 20:39:25','root@localhost','uesbs5oc0','uEGesbso','uEGesbso','uesbs5oc0','uesbs5oc0','5/11/1956','5/11/1956','6/1/2007','6/1/2007','ues@ues.com','ues@gmail.com','user','user'),(13,'2015-05-05 17:38:42','root@localhost','11122211P','Prova','Prova','111111111','111111111','11/10/1990','11/10/1990','10/2/2014','10/2/2014','asd@gmail.com','asd@gmail.com','user','user'),(14,'2015-05-05 17:39:07','root@localhost','1hn6cvx51','UFhHOCnP','UFhHOCnP','unnlynrt0','unnlynrt0','3/7/1965','3/7/1965','9/8/2007','9/8/2007','1hn@gmail.com','1hn@gmail.com','user','user'),(15,'2015-05-05 17:39:27','root@localhost','44445522M','Yolandaqq','Yolandaqq','654301248','654301248','11/11/1980','11/11/1980','10/10/2010','10/10/2010','yy@gmail.com','yy@gmail.com','user','user'),(16,'2015-05-05 17:49:42','root@localhost','11122211P','Prova','Prova','111111111','111111111','11/10/1990','11/10/1990','10/2/2014','10/2/2014','asd@gmail.com','asd@gmail.com','user','user'),(17,'2015-05-05 17:49:54','root@localhost','1hn6cvx51','UFhHOCnP','UFhHOCnP','unnlynrt0','unnlynrt0','3/7/1965','3/7/1965','9/8/2007','9/8/2007','1hn@gmail.com','1hn@gmail.com','user','user'),(18,'2015-05-05 17:50:05','root@localhost','44445522M','Yolandaqq','Yolandaqq','654301248','654301248','11/11/1980','11/11/1980','10/10/2010','10/10/2010','yy@gmail.com','yy@gmail.com','user','user'),(19,'2015-05-05 17:50:31','root@localhost','45454545P','Paco','Paco','654321301','654321301','11/12/1979','11/12/1979','13/11/2011','13/11/2011','Paco@gmail.com','Paco@gmail.com','user','user'),(20,'2015-05-05 17:50:41','root@localhost','48484848A','Pepe','Pepe','666555444','666555444','1/2/1970','1/2/1970','1/2/2010','1/2/2010','pepe@gmail.com','pepe@gmail.com','user','user'),(21,'2015-05-05 17:50:47','root@localhost','48607270J','Vicent','Vicent','659032587','659032587','12-04-1990','12/4/1990','12/4/2015','12/4/2015','vv@gmail.com','vv@gmail.com','Admin','Admin'),(22,'2015-05-05 17:55:24','root@localhost','11122211P','Prova','Prova','111111111','111111111','11/10/1990','11/10/1990','10/2/2014','10/2/2014','asd@gmail.com','asd@gmail.com','user','user'),(23,'2015-05-05 17:55:36','root@localhost','1hn6cvx51','UFhHOCnP','UFhHOCnP','unnlynrt0','unnlynrt0','3/7/1965','3/7/1965','9/8/2007','9/8/2007','1hn@gmail.com','1hn@gmail.com','user','user'),(24,'2015-05-05 17:55:42','root@localhost','44445522M','Yolandaqq','Yolandaqq','654301248','654301248','11/11/1980','11/11/1980','10/10/2010','10/10/2010','yy@gmail.com','yy@gmail.com','user','user'),(25,'2015-05-05 17:55:50','root@localhost','44558899P','ProvaAa','ProvaAa','123456789','123456789','10/10/1990','10/10/1990','9/9/2013','9/9/2013','ppsd@gmail.com','ppsd@gmail.com','user','user'),(26,'2015-05-05 17:55:57','root@localhost','48484848A','Pepe','Pepe','666555444','666555444','1/2/1970','1/2/1970','1/2/2010','1/2/2010','pepe@gmail.com','pepe@gmail.com','user','user'),(27,'2015-05-05 17:56:02','root@localhost','48607270J','Vicent','Vicent','659032587','659032587','12/4/1990','12/4/1990','12/4/2015','12/4/2015','vv@gmail.com','vv@gmail.com','Admin','user'),(28,'2015-05-05 17:56:08','root@localhost','rwy1iwhj1','JrPwyiON','JrPwyiON','rwy1iwhj1','rwy1iwhj1','7/7/1952','7/7/1952','19/8/1972','19/8/1972','rwy@gmail.com','rwy@gmail.com','user','user'),(29,'2015-05-05 17:56:16','root@localhost','sa42erm9c','WsaKermK','WsaKermK','sa42erm9c','sa42erm9c','4/11/1955','4/11/1955','7/6/2007','7/6/2007','sa4@gmail.com','sa4@gmail.com','user','user'),(30,'2015-05-05 17:56:21','root@localhost','sa42erm9c','WsaKermK','WsaKermK','sa42erm9c','sa42erm9c','4/11/1955','4/11/1955','7/6/2007','7/6/2007','sa4@gmail.com','sa4@gmail.com','user','user'),(31,'2015-05-05 17:57:16','root@localhost','45454545P','Paco','Paco','654321301','654321301','11/12/1979','11/12/1979','13/11/2011','13/11/2011','Paco@gmail.com','Paco@gmail.com','user','user'),(32,'2015-05-05 17:57:16','root@localhost','uesbs5oc0','uEGesbso','uEGesbso','uesbs5oc0','uesbs5oc0','5/11/1956','5/11/1956','6/1/2007','6/1/2007','ues@gmail.com','ues@gmail.com','user','user'),(33,'2015-05-05 17:57:16','root@localhost','44558899P','ProvaAa','ProvaAa','123456789','123456789','10/10/1990','10/10/1990','9/9/2013','9/9/2013','ppsd@gmail.com','ppsd@gmail.com','user','user'),(34,'2015-05-05 19:04:59','root@localhost','48607270J','Vicent','Vicent','659032587','659032587','12/4/1990','12/4/1990','12/4/2015','12/4/2015','vv@gmail.com','vv@gmail.com','user','user'),(35,'2015-05-06 18:52:25','root@localhost','48607270J','Vicent','Vicent','659032587','659032587','12/4/1990','12/4/1990','12/4/2015','12/4/2015','vv@gmail.com','vv@gmail.com','user','Admin'),(36,'2015-05-06 18:53:28','root@localhost','48607270J','Vicent','Vicent','659032587','659032587','12/4/1990','12/4/1990','12/4/2015','12/4/2015','vv@gmail.com','vv@gmail.com','Admin','Admin'),(37,'2015-05-06 18:54:38','root@localhost','48607270J','Vicent','Vicent','659032587','659032587','12/4/1990','12/4/1990','12/4/2015','12/4/2015','vv@gmail.com','vv@gmail.com','Admin','Admin'),(38,'2015-05-10 17:55:55','root@localhost','48607270J','Vicent','Vicent','659032587','659032587','12/4/1990','12/4/1990','12/4/2015','12/4/2015','vv@gmail.com','vicent.albo@gmail.com','Admin','Admin'),(39,'2015-05-10 18:14:46','root@localhost','48607270J','Vicent','Vicent','659032587','659032587','12/4/1990','12/4/1990','12/4/2015','12/4/2015','vicent.albo@gmail.com','vicent.albo@gmail.com','Admin','Admin'),(40,'2015-05-10 18:21:20','root@localhost','48607270J','Vicent','Vicent','659032587','659032587','12/4/1990','12/4/1990','12/4/2015','12/4/2015','vicent.albo@gmail.com','vicent.albo@gmail.com','Admin','Admin'),(41,'2015-05-10 18:22:08','root@localhost','48607270J','Vicent','Vicent','659032587','659032587','12/4/1990','12/4/1990','12/4/2015','12/4/2015','vicent.albo@gmail.com','vicent.albo@gmail.com','Admin','Admin'),(42,'2015-05-10 18:25:36','root@localhost','48607270J','Vicent','Vicent','659032587','659032587','12/4/1990','12/4/1990','12/4/2015','12/4/2015','vicent.albo@gmail.com','vicent.albo@gmail.com','Admin','Admin'),(43,'2015-05-10 18:27:02','root@localhost','48607270J','Vicent','Vicent','659032587','659032587','12/4/1990','12/4/1990','12/4/2015','12/4/2015','vicent.albo@gmail.com','vicent.albo@gmail.com','Admin','Admin'),(44,'2015-05-10 18:35:17','root@localhost','41424344M','Santiago','Santiago','659000325','659000325','11/2/1975','11/2/1975','20/10/2013','20/10/2013','vinche777@gmail.com','vinche777@gmail.com','user','user'),(45,'2015-05-10 18:35:41','root@localhost','41424344M','Santiago','Santiago','659000325','659000325','11/2/1975','11/2/1975','20/10/2013','20/10/2013','vinche777@gmail.com','vinche777@gmail.com','user','user'),(46,'2015-05-10 18:43:25','root@localhost','41424344M','Santiago','Santiago','659000325','659000325','11/2/1975','11/2/1975','20/10/2013','20/10/2013','vinche777@gmail.com','vinche777@gmail.com','user','user'),(47,'2015-05-18 11:22:53','root@localhost','41424344M','Santiago','Santiago','659000325','659000325','11/2/1975','11/2/1975','20/10/2013','20/10/2013','vinche777@gmail.com','vinche777@gmail.com','user','user'),(48,'2015-05-18 11:31:10','root@localhost','44665599F','DAW','DAW','620032230','620032230','12/12/1992','12/12/1992','10/12/2013','10/12/2013','1erdaw2015@gmail.com','1erdaw2015@gmail.com','user','user'),(49,'2015-05-18 11:31:22','root@localhost','44665599F','DAW','DAW','620032230','620032230','12/12/1992','12/12/1992','10/12/2013','10/12/2013','1erdaw2015@gmail.com','1erdaw2015@gmail.com','user','user'),(50,'2015-05-18 11:31:29','root@localhost','44665599F','DAW','DAW','620032230','620032230','12/12/1992','12/12/1992','10/12/2013','10/12/2013','1erdaw2015@gmail.com','1erdaw2015@gmail.com','user','user'),(51,'2015-05-18 11:31:40','root@localhost','44665599F','DAW','DAW','620032230','620032230','12/12/1992','12/12/1992','10/12/2013','10/12/2013','1erdaw2015@gmail.com','1erdaw2015@gmail.com','user','user'),(52,'2015-05-18 11:31:50','root@localhost','44665599F','DAW','DAW','620032230','620032230','12/12/1992','12/12/1992','10/12/2013','10/12/2013','1erdaw2015@gmail.com','1erdaw2015@gmail.com','user','user'),(53,'2015-05-18 11:31:55','root@localhost','44665599F','DAW','DAW','620032230','620032230','12/12/1992','12/12/1992','10/12/2013','10/12/2013','1erdaw2015@gmail.com','1erdaw2015@gmail.com','user','user'),(54,'2015-05-18 11:32:01','root@localhost','44665599F','DAW','DAW','620032230','620032230','12/12/1992','12/12/1992','10/12/2013','10/12/2013','1erdaw2015@gmail.com','1erdaw2015@gmail.com','user','user'),(55,'2015-05-18 11:32:10','root@localhost','44665599F','DAW','DAW','620032230','620032230','12/12/1992','12/12/1992','10/12/2013','10/12/2013','1erdaw2015@gmail.com','1erdaw2015@gmail.com','user','user'),(56,'2015-05-18 11:32:16','root@localhost','44665599F','DAW','DAW','620032230','620032230','12/12/1992','12/12/1992','10/12/2013','10/12/2013','1erdaw2015@gmail.com','1erdaw2015@gmail.com','user','user'),(57,'2015-05-18 11:32:53','root@localhost','44665599F','DAW','DAW','620032230','620032230','12/12/1992','12/12/1992','10/12/2013','10/12/2013','1erdaw2015@gmail.com','1erdaw2015@gmail.com','user','user'),(58,'2015-05-18 11:33:01','root@localhost','44665599F','DAW','DAW','620032230','620032230','12/12/1992','12/12/1992','10/12/2013','10/12/2013','1erdaw2015@gmail.com','1erdaw2015@gmail.com','user','user'),(59,'2015-05-18 11:33:05','root@localhost','44665599F','DAW','DAW','620032230','620032230','12/12/1992','12/12/1992','10/12/2013','10/12/2013','1erdaw2015@gmail.com','1erdaw2015@gmail.com','user','user'),(60,'2015-05-18 11:39:41','root@localhost','44665599F','DAW','DAW','620032230','620032230','12/12/1992','12/12/1992','10/12/2013','10/12/2013','1erdaw2015@gmail.com','1erdaw2015@gmail.com','user','user'),(61,'2015-05-18 11:52:15','root@localhost','44110258C','DAW','DAW','658700000','658700000','12/12/1982','12/12/1982','10/10/2012','10/10/2012','1erdaw2015@gmail.com','1erdaw2015@gmail.com','user','user'),(62,'2015-05-18 11:52:22','root@localhost','44110258C','DAW','DAW','658700000','658700000','12/12/1982','12/12/1982','10/10/2012','10/10/2012','1erdaw2015@gmail.com','1erdaw2015@gmail.com','user','user');
 /*!40000 ALTER TABLE `logempleado_cambio` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -164,7 +164,7 @@ CREATE TABLE `logempleado_delete` (
   `oldNombre` varchar(45) DEFAULT NULL,
   `nuevoNombre` int(11) DEFAULT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -173,7 +173,7 @@ CREATE TABLE `logempleado_delete` (
 
 LOCK TABLES `logempleado_delete` WRITE;
 /*!40000 ALTER TABLE `logempleado_delete` DISABLE KEYS */;
-INSERT INTO `logempleado_delete` VALUES (1,'2015-04-23 19:37:15','root@localhost','48785263A','Test2',NULL),(2,'2015-04-29 17:36:42','root@localhost','45484548M','Yolanda',NULL),(3,'2015-04-29 17:44:19','root@localhost','48525252A','Yolandaqq',NULL);
+INSERT INTO `logempleado_delete` VALUES (1,'2015-04-23 19:37:15','root@localhost','48785263A','Test2',NULL),(2,'2015-04-29 17:36:42','root@localhost','45484548M','Yolanda',NULL),(3,'2015-04-29 17:44:19','root@localhost','48525252A','Yolandaqq',NULL),(4,'2015-05-18 11:49:29','root@localhost','44665599F','DAW',NULL),(5,'2015-05-18 11:50:18','root@localhost','44445522M','Yolandaqq',NULL);
 /*!40000 ALTER TABLE `logempleado_delete` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -192,7 +192,7 @@ CREATE TABLE `logempleados` (
   `oldNombre` varchar(45) DEFAULT 'null',
   `nuevoNombre` varchar(45) DEFAULT 'null',
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -201,9 +201,178 @@ CREATE TABLE `logempleados` (
 
 LOCK TABLES `logempleados` WRITE;
 /*!40000 ALTER TABLE `logempleados` DISABLE KEYS */;
-INSERT INTO `logempleados` VALUES (1,'2015-04-23 19:15:39','root@localhost','48785263A',NULL,'Test'),(2,'2015-04-29 17:35:26','root@localhost','45484548M',NULL,'Yolanda'),(3,'2015-04-29 17:37:33','root@localhost','48525252A',NULL,'Yolanda'),(4,'2015-04-29 17:45:02','root@localhost','44445522M',NULL,'Yolanda'),(5,'2015-05-04 21:02:30','root@localhost','11122211P',NULL,'Prova'),(6,'2015-05-05 17:42:34','root@localhost','44558899P',NULL,'ProvaAa'),(7,'2015-05-10 18:32:47','root@localhost','41424344M',NULL,'Santiago');
+INSERT INTO `logempleados` VALUES (1,'2015-04-23 19:15:39','root@localhost','48785263A',NULL,'Test'),(2,'2015-04-29 17:35:26','root@localhost','45484548M',NULL,'Yolanda'),(3,'2015-04-29 17:37:33','root@localhost','48525252A',NULL,'Yolanda'),(4,'2015-04-29 17:45:02','root@localhost','44445522M',NULL,'Yolanda'),(5,'2015-05-04 21:02:30','root@localhost','11122211P',NULL,'Prova'),(6,'2015-05-05 17:42:34','root@localhost','44558899P',NULL,'ProvaAa'),(7,'2015-05-10 18:32:47','root@localhost','41424344M',NULL,'Santiago'),(8,'2015-05-18 11:26:33','root@localhost','44665599F',NULL,'DAW'),(9,'2015-05-18 11:51:33','root@localhost','44110258C',NULL,'DAW');
 /*!40000 ALTER TABLE `logempleados` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Table structure for table `logproductos`
+--
+
+DROP TABLE IF EXISTS `logproductos`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `logproductos` (
+  `fecha` datetime NOT NULL,
+  `usuario` varchar(45) DEFAULT NULL,
+  `ID` int(11) DEFAULT NULL,
+  `oldNombre` varchar(45) DEFAULT NULL,
+  `newNombre` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`fecha`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `logproductos`
+--
+
+LOCK TABLES `logproductos` WRITE;
+/*!40000 ALTER TABLE `logproductos` DISABLE KEYS */;
+/*!40000 ALTER TABLE `logproductos` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `logproductos_cambio`
+--
+
+DROP TABLE IF EXISTS `logproductos_cambio`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `logproductos_cambio` (
+  `fecha` datetime NOT NULL,
+  `usuario` varchar(45) DEFAULT NULL,
+  `ID` int(11) DEFAULT NULL,
+  `oldNombre` varchar(45) DEFAULT NULL,
+  `nuevoNombre` varchar(45) DEFAULT NULL,
+  `oldPrecio` float DEFAULT NULL,
+  `nuevoPrecio` float DEFAULT NULL,
+  `oldStock` int(11) DEFAULT NULL,
+  `nuevoStock` int(11) DEFAULT NULL,
+  PRIMARY KEY (`fecha`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `logproductos_cambio`
+--
+
+LOCK TABLES `logproductos_cambio` WRITE;
+/*!40000 ALTER TABLE `logproductos_cambio` DISABLE KEYS */;
+/*!40000 ALTER TABLE `logproductos_cambio` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `logproductos_delete`
+--
+
+DROP TABLE IF EXISTS `logproductos_delete`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `logproductos_delete` (
+  `fecha` datetime NOT NULL,
+  `usuario` varchar(45) DEFAULT NULL,
+  `ID` int(11) DEFAULT NULL,
+  `oldNombre` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`fecha`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `logproductos_delete`
+--
+
+LOCK TABLES `logproductos_delete` WRITE;
+/*!40000 ALTER TABLE `logproductos_delete` DISABLE KEYS */;
+/*!40000 ALTER TABLE `logproductos_delete` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `productos`
+--
+
+DROP TABLE IF EXISTS `productos`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `productos` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `Nombre` varchar(45) DEFAULT NULL,
+  `Precio` float NOT NULL DEFAULT '0',
+  `Stock` int(11) DEFAULT '0',
+  `Tipo` varchar(45) DEFAULT NULL,
+  `Descripcion` varchar(150) DEFAULT NULL,
+  `Imagen` varchar(90) DEFAULT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `productos`
+--
+
+LOCK TABLES `productos` WRITE;
+/*!40000 ALTER TABLE `productos` DISABLE KEYS */;
+INSERT INTO `productos` VALUES (1,'Hamburguesa base',3.5,25,'Hamburguesa','Hamburguesa de ternera con queso, tomate y ensalada','src/'),(2,'CocaCola',1,50,'Bebida','Coca-cola','src/'),(3,'Ensalada mediterranea',2.5,30,'Ensalada','Ensalada','src/'),(4,'H Barcacoa',4,25,'Hamburguesa','H. Base + salsa barbacoa','');
+/*!40000 ALTER TABLE `productos` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+/*!50003 CREATE*/ /*!50017 DEFINER=`root`@`localhost`*/ /*!50003 TRIGGER `gvbbdd`.`productos_AFTER_INSERT` AFTER INSERT ON `productos` FOR EACH ROW
+BEGIN
+insert into logproductos( fecha, usuario, ID, oldNombre, nuevoNombre )
+values( Now(), USER(), new.ID, null , new.Nombre );
+END */;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+/*!50003 CREATE*/ /*!50017 DEFINER=`root`@`localhost`*/ /*!50003 TRIGGER `gvbbdd`.`productos_AFTER_UPDATE` AFTER UPDATE ON `productos` FOR EACH ROW
+BEGIN
+
+insert into logproductos_cambio( fecha, usuario, ID, oldNombre, nuevoNombre, oldPrecio, nuevoPrecio, oldStock, nuevoStock)
+values( Now(), USER(), new.ID, old.Nombre , new.Nombre, old.Precio, new.Precio, old.Stock, new.Stock);
+
+END */;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+/*!50003 CREATE*/ /*!50017 DEFINER=`root`@`localhost`*/ /*!50003 TRIGGER `gvbbdd`.`productos_AFTER_DELETE` AFTER DELETE ON `productos` FOR EACH ROW
+BEGIN
+insert into logproductos_delete( fecha, usuario, ID, oldNombre)
+values( Now(), USER(), old.ID, old.Nombre);
+END */;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
 
 --
 -- Dumping routines for database 'gvbbdd'
@@ -256,4 +425,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-05-10 18:52:53
+-- Dump completed on 2015-05-26 13:03:32

@@ -38,7 +38,8 @@ public class BLLBDProd {
         _con = _conexion_DB.AbrirConexion();
         
         try {
-            DAOBDProd.listAllProdDAO(_con);//Recuperamos los usuarios       
+            DAOBDProd.listAllProdDAO(_con);
+            
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(null, "Ha habido un error Logger2!");
         }

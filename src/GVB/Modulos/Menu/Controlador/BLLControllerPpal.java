@@ -5,8 +5,6 @@
  */
 package GVB.Modulos.Menu.Controlador;
 
-import GVB.Librerias.Funcions;
-import GVB.Modulos.GestionEmpleados.GestionE.Modelo.BLL.BLL;
 import GVB.Modulos.GestionEmpleados.Pager.Controlador.BLLControllerPaginador;
 import GVB.Modulos.GestionEmpleados.Pager.Vista.Paginador;
 import GVB.Modulos.Menu.Vista.Ventana_ppal;
@@ -80,11 +78,12 @@ public BLLControllerPpal(JFrame Ppal1) {
         switch (BLLControllerPpal.Accion.valueOf(e.getActionCommand())) {
             case EMPLEADOS:
                 Ppal.dispose();
-                new BLLControllerPaginador(new Paginador()).Iniciar();
+                new GVB.Modulos.GestionEmpleados.Pager.Controlador.BLLControllerPaginador(new Paginador()).Iniciar();
                 break;
 
             case PRODUCTOS:
-
+        Ppal.dispose();
+        new GVB.Modulos.GestionProd.Pager.Controlador.BLLControllerPaginador(new GVB.Modulos.GestionProd.Pager.Vista.Paginador()).Iniciar();
                 break;
 
             case PEDIDOS:

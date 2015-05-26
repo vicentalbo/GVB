@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package GVB.Modulos.GestionEmpleados.GestionEF.Modelo.DAO;
+package GVB.Modulos.GestionProd.GestionProductos.Modelo.DAO;
 
 import GVB.Modulos.GestionProd.GestionProductos.Modelo.Classe.Productos;
 
@@ -31,7 +31,7 @@ public class DAOPro {
 
 
         if ((valc == 0)) {
-            pr = new Productos(nom, tipo, precio, stock, descri, imagen);
+            pr = new Productos(nom,  precio, stock,tipo, descri, imagen);
         }
        
 

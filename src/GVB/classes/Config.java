@@ -9,6 +9,8 @@ import GVB.Modulos.GestionEmpleados.GestionEH.Modelo.Classe.ArrayListEH;
 import GVB.Modulos.GestionEmpleados.GestionEH.Modelo.Classe.EmpleadoHoras;
 import GVB.Modulos.GestionEmpleados.GestionET.Modelo.Classe.ArrayListET;
 import GVB.Modulos.GestionEmpleados.GestionET.Modelo.Classe.EmpleadoTemp;
+import GVB.Modulos.GestionProd.GestionProductos.Modelo.Classe.ArrayListPro;
+import GVB.Modulos.GestionProd.GestionProductos.Modelo.Classe.Productos;
 
 public class Config {
 
@@ -25,8 +27,7 @@ public class Config {
 		saves = 1; // 1==Json, 2==Xml, 3==Txt
 
 		ArrayListEF.efi = new ArrayList<EmpleadoFijo>();
-		ArrayListEH.eho = new ArrayList<EmpleadoHoras>();
-		ArrayListET.ete = new ArrayList<EmpleadoTemp>();
+		ArrayListPro.pro=new ArrayList<Productos>();
 		// Dummies.generarDummies(7);
 		
 	}

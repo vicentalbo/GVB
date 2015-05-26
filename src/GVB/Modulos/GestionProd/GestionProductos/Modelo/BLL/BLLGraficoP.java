@@ -50,17 +50,15 @@ public static void Limpiar(){
 public static void introName(int i){
     DAOGraficoP.introName(i);
 }
-public static void introID(int i){
-    DAOGraficoP.introID(i);
-}
+
 public static void introPrecio(int i){
-    DAOGraficoP.introPrecio(i);
+    DAOGraficoP.introPrecio();
 }
 public static void introStock(){
     DAOGraficoP.introStock();
 }
 public static void introDescripcion(){
-    DAOGraficoP.introDescripcion();
+    DAOGraficoP.introDescri();
 }
 public static void crearPro() {
         

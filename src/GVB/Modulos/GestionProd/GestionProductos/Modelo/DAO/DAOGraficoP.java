@@ -5,7 +5,6 @@
  */
 package GVB.Modulos.GestionProd.GestionProductos.Modelo.DAO;
 
-import GVB.Modulos.GestionEmpleados.GestionEF.Modelo.DAO.DAOPro;
 import GVB.Modulos.GestionProd.GestionProductos.Controlador.BLLControllerVntPro;
 import static GVB.Modulos.GestionProd.GestionProductos.Controlador.BLLControllerVntPro.VntPro;
 
@@ -38,9 +37,9 @@ public class DAOGraficoP {
         } else {
             precio = Float.parseFloat(VntPro.TxtPrecio.getText());
             if (precio == 0.0f) {
-                VntPro.NoSueldo.setVisible(true);
+                VntPro.NoPrecio.setVisible(true);
             }else{
-                VntPro.NoSueldo.setVisible(false);
+                VntPro.NoPrecio.setVisible(false);
             }
         }
         return precio;
@@ -72,14 +71,14 @@ public class DAOGraficoP {
 //creaEmp
         if ((VntPro.NoNombre.isVisible() == false) && (VntPro.NoPrecio.isVisible() == false) && (VntPro.NoStock.isVisible() == false) ) {
             if (BLLControllerVntPro.mod == 1) {
-                ArrayListPro.p =  DAOPro.IntroPro(0, ArrayListPro.p, nombre, precio, stock, tipo,  descri,  imagen);
+                ArrayListPro.p =  DAOPro.IntroPro(0, ArrayListPro.p, nombre, precio, stock, tipo,  descri,  BLLControllerVntPro.Img);
                 BLLControllerVntPro.veri = true;
 
             }
             if (BLLControllerVntPro.mod == 11) {
-                ArrayListPro.p = DAOPro.IntroPro(1, ArrayListPro.p, nombre, precio, stock, tipo,  descri,  imagen);
+                ArrayListPro.p = DAOPro.IntroPro(1, ArrayListPro.p, nombre, precio, stock, tipo,  descri,  BLLControllerVntPro.Img);
                 BLLControllerVntPro.veri = true;
-                //VntEmp.TxtImpres.setText("Nombre= " + nombre + "\n" + "\n" + "DNI= " + DNI + "\n" + "\n" + "Telefono= " + telef + "\n" + "\n" + "Sueldo básico= " + sueldo + Config.getMoneda() + "\n" + "\n" + "Sueldo anual= " + (ArrayListEF.e).getSueldoh() + Config.getMoneda() + "\n" + "\n" + "Fecha de Nacimiento= " + ArrayListEF.e.getFnac().toString() + "\n" + "\n" + "Fecha de Contratación= " + ArrayListEF.e.getFcontr().toString() + "\n" + "\n" + "Edad= " + ArrayListEF.e.getEdad() + "\n" + "\n" + "Antigüedad= " + (ArrayListEF.e).getAntig()+"\n"+"\n"+"Email= "+ArrayListEF.e.getEmail()+"\n"+"\n"+"Usuario= "+ArrayListEF.e.getUsuario());
+               
 
             }
             
@@ -104,7 +103,34 @@ public class DAOGraficoP {
         return nombre;
     }
 
-    
+     public static String introDescri() {
+        String descri="";
+        if (VntPro.TxtDescri.getText().isEmpty()) {
+            VntPro.NoDescri.setVisible(true);
+        } else {
+            descri = VntPro.TxtDescri.getText();
+            
+                VntPro.NoDescri.setVisible(false);
+
+                
+            
+        }
+        return descri;
+    }
+    public static int introStock(){
+       int stock=0;
+        if (VntPro.TxtPrecio.getText().isEmpty()) {
+            VntPro.NoStock.setVisible(true);
+        } else {
+            stock = Integer.parseInt(VntPro.TxtStock.getText());
+            if (stock == 0) {
+                VntPro.NoStock.setVisible(true);
+            }else{
+                VntPro.NoStock.setVisible(false);
+            }
+        }
+        return stock;
+   }
 
 
    

@@ -24,17 +24,17 @@ public class DAOBDProd {
         int resultado = 0;
         try {
             stmt = con.prepareStatement("INSERT INTO gvbbdd.productos"
-                    + "(ID, Nombre, Precio, Stock, Tipo, Descripcion"
+                    + "( Nombre, Precio, Stock, Tipo, Descripcion"
                     + ", Imagen) "
-                    + "VALUES(?,?,?,?,?,?,?)");
- stmt.setInt(1, ArrayListPro.p.getID());
-            stmt.setString(2, ArrayListPro.p.getNombre());
+                    + "VALUES(?,?,?,?,?,?)");
+
+            stmt.setString(1, ArrayListPro.p.getNombre());
            
-            stmt.setFloat(3, ArrayListPro.p.getPrecio());
-            stmt.setInt(4,ArrayListPro.p.getStock());
-            stmt.setString(5, ArrayListPro.p.getTipo());
-            stmt.setString(6, ArrayListPro.p.getDescripcion());
-            stmt.setString(7, ArrayListPro.p.getImagen());
+            stmt.setFloat(2, ArrayListPro.p.getPrecio());
+            stmt.setInt(3,ArrayListPro.p.getStock());
+            stmt.setString(4, ArrayListPro.p.getTipo());
+            stmt.setString(5, ArrayListPro.p.getDescripcion());
+            stmt.setString(6, ArrayListPro.p.getImagen());
             
 
             resultado = stmt.executeUpdate();
@@ -68,14 +68,11 @@ public class DAOBDProd {
                 pr = new Productos(0);
                 pr.setID(rs.getInt("ID"));
                 pr.setNombre(rs.getString("Nombre"));
-                
                 pr.setPrecio(rs.getFloat("Precio"));
                 pr.setStock(rs.getInt("Stock"));
-            
                 pr.setTipo(rs.getString("Tipo"));
                 pr.setDescripcion(rs.getString("Descripcion"));
                 pr.setImagen(rs.getString("Imagen"));
-               
                 ArrayListPro.pro.add(pr);
 
             }
