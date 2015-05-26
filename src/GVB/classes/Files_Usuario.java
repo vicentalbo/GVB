@@ -41,7 +41,7 @@ public class Files_Usuario {
      public static void pintar_Pro(JLabel etiqueta) {
         ImageIcon icon = new ImageIcon(ArrayListPro.p.getImagen());
         Image img = icon.getImage();
-        Image newimg = img.getScaledInstance(60, 60, java.awt.Image.SCALE_SMOOTH);
+        Image newimg = img.getScaledInstance(150, 150, java.awt.Image.SCALE_SMOOTH);
         ImageIcon newIcon = new ImageIcon(newimg);
         etiqueta.setIcon(newIcon);
 

@@ -240,9 +240,9 @@ this.VntPro.TxtStock.setName("Txt_Stock");
             
                 
                 case IMAGEN:
-                    String path;
                     
-                    Img=Files_Usuario.pintar_String(VntPro.Imagen, 60, 60);
+                    
+                    Img=Files_Usuario.pintar_String(VntPro.Imagen, 150 , 150);
                    
                     break;
         }

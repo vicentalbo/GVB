@@ -49,7 +49,7 @@ import static javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE;
 public class BLLControllerVntEmp implements ActionListener, KeyListener, MouseListener {
 
     public static int mod = 0;
-
+public static String Img = "";
     public static Vnt_Empleados VntEmp = new Vnt_Empleados();
     public static boolean veri = false;
 
@@ -143,12 +143,10 @@ VntEmp.UsOk.setVisible(false);
         this.VntEmp.NoFnac.setVisible(false);
         this.VntEmp.NoFcontr.setVisible(false);
         this.VntEmp.NoEmail.setVisible(false);
-        if(mod==1){
-            this.VntEmp.Imagen.setVisible(false);
-        }
+        
         if (mod == -1) {
             this.VntEmp.setTitle("Registrar");
-            this.VntEmp.Imagen.setVisible(false);
+            
         }
         if (mod >1) {
             try {
@@ -296,13 +294,7 @@ VntEmp.UsOk.setVisible(false);
                     Files_Usuario.pintar_guardar_imag(VntEmp.Imagen, 60, 60, 1);
                     else{
                         
-                        try{
-                            ArrayListEF.e.getdNi();
-                            Files_Usuario.pintar_guardar_imag(VntEmp.Imagen, 60, 60, 1);
-                            
-                        }catch(Exception err){
-                            Funcions.result("Debe guardar primero el perfil completo");
-                        }
+                        Img=Files_Usuario.pintar_String(VntEmp.Imagen, 150 , 150);
                     }
                     break;
         }

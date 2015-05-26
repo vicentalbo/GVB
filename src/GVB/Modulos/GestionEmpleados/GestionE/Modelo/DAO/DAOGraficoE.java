@@ -31,7 +31,7 @@ import com.toedter.calendar.JTextFieldDateEditor;
 public class DAOGraficoE {
 
     public static void crearEF() {
-        String DNI, nombre, telef, email, password, tipo="user", Avatar = "src/GVB/img/Avatar/user-defec.png", encpassword;
+        String DNI, nombre, telef, email, password, tipo="user", Avatar, encpassword;
         int estado = 0;
         float sueldo;
         Fechas f;
@@ -86,7 +86,12 @@ public class DAOGraficoE {
 
 //creaEmp
         if ((VntEmp.NoDNI.isVisible() == false) && (VntEmp.NoNom.isVisible() == false) && (VntEmp.NoTelef.isVisible() == false) && (VntEmp.NoSueldo.isVisible() == false) && (VntEmp.NoFnac.isVisible() == false) && (VntEmp.NoFcontr.isVisible() == false) && (VntEmp.NoEmail.isVisible() == false) && (VntEmp.Password.getText().isEmpty() == false)) {
+            if(BLLControllerVntEmp.Img.equals(""))
+                     Avatar= "src/GVB/img/Avatar/user-defec.png";
+                else
+                    Avatar=BLLControllerVntEmp.Img;
             if (BLLControllerVntEmp.mod == 1) {
+                
                 ArrayListEF.e = (EmpleadoFijo) DAOEmp.IntroEmp(1, 0, ArrayListEF.e, nombre, DNI, telef, sueldo, f, fc, email, encpassword, estado, tipo, Avatar);
                 BLLControllerVntEmp.veri = true;
 

@@ -5,6 +5,7 @@
  */
 package GVB.Modulos.GestionProd.GestionProductos.Modelo.DAO;
 
+import GVB.Librerias.Funcions;
 import GVB.Modulos.GestionProd.GestionProductos.Modelo.Classe.ArrayListPro;
 import GVB.Modulos.GestionProd.GestionProductos.Modelo.Classe.Productos;
 import java.sql.CallableStatement;
@@ -22,7 +23,8 @@ public class DAOBDProd {
     public static int nuevoProdDAO(Connection con) {
         PreparedStatement stmt = null;
         int resultado = 0;
-        try {
+       try {
+           
             stmt = con.prepareStatement("INSERT INTO gvbbdd.productos"
                     + "( Nombre, Precio, Stock, Tipo, Descripcion"
                     + ", Imagen) "
@@ -36,12 +38,13 @@ public class DAOBDProd {
             stmt.setString(5, ArrayListPro.p.getDescripcion());
             stmt.setString(6, ArrayListPro.p.getImagen());
             
-
+ 
             resultado = stmt.executeUpdate();
 
-        } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Ha habido un problema al insertar un nuevo producto!");
-        } finally {
+       } catch (SQLException ex) {
+           JOptionPane.showMessageDialog(null, "Ha habido un problema al insertar un nuevo producto!");
+        } 
+        finally {
             if (stmt != null) {
                 try {
                     stmt.close();
@@ -96,20 +99,20 @@ public class DAOBDProd {
         PreparedStatement stmt = null;
         try {
            
-            stmt = con.prepareStatement("UPDATE gvbbdd.productos SET  ID=?, Nombre=?,"
+            stmt = con.prepareStatement("UPDATE gvbbdd.productos SET Nombre=?,"
                     + "Precio=?, Stock=?, Tipo=?, Descripcion=?,"
                     + "Imagen=? WHERE ID=?");
 
-            stmt.setInt(1, ArrayListPro.p.getID());
-            stmt.setString(2, ArrayListPro.p.getNombre());
+            
+            stmt.setString(1, ArrayListPro.p.getNombre());
            
-            stmt.setFloat(3, ArrayListPro.p.getPrecio());
-            stmt.setInt(4,ArrayListPro.p.getStock());
-            stmt.setString(5, ArrayListPro.p.getTipo());
-            stmt.setString(6, ArrayListPro.p.getDescripcion());
-            stmt.setString(7, ArrayListPro.p.getImagen());
+            stmt.setFloat(2, ArrayListPro.p.getPrecio());
+            stmt.setInt(3,ArrayListPro.p.getStock());
+            stmt.setString(4, ArrayListPro.p.getTipo());
+            stmt.setString(5, ArrayListPro.p.getDescripcion());
+            stmt.setString(6, ArrayListPro.p.getImagen());
 
-            stmt.setInt(16, ArrayListPro.p.getID());
+            stmt.setInt(7, ArrayListPro.p.getID());
             stmt.executeUpdate();
 
             

@@ -35,7 +35,12 @@ public class DAOGraficoP {
         if (VntPro.TxtPrecio.getText().isEmpty()) {
             VntPro.NoPrecio.setVisible(true);
         } else {
+            try{
             precio = Float.parseFloat(VntPro.TxtPrecio.getText());
+            }catch(Exception e){
+                VntPro.NoPrecio.setVisible(true);
+            }
+            
             if (precio == 0.0f) {
                 VntPro.NoPrecio.setVisible(true);
             }else{
@@ -71,6 +76,9 @@ public class DAOGraficoP {
 //creaEmp
         if ((VntPro.NoNombre.isVisible() == false) && (VntPro.NoPrecio.isVisible() == false) && (VntPro.NoStock.isVisible() == false) ) {
             if (BLLControllerVntPro.mod == 1) {
+                if(BLLControllerVntPro.Img.equals(""))
+                    BLLControllerVntPro.Img="src/GVB/img/Prods/icon.jpg";
+                
                 ArrayListPro.p =  DAOPro.IntroPro(0, ArrayListPro.p, nombre, precio, stock, tipo,  descri,  BLLControllerVntPro.Img);
                 BLLControllerVntPro.veri = true;
 
@@ -122,7 +130,11 @@ public class DAOGraficoP {
         if (VntPro.TxtPrecio.getText().isEmpty()) {
             VntPro.NoStock.setVisible(true);
         } else {
+            try{
             stock = Integer.parseInt(VntPro.TxtStock.getText());
+            }catch(Exception e){
+                VntPro.NoStock.setVisible(true);
+            }
             if (stock == 0) {
                 VntPro.NoStock.setVisible(true);
             }else{
