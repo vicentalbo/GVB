@@ -15,6 +15,7 @@ import GVB.Modulos.GestionLogin.Vista.Login;
 import GVB.Modulos.GestionProd.GestionProductos.Modelo.BLL.BLL;
 import GVB.Modulos.GestionProd.GestionProductos.Modelo.BLL.BLLGraficoP;
 import static GVB.Modulos.GestionProd.Pager.Controlador.BLLControllerPaginador.Pag;
+import static GVB.Modulos.Menu.Controlador.BLLControllerPpal.Ppal;
 import GVB.Modulos.Menu.Vista.About;
 import GVB.Modulos.Menu.Vista.Ventana_Us;
 import GVB.Modulos.Menu.Vista.Ventana_ppal;
@@ -127,13 +128,19 @@ System.exit(0);
         Ab.addWindowListener(new WindowAdapter() {
             @Override
             public void windowClosing(WindowEvent e) {
+                Ab.dispose();
                 if(BLLControllerVntEmp.mod==-1){
-                    Ab.dispose();
-                    new BLLControllerLogin(new Login()).iniciar();
+                    
+                    new BLLControllerLogin(new Login(),2).iniciar(2);
                 }else{
+                if(ArrayListEF.us.getTipo().equals("admin")){
                 
-               Ab.dispose();
-                new BLLControllerPaginador(new Paginador()).Iniciar();
+               
+                 new BLLControllerPpal(new Ventana_ppal(),0).iniciar(0);
+                }else{
+                    new BLLControllerPpal(new Ventana_Us(),0).iniciar(0);
+                }
+                
                 }
             }
 
@@ -254,7 +261,7 @@ Us.dispose();
             case Logout:
                  ArrayListEF.us=null;
                     Us.dispose();
-                    new BLLControllerLogin(new Login()).iniciar();
+                    new BLLControllerLogin(new Login(),2).iniciar(2);
                 break;
                   case Menu_Guardar:
                 BLL.GuardarTodo();
@@ -365,7 +372,7 @@ Us.dispose();
                 break;
                     
                 case IMAGEN:
-                    Files_Usuario.pintar_guardar_imag(Pag.Imagen, 60, 60, 0);
+                    Files_Usuario.pintar_guardar_imag(Us.Imagen, 60, 60, 0);
                     break;
          }
          }

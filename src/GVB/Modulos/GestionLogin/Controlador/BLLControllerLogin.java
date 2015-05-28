@@ -7,9 +7,13 @@ package GVB.Modulos.GestionLogin.Controlador;
 
 import GVB.Modulos.GestionEmpleados.GestionE.Controlador.BLLControllerVntEmp;
 import GVB.Modulos.GestionEmpleados.GestionE.Vista.Vnt_Empleados;
+
 import GVB.Modulos.GestionLogin.Modelo.BLL.BLLLogin;
+import GVB.Modulos.GestionLogin.Modelo.DAO.DAOLogin;
 import GVB.Modulos.GestionLogin.Vista.Contraseña_O;
 import GVB.Modulos.GestionLogin.Vista.Login;
+import GVB.Modulos.GestionLogin.Vista.Verificar;
+import static com.sun.java.accessibility.util.AWTEventMonitor.addWindowListener;
 import java.awt.Color;
 import java.awt.Image;
 import java.awt.Toolkit;
@@ -28,31 +32,44 @@ import javax.swing.JOptionPane;
  */
 public class BLLControllerLogin implements ActionListener, MouseListener {
     public static Login Log = new Login();
-
+ public static Contraseña_O Cont=new Contraseña_O();
+ public static Verificar Ver = new Verificar();
     
     public enum Accion{
         TXTUS,
         TXTPASS,
         INTRO,
         REGISTER,
-        OLVIDAR
+        OLVIDAR,
+         USUARIO,
+        PASS,
+         ACEPTAR,
+         ENVIAR,
+         EMAIL,
+         VOLVER
     }
  
  
  
- public BLLControllerLogin(JFrame Logg) {
+ public BLLControllerLogin(JFrame Logg, int i) {
+if(i==0)
+        Ver = (Verificar) Logg;
 
+if(i==1)
+    Cont=(Contraseña_O)Logg;
+if(i==2)
         Log = (Login) Logg;
 
     }
- public void iniciar(){
-     this.Log.setTitle("Login");
+ public void iniciar(int i){
+     if(i==2){
+     this.Log.setTitle("FastBurger");
         this.Log.setLocationRelativeTo(null);
         this.Log.setVisible(true);
         this.Log.setResizable(false);
-        Image icono = Toolkit.getDefaultToolkit().getImage("src/GVB/img/FastBurger.jpg");
+        Image icono = Toolkit.getDefaultToolkit().getImage("src/GVB/img/photos/FastBurger.jpg");
         this.Log.setIconImage(icono);
-this.Log.setSize(370, 475);
+this.Log.setSize(373, 498);
         
         this.Log.addWindowListener(new WindowAdapter() {
             @Override
@@ -84,6 +101,59 @@ this.Log.setSize(370, 475);
         
           this.Log.Entrar.setActionCommand("INTRO");
         this.Log.Entrar.addActionListener(this);
+     }
+     if(i==1){
+          Cont.setTitle("Recordar Contraseña");
+        Cont.setLocationRelativeTo(null);
+        Cont.setVisible(true);
+        Cont.setResizable(false);
+
+        Cont.setIconImage(Toolkit.getDefaultToolkit().getImage("src/GVB/img/V.jpg"));
+         addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+        
+                JOptionPane.showMessageDialog(null, "Saliendo de la aplicación");
+                Cont.dispose();
+                System.exit(0);
+            }
+        });
+         
+          this.Cont.Email.setActionCommand("EMAIL");
+        this.Cont.Email.addActionListener(this);
+        
+        this.Cont.Enviar.setActionCommand("ENVIAR");
+        this.Cont.Enviar.addActionListener(this);
+        
+        this.Cont.Volver.setActionCommand("VOLVER");
+        this.Cont.Volver.addActionListener(this);
+     }
+     if(i==0){
+         Ver.setTitle("Verificar");
+        Ver.setLocationRelativeTo(null);
+        Ver.setVisible(true);
+        Ver.setResizable(false);
+
+        Ver.setIconImage(Toolkit.getDefaultToolkit().getImage("src/GVB/img/IconFast.jpg"));
+         addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+        
+                JOptionPane.showMessageDialog(null, "Saliendo de la aplicación");
+                Ver.dispose();
+                System.exit(0);
+            }
+        });
+         
+         this.Ver.Usuario.setActionCommand("USUARIO");
+        this.Ver.Usuario.addActionListener(this);
+        
+         this.Ver.Pass.setActionCommand("PASS");
+        this.Ver.Pass.addActionListener(this);
+        
+         this.Ver.Aceptar.setActionCommand("ACEPTAR");
+        this.Ver.Aceptar.addActionListener(this);
+     }
 }
  
     @Override
@@ -101,6 +171,32 @@ this.Log.setSize(370, 475);
             case INTRO:
                 BLLLogin.Entrar(1);
                 break;
+                case USUARIO:
+                    Ver.Pass.requestFocus();
+                    break;
+                    
+                case PASS:
+                    DAOLogin.Entrar(13);
+                    break;
+                    
+                case ACEPTAR:
+                    DAOLogin.Entrar(13);
+                    break;
+                     case EMAIL:
+                         BLLLogin.Contraseña();
+                         
+                         
+                         break;
+                         
+                     case ENVIAR:
+                         BLLLogin.Contraseña();
+                         break;
+                         
+                     case VOLVER:
+                         BLLControllerLogin.Cont.dispose();
+                         
+                          new BLLControllerLogin(new Login(),2).iniciar(2);
+                         break;
         }
     }
     
@@ -109,7 +205,7 @@ this.Log.setSize(370, 475);
         switch (BLLControllerLogin.Accion.valueOf(e.getComponent().getName())){
             case OLVIDAR:
                 this.Log.dispose();
-                 new BLLControllerVO(new Contraseña_O(),1).iniciar(1);
+                 new BLLControllerLogin(new Contraseña_O(),1).iniciar(1);
                 break;
                 
             case REGISTER:

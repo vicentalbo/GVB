@@ -34,6 +34,7 @@ import GVB.Modulos.Menu.Vista.About;
 import GVB.Modulos.Menu.Vista.Ventana_ppal;
 import GVB.Modulos.autocomplete.AutocompleteJComboBox;
 import GVB.Librerias.Menus;
+import GVB.Modulos.Menu.Vista.Ventana_Us;
 import GVB.classes.Config;
 import GVB.classes.Files_Usuario;
 import static com.sun.java.accessibility.util.AWTEventMonitor.addWindowListener;
@@ -281,8 +282,11 @@ if((ArrayListEF.us.getTipo().equals("user"))||(ArrayListEF.us.getTipo().equals("
                 break;
 
             case _VOLVER:
-                Pag.dispose();
-                new BLLControllerPpal(new Ventana_ppal(),0).iniciar(0);
+                this.Pag.dispose();
+                if(ArrayListEF.e.getTipo().equals("admin"))
+                             new BLLControllerPpal(new Ventana_ppal(),0).iniciar(0);
+                             else
+                                 new BLLControllerPpal(new Ventana_Us(),0).iniciar(0);
                 break;
 
             case _MUESTRA:
@@ -501,7 +505,7 @@ try{
                 case LOGOUT:
                     ArrayListEF.us=null;
                     Pag.dispose();
-                    new BLLControllerLogin(new Login()).iniciar();
+                    new BLLControllerLogin(new Login(),2).iniciar(2);
                     break;
         }
 

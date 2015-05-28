@@ -30,7 +30,6 @@ public class Login extends javax.swing.JFrame {
         jLayeredPane1 = new javax.swing.JLayeredPane();
         TxtPass = new javax.swing.JPasswordField();
         TxtUsuario = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         Entrar = new javax.swing.JButton();
@@ -43,55 +42,56 @@ public class Login extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLayeredPane1.setBorder(javax.swing.BorderFactory.createEtchedBorder(null, new java.awt.Color(51, 255, 51)));
+        jLayeredPane1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         jLayeredPane1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        TxtPass.setBorder(null);
-        jLayeredPane1.add(TxtPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(45, 222, 184, -1));
+        TxtPass.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jLayeredPane1.add(TxtPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(154, 220, 120, -1));
 
         TxtUsuario.setToolTipText("Introduce tu nombre de Usuario o Email");
-        TxtUsuario.setBorder(null);
-        jLayeredPane1.add(TxtUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(45, 139, 184, -1));
+        TxtUsuario.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jLayeredPane1.add(TxtUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 140, 120, -1));
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Login");
-        jLayeredPane1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 13, 256, -1));
-
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel2.setForeground(java.awt.Color.white);
         jLabel2.setText("Usuario / Email");
-        jLayeredPane1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(45, 114, 116, -1));
+        jLayeredPane1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 140, 116, -1));
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel3.setForeground(java.awt.Color.white);
         jLabel3.setText("Password");
-        jLayeredPane1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(45, 197, 67, -1));
+        jLayeredPane1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 210, 67, -1));
 
         Entrar.setText("Entrar");
         Entrar.setOpaque(false);
-        jLayeredPane1.add(Entrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(179, 270, -1, -1));
+        jLayeredPane1.add(Entrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 340, -1, -1));
 
-        Registrarse.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        Registrarse.setForeground(java.awt.Color.blue);
+        Registrarse.setFont(new java.awt.Font("Tahoma", 3, 11)); // NOI18N
+        Registrarse.setForeground(java.awt.Color.orange);
         Registrarse.setText("Registrarse");
-        jLayeredPane1.add(Registrarse, new org.netbeans.lib.awtextra.AbsoluteConstraints(45, 274, 84, -1));
+        jLayeredPane1.add(Registrarse, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 340, 84, -1));
 
-        OlvidPass.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        OlvidPass.setForeground(java.awt.Color.blue);
+        OlvidPass.setFont(new java.awt.Font("Tahoma", 3, 11)); // NOI18N
+        OlvidPass.setForeground(java.awt.Color.orange);
         OlvidPass.setText("¿Olvidaste tu contraseña?");
-        jLayeredPane1.add(OlvidPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(45, 315, -1, -1));
+        jLayeredPane1.add(OlvidPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 360, -1, -1));
 
+        NoPass.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         NoPass.setForeground(java.awt.Color.red);
         NoPass.setText("El usuario y la contraseña no coinciden");
-        jLayeredPane1.add(NoPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(45, 248, -1, -1));
+        NoPass.setOpaque(true);
+        jLayeredPane1.add(NoPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 250, -1, -1));
 
+        NoUsuario.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         NoUsuario.setForeground(java.awt.Color.red);
         NoUsuario.setText("Usuario no registrado");
-        jLayeredPane1.add(NoUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(45, 165, -1, -1));
+        NoUsuario.setOpaque(true);
+        jLayeredPane1.add(NoUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 170, -1, -1));
 
         getContentPane().add(jLayeredPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(46, 30, 280, 380));
 
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GVB/img/fondo_degradado2.jpeg"))); // NOI18N
-        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -9, 380, 610));
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GVB/img/fondo_login.png"))); // NOI18N
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 380, 470));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -109,7 +109,6 @@ public class Login extends javax.swing.JFrame {
     public static javax.swing.JLabel Registrarse;
     public static javax.swing.JPasswordField TxtPass;
     public static javax.swing.JTextField TxtUsuario;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel8;

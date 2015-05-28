@@ -12,8 +12,8 @@ import GVB.Modulos.GestionEmpleados.GestionEF.Modelo.Classe.ArrayListEF;
 import GVB.Modulos.GestionEmpleados.GestionEF.Modelo.Classe.EmpleadoFijo;
 import GVB.Modulos.GestionLogin.Controlador.BLLControllerLogin;
 import static GVB.Modulos.GestionLogin.Controlador.BLLControllerLogin.Log;
-import GVB.Modulos.GestionLogin.Controlador.BLLControllerVO;
-import static GVB.Modulos.GestionLogin.Controlador.BLLControllerVO.Ver;
+import static GVB.Modulos.GestionLogin.Controlador.BLLControllerLogin.Ver;
+
 
 import GVB.Modulos.GestionLogin.Modelo.BLL.BLLLoginBD;
 import GVB.Modulos.GestionLogin.Vista.Contraseña_O;
@@ -138,10 +138,10 @@ public class DAOLogin {
         boolean error=true;
         String email, pass, encpass, message;
         
-        email=BLLControllerVO.Cont.Email.getText();
+        email=BLLControllerLogin.Cont.Email.getText();
         
          if(email.isEmpty()){
-BLLControllerVO.Cont.Email.setBackground(Color.red);            
+BLLControllerLogin.Cont.Email.setBackground(Color.red);            
         }else{
              if(Validate.validaEmail(email)==true){
                     
@@ -156,10 +156,10 @@ BLLControllerVO.Cont.Email.setBackground(Color.red);
                 }
                 }else{
                     error=true;
-                    BLLControllerVO.Cont.Email.setBackground(Color.red);
+                    BLLControllerLogin.Cont.Email.setBackground(Color.red);
                 }
                 if((error==true)||(ArrayListEF.e.getdNi().equals(""))){
-                BLLControllerVO.Cont.Email.setBackground(Color.red);
+                BLLControllerLogin.Cont.Email.setBackground(Color.red);
                 }else{
                     try{
                     pass=Funcions.getCadenaAleatoria1(8);

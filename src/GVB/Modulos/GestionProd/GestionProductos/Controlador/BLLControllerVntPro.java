@@ -5,6 +5,7 @@
  */
 package GVB.Modulos.GestionProd.GestionProductos.Controlador;
 
+import GVB.Modulos.GestionEmpleados.GestionEF.Modelo.Classe.ArrayListEF;
 import GVB.Modulos.GestionLogin.Vista.Login;
 import GVB.Modulos.GestionProd.GestionProductos.Modelo.BLL.BLL;
 import GVB.Modulos.GestionProd.GestionProductos.Modelo.BLL.BLLGraficoP;
@@ -15,6 +16,7 @@ import GVB.Modulos.GestionProd.Pager.Vista.Paginador;
 import GVB.Modulos.Menu.Controlador.BLLControllerPpal;
 
 import GVB.Modulos.Menu.Vista.About;
+import GVB.Modulos.Menu.Vista.Ventana_Us;
 import GVB.classes.Config;
 import GVB.classes.Files_Usuario;
 import java.awt.Image;
@@ -297,7 +299,11 @@ this.VntPro.TxtStock.setName("Txt_Stock");
             case _VOLVER:
                
                     VntPro.dispose();
-                    new BLLControllerPaginador(new Paginador()).Iniciar();
+                    
+                    if(ArrayListEF.e.getTipo().equals("admin"))
+                             new BLLControllerPaginador(new Paginador()).Iniciar();
+                             else
+                                 new BLLControllerPpal(new Ventana_Us(),0).iniciar(0);
                 
                 break;
 

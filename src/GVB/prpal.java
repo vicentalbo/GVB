@@ -11,7 +11,7 @@ public static Config conf;
             conf = new Config();
                         
 
-            new BLLControllerLogin(new Login()).iniciar();
+            new BLLControllerLogin(new Login(),2).iniciar(2);
 
 	}
 

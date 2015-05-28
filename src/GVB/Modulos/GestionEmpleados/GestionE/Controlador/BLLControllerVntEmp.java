@@ -22,6 +22,7 @@ import GVB.Modulos.GestionLogin.Vista.Login;
 import GVB.Modulos.Menu.Controlador.BLLControllerPpal;
 import static GVB.Modulos.Menu.Controlador.BLLControllerPpal.Ppal;
 import GVB.Modulos.Menu.Vista.About;
+import GVB.Modulos.Menu.Vista.Ventana_Us;
 import GVB.Modulos.Menu.Vista.Ventana_ppal;
 import GVB.classes.Config;
 import GVB.classes.Files_Usuario;
@@ -129,11 +130,11 @@ public static String Img = "";
     }
 
     public void iniciar() {
-        this.VntEmp.setTitle("Empleados");
+        this.VntEmp.setTitle("Usuario");
         this.VntEmp.setLocationRelativeTo(null);
         this.VntEmp.setVisible(true);
         this.VntEmp.setResizable(false);
-        Image icono = Toolkit.getDefaultToolkit().getImage("src/GVB/img/FastBurger.jpg");
+        Image icono = Toolkit.getDefaultToolkit().getImage("src/GVB/img/photos/FastBurger.jpg");
         this.VntEmp.setIconImage(icono);
 
         this.VntEmp.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
@@ -342,7 +343,7 @@ this.VntEmp.User.setActionCommand("User");
                 if ((mod == -1) && (veri = true)) {
                     ArrayListEF.us = ArrayListEF.e;
                     VntEmp.dispose();
-                    new BLLControllerLogin(new Login()).iniciar();
+                    new BLLControllerLogin(new Login(),2).iniciar(2);
                 }
                 break;
 
@@ -369,10 +370,14 @@ this.VntEmp.User.setActionCommand("User");
             case _VOLVER:
                 if (mod > 0) {
                     VntEmp.dispose();
-                    new BLLControllerPaginador(new Paginador()).Iniciar();
+                   
+                    if(ArrayListEF.e.getTipo().equals("admin"))
+                              new BLLControllerPaginador(new Paginador()).Iniciar();
+                             else
+                                 new BLLControllerPpal(new Ventana_Us(),0).iniciar(0);
                 } else {
                     VntEmp.dispose();
-                    new BLLControllerLogin(new Login()).iniciar();
+                    new BLLControllerLogin(new Login(),2).iniciar(2);
                 }
                 break;
 

@@ -478,11 +478,10 @@ if((ArrayListEF.us.getTipo().equals("user"))||(ArrayListEF.us.getTipo().equals("
 
                     ArrayListEF.e = new EmpleadoFijo((String) Pag.TABLA.getModel().getValueAt(selection1, 0));
                     EFBLLBD.buscarPorDniBLL();
-                    //BLLGraficoE.pos = BLL.buscar(ArrayListEF.e, 1);
-                   // ArrayListEF.e = (EmpleadoFijo) BLL.Obtener(BLLGraficoE.pos, 1);
+                    
 
-                    MuestraSelected.setText(" Nombre= " + ArrayListEF.e.getNombre() + "\n" + " Telefono= " + ArrayListEF.e.getTelef() + "\n" + " Sueldo anual= " + ArrayListEF.e.getSueldoh() + Config.getMoneda() + "\n" + " Fecha de Contratación= " + ArrayListEF.e.getFcontr().toString() + "\n" + " Antigüedad= " + ArrayListEF.e.getAntig() + "\n" + " User= " + ArrayListEF.e.getUsuario());
-                    MuestraSelected2.setText("     DNI= " + ArrayListEF.e.getdNi() + "\n" + "     Sueldo básico= " + ArrayListEF.e.getSueldof() + Config.getMoneda() + "\n" + "     Fecha de Nacimiento= " + ArrayListEF.e.getFnac().toString() + "\n" + "     Edad= " + ArrayListEF.e.getEdad() + "\n" + "     Email= " + ArrayListEF.e.getEmail() + "\n" + "     Tipo= " + ArrayListEF.e.getTipo());
+                    MuestraSelected.setText(" Nombre= " + ArrayListEF.e.getNombre() + "\n" + " Telefono= " + ArrayListEF.e.getTelef() + "\n" + " Puntos= " + ArrayListEF.e.getSueldoh() + Config.getMoneda() + "\n" + " Fecha de Alta= " + ArrayListEF.e.getFcontr().toString() + "\n" + " Antigüedad= " + ArrayListEF.e.getAntig() + "\n" + " Usuario= " + ArrayListEF.e.getUsuario());
+                    MuestraSelected2.setText("     DNI= " + ArrayListEF.e.getdNi() + "\n" + "     Saldo= " + ArrayListEF.e.getSueldof() + Config.getMoneda() + "\n" + "     Fecha de Nacimiento= " + ArrayListEF.e.getFnac().toString() + "\n" + "     Edad= " + ArrayListEF.e.getEdad() + "\n" + "     Email= " + ArrayListEF.e.getEmail() + "\n" + "     Tipo= " + ArrayListEF.e.getTipo());
 
                 }
                 break;
@@ -500,7 +499,7 @@ if((ArrayListEF.us.getTipo().equals("user"))||(ArrayListEF.us.getTipo().equals("
                 case LOGOUT:
                     ArrayListEF.us=null;
                     Pag.dispose();
-                    new BLLControllerLogin(new Login()).iniciar();
+                    new BLLControllerLogin(new Login(),2).iniciar(2);
                     break;
         }
 
