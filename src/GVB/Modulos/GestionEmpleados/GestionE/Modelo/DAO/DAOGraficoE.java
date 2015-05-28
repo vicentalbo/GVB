@@ -23,6 +23,7 @@ import GVB.classes.Config;
 import GVB.classes.Fechas;
 import GVB.classes.Mail;
 import com.toedter.calendar.JTextFieldDateEditor;
+import java.util.Calendar;
 
 /**
  *
@@ -31,9 +32,9 @@ import com.toedter.calendar.JTextFieldDateEditor;
 public class DAOGraficoE {
 
     public static void crearEF() {
-        String DNI, nombre, telef, email, password, tipo = "user", Avatar, encpassword;
+        String DNI, nombre, telef="", email, password, tipo, Avatar, encpassword;
         int estado = 0;
-        float sueldo;
+        float sueldo=0.0f;
         Fechas f;
         Fechas fc;
 
@@ -55,8 +56,10 @@ public class DAOGraficoE {
             }
         }
         nombre = introName(0);
+        if(VntEmp.Cliente.isSelected()){
         telef = introPhone(0);
         sueldo = DAOGraficoEF.introSueldo();
+        }
         email = introEmail();
         if (email.contains("@gmail.com")) {
             if (BLLControllerVntEmp.mod < 10) {
@@ -81,11 +84,20 @@ public class DAOGraficoE {
         password = VntEmp.Password.getText();
         encpassword = Funcions.encriptarTokenMD5(password);
 
+if(VntEmp.TxtSueldo.getText().isEmpty())
+    tipo="user";
+else
+    tipo="cliente";
+
+if((BLLControllerVntEmp.mod == 11)&&(VntEmp.User.isSelected()==false)&&(VntEmp.Cliente.isSelected()==false))
+    tipo=ArrayListEF.e.getTipo();
+
+Calendar fca = Calendar.getInstance();
         f = introFnac(0);
-        fc = introFnac(1);
+        fc = DAO.sacaFecha(fca.get(Calendar.DATE)+"-"+(fca.get(Calendar.MONTH)+1)+"-"+fca.get(Calendar.YEAR));
 
 //creaEmp
-        if ((VntEmp.NoDNI.isVisible() == false) && (VntEmp.NoNom.isVisible() == false) && (VntEmp.NoTelef.isVisible() == false) && (VntEmp.NoSueldo.isVisible() == false) && (VntEmp.NoFnac.isVisible() == false) && (VntEmp.NoFcontr.isVisible() == false) && (VntEmp.NoEmail.isVisible() == false) && (VntEmp.Password.getText().isEmpty() == false)) {
+        if ((VntEmp.NoDNI.isVisible() == false) && (VntEmp.NoNom.isVisible() == false) && (VntEmp.NoTelef.isVisible() == false) && (VntEmp.NoSueldo.isVisible() == false) && (VntEmp.NoFnac.isVisible() == false) && (VntEmp.NoEmail.isVisible() == false) && (VntEmp.Password.getText().isEmpty() == false)) {
             if (BLLControllerVntEmp.Img.equals("")) {
                 Avatar = "src/GVB/img/Avatar/user-defec.png";
             } else {
@@ -94,6 +106,7 @@ public class DAOGraficoE {
             if (BLLControllerVntEmp.mod == 1) {
 
                 ArrayListEF.e = (EmpleadoFijo) DAOEmp.IntroEmp(1, 0, ArrayListEF.e, nombre, DNI, telef, sueldo, f, fc, email, encpassword, estado, tipo, Avatar);
+
                 BLLControllerVntEmp.veri = true;
 
             }
@@ -193,32 +206,27 @@ public class DAOGraficoE {
     }
 
     public static Fechas introFnac(int val) {
-        String fnac, fcontr;
-        Fechas f = null, fc = null;
+        String fnac;
+        Fechas f = null;
 
         fnac = ((JTextFieldDateEditor) Vnt_Empleados.DCFnac.getDateEditor()).getText();
-        fcontr = ((JTextFieldDateEditor) Vnt_Empleados.DCFcontr.getDateEditor()).getText();
+       
 
         if (fnac.equals("")) {
             VntEmp.NoFnac.setVisible(true);
         } else {
-            if (DAO.sacaFecha(fcontr).restaFechasEdad() - DAO.sacaFecha(fnac).restaFechasEdad() < 16) {
+            if ( DAO.sacaFecha(fnac).restaFechasEdad() >= 16) {
                 VntEmp.NoFnac.setVisible(false);
-                VntEmp.NoFcontr.setVisible(false);
+                
                 f = DAO.sacaFecha(fnac);
-                fc = DAO.sacaFecha(fcontr);
-
-                VntEmp.NoFnac.setVisible(false);
                 VntEmp.TxtEdad.setText("" + f.restaFechasEdad());
-                VntEmp.TxtAntig.setText("" + fc.restaFechasEdad());
+                
 
             } else {
                 VntEmp.NoFnac.setVisible(true);
             }
         }
-        if (val == 1) {
-            return fc;
-        }
+        
         return f;
     }
 

@@ -7,7 +7,7 @@ package GVB.Modulos.GestionProd.GestionProductos.Modelo.BLL;
 
 import GVB.Modulos.GestionProd.GestionProductos.Controlador.BLLControllerVntPro;
 import GVB.Modulos.GestionProd.GestionProductos.Modelo.DAO.DAOGraficoP;
-import GVB.Utilities.Menus;
+import GVB.Librerias.Menus;
 import GVB.classes.Config;
 
 /**

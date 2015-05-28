@@ -20,6 +20,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Calendar;
 import javax.swing.JOptionPane;
 
 
@@ -33,8 +34,9 @@ public class Prova {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        ArrayListPro.pro.add(new Productos(1));
-        ArrayListPro.pro.clear();
+       Calendar fca = Calendar.getInstance();
+        
+        Funcions.result(fca.get(Calendar.DATE)+"-"+(fca.get(Calendar.MONTH)+1)+"-"+fca.get(Calendar.YEAR));
       /*Connection _con;
         Conexion _conexion_DB = new Conexion();
 

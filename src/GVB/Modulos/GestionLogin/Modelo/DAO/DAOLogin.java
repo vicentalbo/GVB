@@ -19,6 +19,7 @@ import GVB.Modulos.GestionLogin.Modelo.BLL.BLLLoginBD;
 import GVB.Modulos.GestionLogin.Vista.Contraseña_O;
 import GVB.Modulos.GestionLogin.Vista.Verificar;
 import GVB.Modulos.Menu.Controlador.BLLControllerPpal;
+import GVB.Modulos.Menu.Vista.Ventana_Us;
 import GVB.Modulos.Menu.Vista.Ventana_ppal;
 import GVB.classes.Mail;
 import java.awt.Color;
@@ -73,10 +74,16 @@ public class DAOLogin {
                         ArrayListEF.us=ArrayListEF.e;
                         if(ArrayListEF.us.getEstado()==1){
                         Log.dispose();
-                        new BLLControllerPpal(new Ventana_ppal()).iniciar();
+                        if(ArrayListEF.e.getTipo().equals("admin"))
+                             new BLLControllerPpal(new Ventana_ppal(),0).iniciar(0);
+                             else
+                                 new BLLControllerPpal(new Ventana_Us(),0).iniciar(0);
                         }else{
                             Log.dispose();
-                            new BLLControllerVO(new Verificar(),0).iniciar(0);
+                            if(ArrayListEF.e.getTipo().equals("admin"))
+                             new BLLControllerPpal(new Ventana_ppal(),0).iniciar(0);
+                             else
+                                 new BLLControllerPpal(new Ventana_Us(),0).iniciar(0);
                         }
                     }
                 }
@@ -100,15 +107,24 @@ public class DAOLogin {
                              ArrayListEF.e.setEstado(1);
                              EFBLLBD.modificarEFBLL();
                              Ver.dispose();
-                             new BLLControllerPpal(new Ventana_ppal()).iniciar();
+                             if(ArrayListEF.e.getTipo().equals("admin"))
+                             new BLLControllerPpal(new Ventana_ppal(),0).iniciar(0);
+                             else
+                                 new BLLControllerPpal(new Ventana_Us(),0).iniciar(0);
                          }else{
                          ArrayListEF.us=ArrayListEF.e;
                          if(ArrayListEF.us.getEstado()==1){
                         Log.dispose();
-                  new BLLControllerPpal(new Ventana_ppal()).iniciar();
+                  if(ArrayListEF.e.getTipo().equals("admin"))
+                             new BLLControllerPpal(new Ventana_ppal(),0).iniciar(0);
+                             else
+                                 new BLLControllerPpal(new Ventana_Us(),0).iniciar(0);
                         }else{
                             Log.dispose();
-                            new BLLControllerVO(new Verificar(),0).iniciar(0);
+                            if(ArrayListEF.e.getTipo().equals("admin"))
+                             new BLLControllerPpal(new Ventana_ppal(),0).iniciar(0);
+                             else
+                                 new BLLControllerPpal(new Ventana_Us(),0).iniciar(0);
                         }
                          }
                      }else{

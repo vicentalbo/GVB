@@ -18,7 +18,7 @@ import GVB.Modulos.GestionEmpleados.Pager.Controlador.BLLControllerPaginador;
 import GVB.Modulos.GestionEmpleados.Pager.Vista.Paginador;
 import GVB.Modulos.GestionLogin.Controlador.BLLControllerLogin;
 import GVB.Modulos.GestionLogin.Vista.Login;
-import GVB.Modulos.Menu.Controlador.BLLControllerAbout;
+
 import GVB.Modulos.Menu.Controlador.BLLControllerPpal;
 import static GVB.Modulos.Menu.Controlador.BLLControllerPpal.Ppal;
 import GVB.Modulos.Menu.Vista.About;
@@ -116,7 +116,9 @@ public static String Img = "";
         _EMAIL,
         _TIPO, 
         USUARIO,
-        IMAGEN
+        IMAGEN,
+        User,
+        Cliente
 
     }
 
@@ -135,18 +137,19 @@ public static String Img = "";
         this.VntEmp.setIconImage(icono);
 
         this.VntEmp.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
-VntEmp.UsOk.setVisible(false);
+        VntEmp.UsOk.setVisible(false);
         this.VntEmp.NoDNI.setVisible(false);
         this.VntEmp.NoNom.setVisible(false);
         this.VntEmp.NoSueldo.setVisible(false);
         this.VntEmp.NoTelef.setVisible(false);
         this.VntEmp.NoFnac.setVisible(false);
-        this.VntEmp.NoFcontr.setVisible(false);
+   
         this.VntEmp.NoEmail.setVisible(false);
         
         if (mod == -1) {
             this.VntEmp.setTitle("Registrar");
-            
+            this.VntEmp.PaneCli.setVisible(false);
+            this.VntEmp.User.setSelected(true);
         }
         if (mod >1) {
             try {
@@ -154,6 +157,10 @@ VntEmp.UsOk.setVisible(false);
             } catch (Exception e) {
 
             }
+        }
+        if(mod<10){
+            this.VntEmp.PaneCli.setVisible(false);
+        this.VntEmp.User.setSelected(true);
         }
         if (mod > 10) {
            
@@ -165,16 +172,16 @@ VntEmp.UsOk.setVisible(false);
             this.VntEmp.TxtNom.setText(ArrayListEF.e.getNombre());
             this.VntEmp.TxtTelef.setText(ArrayListEF.e.getTelef());
             this.VntEmp.TxtSueldo.setText("" + (ArrayListEF.e.getSueldof()));
-            this.VntEmp.TxtAntig.setText("" + ArrayListEF.e.getAntig());
+            
             this.VntEmp.TxtEdad.setText("" + ArrayListEF.e.getEdad());
             
             try {
 
                 ((JTextFieldDateEditor) Vnt_Empleados.DCFnac.getDateEditor()).setText(ArrayListEF.e.getFnac().toString());
-                ((JTextFieldDateEditor) Vnt_Empleados.DCFcontr.getDateEditor()).setText(ArrayListEF.e.getFcontr().toString());
+               
             } catch (Exception e) {
                 this.VntEmp.DCFnac.setCalendar(ArrayListEF.e.getFnac().StringtoCalendar());
-                this.VntEmp.DCFcontr.setCalendar(ArrayListEF.e.getFcontr().StringtoCalendar());
+             
             }
             this.VntEmp.Password.setText("");
             this.VntEmp.TxtEmail.setText(ArrayListEF.e.getEmail());
@@ -214,8 +221,11 @@ VntEmp.UsOk.setVisible(false);
         this.VntEmp.TxtEdad.setActionCommand("Txt_Edad");
         this.VntEmp.TxtEdad.addActionListener(this);
 
-        this.VntEmp.TxtAntig.setActionCommand("Txt_Antig");
-        this.VntEmp.TxtAntig.addActionListener(this);
+this.VntEmp.User.setActionCommand("User");
+        this.VntEmp.User.addActionListener(this);
+        
+        this.VntEmp.Cliente.setActionCommand("Cliente");
+        this.VntEmp.Cliente.addActionListener(this);
 
         this.VntEmp.VOLVER.setActionCommand("_VOLVER");
         this.VntEmp.VOLVER.addActionListener(this);
@@ -373,7 +383,7 @@ VntEmp.UsOk.setVisible(false);
             case _ABOUT:
 
                 VntEmp.dispose();
-                new BLLControllerAbout(new About()).iniciar();
+                new BLLControllerPpal(new About(),1).iniciar(1);
                 break;
 
             case Forma_Json:
@@ -436,12 +446,13 @@ VntEmp.UsOk.setVisible(false);
                 Config.setFormaFecha("6");
                 break;
 
-            case _PASSWORD:
-
+            case User:
+this.VntEmp.PaneCli.setVisible(false);
+this.VntEmp.TxtSueldo.setText("");
                 break;
 
-            case _EMAIL:
-
+            case Cliente:
+this.VntEmp.PaneCli.setVisible(true);
                 break;
 
             case _TIPO:

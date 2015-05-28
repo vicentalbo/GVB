@@ -20,13 +20,13 @@ import static GVB.Modulos.GestionEmpleados.Pager.Vista.Paginador.MuestraSelected
 import static GVB.Modulos.GestionEmpleados.Pager.Vista.Paginador.MuestraSelected2;
 import GVB.Modulos.GestionLogin.Controlador.BLLControllerLogin;
 import GVB.Modulos.GestionLogin.Vista.Login;
-import GVB.Modulos.Menu.Controlador.BLLControllerAbout;
+
 import GVB.Modulos.Menu.Controlador.BLLControllerPpal;
 import GVB.Modulos.Menu.Vista.About;
 
 import GVB.Modulos.Menu.Vista.Ventana_ppal;
 import GVB.Modulos.autocomplete.AutocompleteJComboBox;
-import GVB.Utilities.Menus;
+import GVB.Librerias.Menus;
 import GVB.classes.Config;
 import GVB.classes.Files_Usuario;
 import static com.sun.java.accessibility.util.AWTEventMonitor.addWindowListener;
@@ -128,18 +128,14 @@ try{
 }catch(Exception e){
     
 }
-if(ArrayListEF.us.getTipo().equals("user")){
+if((ArrayListEF.us.getTipo().equals("user"))||(ArrayListEF.us.getTipo().equals("cliente"))){
     Pag.Crear.setEnabled(false);
     Pag.Eliminar.setEnabled(false);
     Pag.Modificar.setEnabled(false);
 }
         pagina.inicializa();
         pagina.initLinkBox();
-        List<String> myWords = new ArrayList<>();
-        for (int i = 0; i <= ArrayListEF.efi.size() - 1; i++) {
-            myWords.add(ArrayListEF.efi.get(i).getdNi());
-        }
-
+       
         addWindowListener(new WindowAdapter() {
             @Override
             public void windowClosing(WindowEvent e) {
@@ -279,7 +275,7 @@ if(ArrayListEF.us.getTipo().equals("user")){
 
             case _VOLVER:
                 Pag.dispose();
-                new BLLControllerPpal(new Ventana_ppal()).iniciar();
+                new BLLControllerPpal(new Ventana_ppal(),0).iniciar(0);
                 break;
 
             case _MUESTRA:
@@ -327,7 +323,7 @@ if(ArrayListEF.us.getTipo().equals("user")){
             case _ABOUT:
                 
                 Pag.dispose();
-                new BLLControllerAbout(new About()).iniciar();
+                new BLLControllerPpal(new About(),1).iniciar(1);
                 break;
 
             case Forma_Json:

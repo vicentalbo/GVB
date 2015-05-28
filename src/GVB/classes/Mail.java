@@ -76,7 +76,7 @@ public class Mail {
             mimebodypart1.setContent("<html><font color='#AA00FF'>"+mensaje+"<br> Mensaje enviado "+new java.util.Date()+"</font></html>", "text/html");
             
             MimeBodyPart mimebodypart2 = new MimeBodyPart();
-            DataSource source = new FileDataSource("src/GVB/Utilities/anexo.txt");
+            DataSource source = new FileDataSource("src/GVB/Librerias/anexo.txt");
             mimebodypart2.setDataHandler(new DataHandler(source));
             mimebodypart2.setFileName("anexo.txt");
 

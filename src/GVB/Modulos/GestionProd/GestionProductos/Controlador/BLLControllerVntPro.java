@@ -12,7 +12,8 @@ import GVB.Modulos.GestionProd.GestionProductos.Modelo.Classe.ArrayListPro;
 import GVB.Modulos.GestionProd.GestionProductos.Vista.Vnt_Productos;
 import GVB.Modulos.GestionProd.Pager.Controlador.BLLControllerPaginador;
 import GVB.Modulos.GestionProd.Pager.Vista.Paginador;
-import GVB.Modulos.Menu.Controlador.BLLControllerAbout;
+import GVB.Modulos.Menu.Controlador.BLLControllerPpal;
+
 import GVB.Modulos.Menu.Vista.About;
 import GVB.classes.Config;
 import GVB.classes.Files_Usuario;
@@ -307,7 +308,7 @@ this.VntPro.TxtStock.setName("Txt_Stock");
             case _ABOUT:
 
                 VntPro.dispose();
-                new BLLControllerAbout(new About()).iniciar();
+                new BLLControllerPpal(new About(),1).iniciar(1);
                 break;
 
             case Forma_Json:

@@ -14,7 +14,7 @@ import GVB.Modulos.GestionEmpleados.GestionEF.Modelo.Classe.ArrayListEF;
 
 import GVB.Modulos.GestionEmpleados.GestionEF.Modelo.Classe.EmpleadoFijo;
 
-import GVB.Utilities.Menus;
+import GVB.Librerias.Menus;
 import GVB.classes.Config;
 import com.toedter.calendar.JTextFieldDateEditor;
 

@@ -49,7 +49,21 @@ public class Empleado implements Comparable<Empleado>, Serializable {
         this.tipo = tipo;
         this.Avatar=Avatar;
     }
+ public Empleado(String nombre, String dNi,  Fechas fnac, Fechas fcontr, String email, String password, int estado, String tipo, String Avatar) {
 
+        this.nombre = nombre;
+        this.dNi = dNi;
+        
+        this.setEdad(fnac.restaFechasEdad());
+        this.Fnac = fnac;
+        this.Fcontr = fcontr;
+        this.email = email;
+        this.usuario = this.setUsuario(email);//split email[@] (0)
+        this.password = password;
+        this.estado = estado;
+        this.tipo = tipo;
+        this.Avatar=Avatar;
+    }
     public Empleado(String dni) {
         this.dNi = dni;
     }

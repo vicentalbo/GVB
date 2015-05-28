@@ -20,15 +20,22 @@ public class EmpleadoFijo extends Empleado implements Serializable {
     @XStreamAlias("sueldo")
     private float sueldo;
 
-    public EmpleadoFijo(String nombre, String dNi, String telef, Fechas fnac, Fechas fcontr, String email, String password, int estado, String tipo, String Avatar, float sueldof, int antig) {
+    public EmpleadoFijo(String nombre, String dNi, String telef, Fechas fnac, Fechas fcontr, String email, String password, int estado, String tipo, String Avatar, float sueldof, int antig, float sueldo) {
         super(nombre, dNi, telef, fnac, fcontr, email, password, estado, tipo, Avatar);
 
         this.sueldof = sueldof;
         this.antig = antig;
-        this.sueldo = this.setSueldoh(sueldof);
+        this.sueldo = this.setSueldoh(sueldo);
 
     }
+public EmpleadoFijo(String nombre, String dNi,  Fechas fnac, Fechas fcontr, String email, String password, int estado, String tipo, String Avatar, int antig) {
+        super(nombre, dNi,  fnac, fcontr, email, password, estado, tipo, Avatar);
 
+        
+        this.antig = antig;
+        
+
+    }
     public EmpleadoFijo(String dni) {
         super(dni);
     }
@@ -93,14 +100,11 @@ public class EmpleadoFijo extends Empleado implements Serializable {
         return sueldo;
     }
 
-    public float setSueldoh(float sueldof) {
-        sueldo = sueldof * 14;
-        if ((this.getAntig() > 5) && (this.getAntig() < 10)) {
-            sueldo = sueldo * 1.2f;
+    public float setSueldoh(float sueldo) {
+        if(sueldo!=0){
+        sueldo = sueldo * 0.05f;
         }
-        if (this.getAntig() > 10) {
-            sueldo = sueldo * 1.4f;
-        }
+        
         return sueldo;
     }
 

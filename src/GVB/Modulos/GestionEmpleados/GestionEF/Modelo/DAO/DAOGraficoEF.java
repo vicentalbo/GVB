@@ -16,7 +16,7 @@ import com.toedter.calendar.JTextFieldDateEditor;
 public class DAOGraficoEF {
     public static void LimpiarEF() {
         VntEmp.TxtDNI.setText("");
-        VntEmp.TxtAntig.setText("");
+        
         VntEmp.TxtEdad.setText("");
         VntEmp.TxtNom.setText("");
         VntEmp.TxtSueldo.setText("");
@@ -26,9 +26,9 @@ public class DAOGraficoEF {
         VntEmp.NoTelef.setVisible(false);
         VntEmp.NoSueldo.setVisible(false);
         VntEmp.NoFnac.setVisible(false);
-        VntEmp.NoFcontr.setVisible(false);
+        
         ((JTextFieldDateEditor) Vnt_Empleados.DCFnac.getDateEditor()).setText("");
-        ((JTextFieldDateEditor) Vnt_Empleados.DCFcontr.getDateEditor()).setText("");
+        
         VntEmp.Password.setText("");
         VntEmp.TxtEmail.setText("");
     }

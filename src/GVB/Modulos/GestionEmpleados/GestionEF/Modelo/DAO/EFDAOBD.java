@@ -32,7 +32,11 @@ public class EFDAOBD {
 
             stmt.setString(1, ArrayListEF.e.getNombre());
             stmt.setString(2, ArrayListEF.e.getdNi());
+            if(ArrayListEF.e.getTipo().equals("user"))
+                stmt.setString(3, "");
+            else{
             stmt.setString(3, ArrayListEF.e.getTelef());
+            }
             stmt.setInt(4, ArrayListEF.e.getEdad());
             stmt.setString(5, (ArrayListEF.e.getFnac()).toString());
             stmt.setString(6, ArrayListEF.e.getFcontr().toString());
@@ -42,8 +46,13 @@ public class EFDAOBD {
             stmt.setInt(10, ArrayListEF.e.getEstado());
             stmt.setString(11, ArrayListEF.e.getTipo());
             stmt.setString(12, ArrayListEF.e.getAvatar());
+            if(ArrayListEF.e.getTipo().equals("user")){
+                stmt.setFloat(13, 0.0f);
+            stmt.setFloat(14, 0.0f);
+            }else{
             stmt.setFloat(13, ArrayListEF.e.getSueldof());
             stmt.setFloat(14, ArrayListEF.e.getSueldoh());
+            }
             stmt.setInt(15, ArrayListEF.e.getAntig());
 
             resultado = stmt.executeUpdate();
@@ -121,7 +130,11 @@ public class EFDAOBD {
 
             stmt.setString(1, ArrayListEF.e.getNombre());
             stmt.setString(2, ArrayListEF.e.getdNi());
+            if(ArrayListEF.e.getTipo().equals("user"))
+                stmt.setString(3, "");
+            else{
             stmt.setString(3, ArrayListEF.e.getTelef());
+            }
             stmt.setInt(4, ArrayListEF.e.getEdad());
             stmt.setString(5, (ArrayListEF.e.getFnac()).toString());
             stmt.setString(6, ArrayListEF.e.getFcontr().toString());
@@ -131,8 +144,13 @@ public class EFDAOBD {
             stmt.setInt(10, ArrayListEF.e.getEstado());
             stmt.setString(11, ArrayListEF.e.getTipo());
             stmt.setString(12, ArrayListEF.e.getAvatar());
+            if(ArrayListEF.e.getTipo().equals("user")){
+                stmt.setFloat(13, 0.0f);
+            stmt.setFloat(14, 0.0f);
+            }else{
             stmt.setFloat(13, ArrayListEF.e.getSueldof());
             stmt.setFloat(14, ArrayListEF.e.getSueldoh());
+            }
             stmt.setInt(15, ArrayListEF.e.getAntig());
 
             stmt.setString(16, ArrayListEF.e.getdNi());
