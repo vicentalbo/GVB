@@ -17,6 +17,7 @@ import GVB.Modulos.GestionProd.GestionProductos.Modelo.BLL.BLLGraficoP;
 import static GVB.Modulos.GestionProd.Pager.Controlador.BLLControllerPaginador.Pag;
 import static GVB.Modulos.Menu.Controlador.BLLControllerPpal.Ppal;
 import GVB.Modulos.Menu.Vista.About;
+import GVB.Modulos.Menu.Vista.Start;
 import GVB.Modulos.Menu.Vista.Ventana_Us;
 import GVB.Modulos.Menu.Vista.Ventana_ppal;
 import GVB.classes.Config;
@@ -31,17 +32,20 @@ import java.awt.event.MouseListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import javax.swing.JFrame;
+import javax.swing.Timer;
 
 /**
  *
  * @author Vinche
  */
 public class BLLControllerPpal implements ActionListener, MouseListener {
-
+ private Timer timer;
+  
     public static Ventana_Us Us = new Ventana_Us();
     public static Ventana_ppal Ppal = new Ventana_ppal();
     public static About Ab = new About();
-
+public static Start St=new Start();
+int cont;
     public enum Accion {
 
         EMPLEADOS,
@@ -84,10 +88,34 @@ public class BLLControllerPpal implements ActionListener, MouseListener {
         if (i == 1) {
             Ab = (About) Ppal1;
         }
+        if(i==-1)
+            St=(Start) Ppal1;
     }
+class TimerListener implements ActionListener {
+        public void actionPerformed(ActionEvent evt) {
+            cont++;
+            //jLabel1.setText("nume es :"+cont);
+            St.jProgressBar1.setValue(cont);
+            if(cont==120){
+                timer.stop();
+                St.setVisible(false);
 
+                 new BLLControllerLogin(new Login(),2).iniciar(2);
+            }
+        }
+    }
     public void iniciar(int val) {
-        if ((ArrayListEF.us.getTipo().equals("admin")) && (val == 0)) {
+        if(val==-1){
+            St.setVisible(true);
+        St.jProgressBar1.setValue(0);
+        St.jProgressBar1.setStringPainted(true);
+        timer = new Timer(15, new TimerListener());
+        timer.start();
+        
+        
+        }
+        if(val==0){
+        if ((ArrayListEF.us.getTipo().equals("admin"))) {
             Ppal.setTitle("Inicio");
             Ppal.setLocationRelativeTo(null);
             Ppal.setVisible(true);
@@ -117,36 +145,7 @@ public class BLLControllerPpal implements ActionListener, MouseListener {
 
            
         }
-        if (val == 1) {
-            Ab.setTitle("About");
-            Ab.setLocationRelativeTo(null);
-            Ab.setResizable(true);
-            Ab.setVisible(true);
-            Image icono = Toolkit.getDefaultToolkit().getImage("src/GVB/img/photos/FastBurger.jpg");
-            Ab.setIconImage(icono);
-
-            Ab.addWindowListener(new WindowAdapter() {
-                @Override
-                public void windowClosing(WindowEvent e) {
-                    Ab.dispose();
-                    if (BLLControllerVntEmp.mod == -1) {
-
-                        new BLLControllerLogin(new Login(), 2).iniciar(2);
-                    } else {
-                        if (ArrayListEF.us.getTipo().equals("admin")) {
-
-                            new BLLControllerPpal(new Ventana_ppal(), 0).iniciar(0);
-                        } else {
-                            new BLLControllerPpal(new Ventana_Us(), 0).iniciar(0);
-                        }
-
-                    }
-                }
-
-            });
-            rellenador();
-        }
-        if ((ArrayListEF.us.getTipo().equals("user") || ArrayListEF.us.getTipo().equals("cliente")) && (val == 0)) {
+        if ((ArrayListEF.us.getTipo().equals("user") || ArrayListEF.us.getTipo().equals("cliente")) ) {
 
             Us.setTitle("Inicio");
             Us.setLocationRelativeTo(null);
@@ -230,6 +229,37 @@ public class BLLControllerPpal implements ActionListener, MouseListener {
             this.Us.CONF_FECHA_6.setActionCommand("_CONF_FECHA_6");
             this.Us.CONF_FECHA_6.addActionListener(this);
         }
+        }
+        if (val == 1) {
+            Ab.setTitle("About");
+            Ab.setLocationRelativeTo(null);
+            Ab.setResizable(true);
+            Ab.setVisible(true);
+            Image icono = Toolkit.getDefaultToolkit().getImage("src/GVB/img/photos/FastBurger.jpg");
+            Ab.setIconImage(icono);
+
+            Ab.addWindowListener(new WindowAdapter() {
+                @Override
+                public void windowClosing(WindowEvent e) {
+                    Ab.dispose();
+                    if (BLLControllerVntEmp.mod == -1) {
+
+                        new BLLControllerLogin(new Login(), 2).iniciar(2);
+                    } else {
+                        if (ArrayListEF.us.getTipo().equals("admin")) {
+
+                            new BLLControllerPpal(new Ventana_ppal(), 0).iniciar(0);
+                        } else {
+                            new BLLControllerPpal(new Ventana_Us(), 0).iniciar(0);
+                        }
+
+                    }
+                }
+
+            });
+            rellenador();
+        }
+        
     }
 
     public static void rellenador() {
