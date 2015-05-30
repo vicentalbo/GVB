@@ -119,7 +119,7 @@ public static String Img = "";
         this.VntPro.setLocationRelativeTo(null);
         this.VntPro.setVisible(true);
         this.VntPro.setResizable(false);
-        Image icono = Toolkit.getDefaultToolkit().getImage("src/GVB/img/IconFast.jpg");
+        Image icono = Toolkit.getDefaultToolkit().getImage("src/GVB/img/photos/FastBurger.jpg");
         this.VntPro.setIconImage(icono);
 
         this.VntPro.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);

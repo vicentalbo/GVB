@@ -40,7 +40,8 @@ public class BLLControllerPpal implements ActionListener, MouseListener {
 
     public static Ventana_Us Us = new Ventana_Us();
     public static Ventana_ppal Ppal = new Ventana_ppal();
-public static About Ab = new About();
+    public static About Ab = new About();
+
     public enum Accion {
 
         EMPLEADOS,
@@ -50,7 +51,7 @@ public static About Ab = new About();
         Perf,
         Prods,
         Logout,
-         Menu_Guardar,
+        Menu_Guardar,
         _ABOUT,
         Forma_Json,
         Forma_Xml,
@@ -68,171 +69,173 @@ public static About Ab = new About();
         _CONF_FECHA_5,
         _CONF_FECHA_6,
         USUARIO,
-        IMAGEN
-    }
-public BLLControllerPpal(JFrame Ppal1, int i) {
-if((i==0)){
-    if(ArrayListEF.us.getTipo().equals("admin"))
-        Ppal = (Ventana_ppal) Ppal1;
-    else
-        Us=(Ventana_Us) Ppal1;
-}
-if(i==1)
-    Ab = (About) Ppal1;
+        IMAGEN,
+        Pedidos
     }
 
-    
+    public BLLControllerPpal(JFrame Ppal1, int i) {
+        if ((i == 0)) {
+            if (ArrayListEF.us.getTipo().equals("admin")) {
+                Ppal = (Ventana_ppal) Ppal1;
+            } else {
+                Us = (Ventana_Us) Ppal1;
+            }
+        }
+        if (i == 1) {
+            Ab = (About) Ppal1;
+        }
+    }
+
     public void iniciar(int val) {
-        if((ArrayListEF.us.getTipo().equals("admin"))&&(val==0)){
-        Ppal.setTitle("Inicio");
-        Ppal.setLocationRelativeTo(null);
-        Ppal.setVisible(true);
-        Ppal.setSize(480, 320);//ancho x alto
-        Ppal.setResizable(false);
-        Image icono = Toolkit.getDefaultToolkit().getImage("src/GVB/img/IconFast.jpg");
-        Ppal.setIconImage(icono);
+        if ((ArrayListEF.us.getTipo().equals("admin")) && (val == 0)) {
+            Ppal.setTitle("Inicio");
+            Ppal.setLocationRelativeTo(null);
+            Ppal.setVisible(true);
+            Ppal.setSize(225, 400);//ancho x alto
+            Ppal.setResizable(false);
+            Image icono = Toolkit.getDefaultToolkit().getImage("src/GVB/img/photos/FastBurger.jpg");
+            Ppal.setIconImage(icono);
 
-     
-        addWindowListener(new WindowAdapter() {
-            @Override
-            public void windowClosing(WindowEvent e) {
-             
+            addWindowListener(new WindowAdapter() {
+                @Override
+                public void windowClosing(WindowEvent e) {
 
-                Ppal.dispose();
-System.exit(0);
-            }
-        });
-        Ppal.btnEmpleados.setActionCommand("EMPLEADOS");
-        Ppal.btnEmpleados.addActionListener(this);
-        Ppal.btnEmpleados.setName("EMPLEADOS");
-        Ppal.btnEmpleados.addMouseListener(this);
+                    Ppal.dispose();
+                    System.exit(0);
+                }
+            });
+            Ppal.btnEmpleados.setActionCommand("EMPLEADOS");
+            Ppal.btnEmpleados.addActionListener(this);
+            Ppal.btnEmpleados.setName("EMPLEADOS");
+            Ppal.btnEmpleados.addMouseListener(this);
 
-        Ppal.btnProductos.setActionCommand("PRODUCTOS");
-        Ppal.btnProductos.addActionListener(this);
+            Ppal.btnProductos.setActionCommand("PRODUCTOS");
+            Ppal.btnProductos.addActionListener(this);
 
-        Ppal.btnPedidos.setActionCommand("PEDIDOS");
-        Ppal.btnPedidos.addActionListener(this);
+            Ppal.btnPedidos.setActionCommand("PEDIDOS");
+            Ppal.btnPedidos.addActionListener(this);
 
-        Ppal.btnReservas.setActionCommand("RESERVAS");
-        Ppal.btnReservas.addActionListener(this);
+           
         }
-        if(val==1){
+        if (val == 1) {
             Ab.setTitle("About");
-        Ab.setLocationRelativeTo(null);
-        Ab.setResizable(true);
-        Ab.setVisible(true);
-        Image icono = Toolkit.getDefaultToolkit().getImage("src/GVB/img/IconFast.jpg");
-        Ab.setIconImage(icono);
-       
+            Ab.setLocationRelativeTo(null);
+            Ab.setResizable(true);
+            Ab.setVisible(true);
+            Image icono = Toolkit.getDefaultToolkit().getImage("src/GVB/img/photos/FastBurger.jpg");
+            Ab.setIconImage(icono);
 
-        Ab.addWindowListener(new WindowAdapter() {
-            @Override
-            public void windowClosing(WindowEvent e) {
-                Ab.dispose();
-                if(BLLControllerVntEmp.mod==-1){
-                    
-                    new BLLControllerLogin(new Login(),2).iniciar(2);
-                }else{
-                if(ArrayListEF.us.getTipo().equals("admin")){
-                
-               
-                 new BLLControllerPpal(new Ventana_ppal(),0).iniciar(0);
-                }else{
-                    new BLLControllerPpal(new Ventana_Us(),0).iniciar(0);
-                }
-                
-                }
-            }
+            Ab.addWindowListener(new WindowAdapter() {
+                @Override
+                public void windowClosing(WindowEvent e) {
+                    Ab.dispose();
+                    if (BLLControllerVntEmp.mod == -1) {
 
-            
-        });
-          rellenador();
-        }if((ArrayListEF.us.getTipo().equals("user")||ArrayListEF.us.getTipo().equals("cliente"))&&(val==0)){
-            
+                        new BLLControllerLogin(new Login(), 2).iniciar(2);
+                    } else {
+                        if (ArrayListEF.us.getTipo().equals("admin")) {
+
+                            new BLLControllerPpal(new Ventana_ppal(), 0).iniciar(0);
+                        } else {
+                            new BLLControllerPpal(new Ventana_Us(), 0).iniciar(0);
+                        }
+
+                    }
+                }
+
+            });
+            rellenador();
+        }
+        if ((ArrayListEF.us.getTipo().equals("user") || ArrayListEF.us.getTipo().equals("cliente")) && (val == 0)) {
+
             Us.setTitle("Inicio");
-        Us.setLocationRelativeTo(null);
-        Us.setVisible(true);
-       
-        Us.setResizable(false);
-        Image icono = Toolkit.getDefaultToolkit().getImage("src/GVB/img/FastBurger.jpg");
-        Us.setIconImage(icono);
+            Us.setLocationRelativeTo(null);
+            Us.setVisible(true);
 
-       try{
-    Files_Usuario.pintar(Us.Imagen, Us.Usuario);
-}catch(Exception e){
-    
-}
-        addWindowListener(new WindowAdapter() {
-            @Override
-            public void windowClosing(WindowEvent e) {
-             
+            Us.setResizable(false);
+            Image icono = Toolkit.getDefaultToolkit().getImage("src/GVB/img/FastBurger.jpg");
+            Us.setIconImage(icono);
 
-                Us.dispose();
-System.exit(0);
+            try {
+                Files_Usuario.pintar(Us.Imagen, Us.Usuario);
+            } catch (Exception e) {
+
             }
-        });
-        
-        Us.btnPerf.setActionCommand("Perf");
-        Us.btnPerf.addActionListener(this);
-        
-        Us.bntProd.setActionCommand("Prods");
-        Us.bntProd.addActionListener(this);
-        
-        Us.LogOut.setActionCommand("Logout");
-        Us.LogOut.addActionListener(this);
-        
-        Us.Usuario.setName("USUARIO");
-        Us.Usuario.addMouseListener(this);
-        
-        Us.Imagen.setName("IMAGEN");
-        Us.Imagen.addMouseListener(this);
-        
-        this.Us.MenuGuardar.setActionCommand("Menu_Guardar");
-        this.Us.MenuGuardar.addActionListener(this);
+            addWindowListener(new WindowAdapter() {
+                @Override
+                public void windowClosing(WindowEvent e) {
 
-        this.Us.ABOUT.setActionCommand("_ABOUT");
-        this.Us.ABOUT.addActionListener(this);
+                    Us.dispose();
+                    System.exit(0);
+                }
+            });
 
-        this.Us.FormaJson.setActionCommand("Forma_Json");
-        this.Us.FormaJson.addActionListener(this);
+            Us.btnPerf.setActionCommand("Perf");
+            Us.btnPerf.addActionListener(this);
 
-        this.Us.FormaXml.setActionCommand("Forma_Xml");
-        this.Us.FormaXml.addActionListener(this);
+            Us.bntProd.setActionCommand("Prods");
+            Us.bntProd.addActionListener(this);
 
-        this.Us.FormaTxt.setActionCommand("Forma_Txt");
-        this.Us.FormaTxt.addActionListener(this);
+            Us.LogOut.setActionCommand("Logout");
+            Us.LogOut.addActionListener(this);
 
-        this.Us.CONF_MONEDA_EURO.setActionCommand("_CONF_MONEDA_EURO");
-        this.Us.CONF_MONEDA_EURO.addActionListener(this);
+            Us.Usuario.setName("USUARIO");
+            Us.Usuario.addMouseListener(this);
 
-        this.Us.CONF_MONEDA_DOLAR.setActionCommand("_CONF_MONEDA_DOLAR");
-        this.Us.CONF_MONEDA_DOLAR.addActionListener(this);
+            Us.Imagen.setName("IMAGEN");
+            Us.Imagen.addMouseListener(this);
 
-        this.Us.CONF_MONEDA_LIBRA.setActionCommand("_CONF_MONEDA_LIBRA");
-        this.Us.CONF_MONEDA_LIBRA.addActionListener(this);
+            Us.btnPed.setActionCommand("Pedidos");
+            Us.btnPed.addActionListener(this);
 
-        this.Us.CONF_FECHA_1.setActionCommand("_CONF_FECHA_1");
-        this.Us.CONF_FECHA_1.addActionListener(this);
+            this.Us.MenuGuardar.setActionCommand("Menu_Guardar");
+            this.Us.MenuGuardar.addActionListener(this);
 
-        this.Us.CONF_FECHA_2.setActionCommand("_CONF_FECHA_2");
-        this.Us.CONF_FECHA_2.addActionListener(this);
+            this.Us.ABOUT.setActionCommand("_ABOUT");
+            this.Us.ABOUT.addActionListener(this);
 
-        this.Us.CONF_FECHA_3.setActionCommand("_CONF_FECHA_3");
-        this.Us.CONF_FECHA_3.addActionListener(this);
+            this.Us.FormaJson.setActionCommand("Forma_Json");
+            this.Us.FormaJson.addActionListener(this);
 
-        this.Us.CONF_FECHA_4.setActionCommand("_CONF_FECHA_4");
-        this.Us.CONF_FECHA_4.addActionListener(this);
+            this.Us.FormaXml.setActionCommand("Forma_Xml");
+            this.Us.FormaXml.addActionListener(this);
 
-        this.Us.CONF_FECHA_5.setActionCommand("_CONF_FECHA_5");
-        this.Us.CONF_FECHA_5.addActionListener(this);
+            this.Us.FormaTxt.setActionCommand("Forma_Txt");
+            this.Us.FormaTxt.addActionListener(this);
 
-        this.Us.CONF_FECHA_6.setActionCommand("_CONF_FECHA_6");
-        this.Us.CONF_FECHA_6.addActionListener(this);
+            this.Us.CONF_MONEDA_EURO.setActionCommand("_CONF_MONEDA_EURO");
+            this.Us.CONF_MONEDA_EURO.addActionListener(this);
+
+            this.Us.CONF_MONEDA_DOLAR.setActionCommand("_CONF_MONEDA_DOLAR");
+            this.Us.CONF_MONEDA_DOLAR.addActionListener(this);
+
+            this.Us.CONF_MONEDA_LIBRA.setActionCommand("_CONF_MONEDA_LIBRA");
+            this.Us.CONF_MONEDA_LIBRA.addActionListener(this);
+
+            this.Us.CONF_FECHA_1.setActionCommand("_CONF_FECHA_1");
+            this.Us.CONF_FECHA_1.addActionListener(this);
+
+            this.Us.CONF_FECHA_2.setActionCommand("_CONF_FECHA_2");
+            this.Us.CONF_FECHA_2.addActionListener(this);
+
+            this.Us.CONF_FECHA_3.setActionCommand("_CONF_FECHA_3");
+            this.Us.CONF_FECHA_3.addActionListener(this);
+
+            this.Us.CONF_FECHA_4.setActionCommand("_CONF_FECHA_4");
+            this.Us.CONF_FECHA_4.addActionListener(this);
+
+            this.Us.CONF_FECHA_5.setActionCommand("_CONF_FECHA_5");
+            this.Us.CONF_FECHA_5.addActionListener(this);
+
+            this.Us.CONF_FECHA_6.setActionCommand("_CONF_FECHA_6");
+            this.Us.CONF_FECHA_6.addActionListener(this);
         }
     }
- public static void rellenador(){
-    Ab.jTextPane1.setText("Creado por"+"\n"+"Vicent Albert Borrell"+"\n"+"\n"+"Versión 1.0.0");
- }
+
+    public static void rellenador() {
+        Ab.jTextPane1.setText("Creado por" + "\n" + "Vicent Albert Borrell" + "\n" + "\n" + "Versión 1.0.0");
+    }
+
     @Override
     public void actionPerformed(ActionEvent e) {
         switch (BLLControllerPpal.Accion.valueOf(e.getActionCommand())) {
@@ -242,35 +245,45 @@ System.exit(0);
                 break;
 
             case PRODUCTOS:
-        Ppal.dispose();
-        new GVB.Modulos.GestionProd.Pager.Controlador.BLLControllerPaginador(new GVB.Modulos.GestionProd.Pager.Vista.Paginador()).Iniciar();
+                Ppal.dispose();
+                new GVB.Modulos.GestionProd.Pager.Controlador.BLLControllerPaginador(new GVB.Modulos.GestionProd.Pager.Vista.Paginador()).Iniciar();
                 break;
 
+            case PEDIDOS:
+                Ppal.dispose();
+                new GVB.Modulos.GestionPedidos.Controlador.BLLControllerPedidos(new GVB.Modulos.GestionPedidos.Vista.Paginador()).Iniciar();
+                break;
+                
             case Perf:
- ArrayListEF.e = ArrayListEF.us;
+                ArrayListEF.e = ArrayListEF.us;
                 BLLControllerVntEmp.mod = 11;
                 Us.dispose();
                 new BLLControllerVntEmp(new Vnt_Empleados()).iniciar();
                 break;
 
             case Prods:
-Us.dispose();
-        new GVB.Modulos.GestionProd.Pager.Controlador.BLLControllerPaginador(new GVB.Modulos.GestionProd.Pager.Vista.Paginador()).Iniciar();
+                Us.dispose();
+                new GVB.Modulos.GestionProd.Pager.Controlador.BLLControllerPaginador(new GVB.Modulos.GestionProd.Pager.Vista.Paginador()).Iniciar();
+                break;
+
+            case Pedidos:
+                Us.dispose();
+                new GVB.Modulos.GestionPedidos.Controlador.BLLControllerPedidos(new GVB.Modulos.GestionPedidos.Vista.Paginador()).Iniciar();
                 break;
                 
             case Logout:
-                 ArrayListEF.us=null;
-                    Us.dispose();
-                    new BLLControllerLogin(new Login(),2).iniciar(2);
+                ArrayListEF.us = null;
+                Us.dispose();
+                new BLLControllerLogin(new Login(), 2).iniciar(2);
                 break;
-                  case Menu_Guardar:
+            case Menu_Guardar:
                 BLL.GuardarTodo();
                 break;
 
             case _ABOUT:
-                
+
                 Us.dispose();
-                new BLLControllerPpal(new About(),1).iniciar(1);
+                new BLLControllerPpal(new About(), 1).iniciar(1);
                 break;
 
             case Forma_Json:
@@ -335,46 +348,48 @@ Us.dispose();
 
         }
     }
+
     @Override
-     public void mouseEntered(MouseEvent e) {
+    public void mouseEntered(MouseEvent e) {
         switch (BLLControllerPpal.Accion.valueOf(e.getComponent().getName())) {
             case EMPLEADOS:
                 this.Ppal.btnEmpleados.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GVB/img/MaletinSS.jpg")));
                 break;
         }
-        }
+    }
+
     @Override
-     public void mousePressed(MouseEvent e) {
+    public void mousePressed(MouseEvent e) {
 //0
     }
 
-   
     @Override
     public void mouseReleased(MouseEvent e) {
 //0
     }
+
     @Override
-     public void mouseExited(MouseEvent e) {
-       switch (BLLControllerPpal.Accion.valueOf(e.getComponent().getName())) {
+    public void mouseExited(MouseEvent e) {
+        switch (BLLControllerPpal.Accion.valueOf(e.getComponent().getName())) {
             case EMPLEADOS:
                 this.Ppal.btnEmpleados.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GVB/img/maletin.png")));
                 break;
         }
-        }
+    }
+
     @Override
-     public void mouseClicked(MouseEvent e) {
-         switch (BLLControllerPpal.Accion.valueOf(e.getComponent().getName())) {
-              case USUARIO:
+    public void mouseClicked(MouseEvent e) {
+        switch (BLLControllerPpal.Accion.valueOf(e.getComponent().getName())) {
+            case USUARIO:
                 ArrayListEF.e = ArrayListEF.us;
                 BLLControllerVntEmp.mod = 11;
                 Us.dispose();
                 new BLLControllerVntEmp(new Vnt_Empleados()).iniciar();
                 break;
-                    
-                case IMAGEN:
-                    Files_Usuario.pintar_guardar_imag(Us.Imagen, 60, 60, 0);
-                    break;
-         }
-         }
-     }
 
+            case IMAGEN:
+                Files_Usuario.pintar_guardar_imag(Us.Imagen, 60, 60, 0);
+                break;
+        }
+    }
+}

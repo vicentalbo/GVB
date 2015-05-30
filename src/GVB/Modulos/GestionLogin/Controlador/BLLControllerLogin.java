@@ -108,7 +108,7 @@ this.Log.setSize(373, 498);
         Cont.setVisible(true);
         Cont.setResizable(false);
 
-        Cont.setIconImage(Toolkit.getDefaultToolkit().getImage("src/GVB/img/V.jpg"));
+        Cont.setIconImage(Toolkit.getDefaultToolkit().getImage("src/GVB/img/photos/FastBurger.jpg"));
          addWindowListener(new WindowAdapter() {
             @Override
             public void windowClosing(WindowEvent e) {
@@ -134,7 +134,7 @@ this.Log.setSize(373, 498);
         Ver.setVisible(true);
         Ver.setResizable(false);
 
-        Ver.setIconImage(Toolkit.getDefaultToolkit().getImage("src/GVB/img/IconFast.jpg"));
+        Ver.setIconImage(Toolkit.getDefaultToolkit().getImage("src/GVB/img/photos/FastBurger.jpg"));
          addWindowListener(new WindowAdapter() {
             @Override
             public void windowClosing(WindowEvent e) {
@@ -182,6 +182,7 @@ this.Log.setSize(373, 498);
                 case ACEPTAR:
                     DAOLogin.Entrar(13);
                     break;
+                    
                      case EMAIL:
                          BLLLogin.Contraseña();
                          

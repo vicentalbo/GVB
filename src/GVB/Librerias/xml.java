@@ -14,6 +14,8 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 
 import GVB.Modulos.GestionEmpleados.GestionEF.Modelo.Classe.ArrayListEF;
 import GVB.Modulos.GestionEmpleados.GestionEF.Modelo.Classe.EmpleadoFijo;
+import GVB.Modulos.GestionPedidos.Modelo.Classe.ArrayListPedidos;
+import GVB.Modulos.GestionPedidos.Modelo.Classe.Pedidos;
 
 import GVB.Modulos.GestionProd.GestionProductos.Modelo.Classe.ArrayListPro;
 import GVB.Modulos.GestionProd.GestionProductos.Modelo.Classe.Productos;
@@ -62,7 +64,42 @@ public class xml {
 	}
 
 	
+public static void generaxmlPed() {
+		String PATH ;
+		try {
+			OutputStream os = new ByteArrayOutputStream();
+			OutputStreamWriter osw = new OutputStreamWriter(os);
+			XStream xstream = new XStream();
+			Annotations.configureAliases(xstream, Pedidos.class);
 
+			String header = "<?xml version=\"1.0\" encoding=\"" + ENCODING + "\"?>\n";
+			xstream.toXML(ArrayListPedidos.ped, osw);
+			StringBuffer xml = new StringBuffer();
+			xml.append(header);
+			xml.append(os.toString());
+
+			JFileChooser fileChooser = new JFileChooser();
+			fileChooser.setAcceptAllFileFilterUsed(false);
+			fileChooser.addChoosableFileFilter(new FileNameExtensionFilter("XML (*.xml)", "xml"));
+			int seleccion = fileChooser.showSaveDialog(null);
+			if (seleccion == JFileChooser.APPROVE_OPTION) {
+				File JFC = fileChooser.getSelectedFile();
+				PATH = JFC.getAbsolutePath();
+				PATH = PATH + ".xml";
+
+				FileWriter fileXml = new FileWriter(PATH);
+				fileXml.write(xml.toString());
+				fileXml.close();
+				osw.close();
+				os.close();
+				JOptionPane.showMessageDialog(null, "Archivo XML guardado con exito", "Archivo TXT",
+						JOptionPane.INFORMATION_MESSAGE);
+
+			}
+		} catch (Exception e1) {
+			JOptionPane.showMessageDialog(null, "Error al grabar el XML", "Error", JOptionPane.ERROR_MESSAGE);
+		}
+	}
 	
 public static void generaxmlProd() {
 		String PATH ;

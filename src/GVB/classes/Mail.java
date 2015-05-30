@@ -82,7 +82,7 @@ public class Mail {
 
 
             MimeBodyPart mimebodypart3 = new MimeBodyPart();
-            DataSource fds = new FileDataSource("src/GVB/img/V.jpg");
+            DataSource fds = new FileDataSource("src/GVB/img/photos/FastBurger.jpg");
             mimebodypart3.setDataHandler(new DataHandler(fds));//establece la imagen como un dato anexo
             mimebodypart3.setHeader("Content-ID","<image>");//embebe la imagen en el cuerpo del mensaje
 

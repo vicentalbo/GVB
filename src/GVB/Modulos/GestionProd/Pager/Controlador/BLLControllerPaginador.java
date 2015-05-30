@@ -5,10 +5,6 @@
  */
 package GVB.Modulos.GestionProd.Pager.Controlador;
 
-
-
-
-
 import GVB.Librerias.Funcions;
 import GVB.Modulos.GestionEmpleados.GestionE.Controlador.BLLControllerVntEmp;
 import GVB.Modulos.GestionEmpleados.GestionE.Vista.Vnt_Empleados;
@@ -32,12 +28,14 @@ import GVB.Modulos.Menu.Controlador.BLLControllerPpal;
 import GVB.Modulos.Menu.Vista.About;
 
 import GVB.Modulos.Menu.Vista.Ventana_ppal;
-import GVB.Modulos.autocomplete.AutocompleteJComboBox;
+
 import GVB.Librerias.Menus;
+import GVB.Modulos.GestionPedidos.Modelo.BLL.BLLGraficoPed;
 import GVB.Modulos.Menu.Vista.Ventana_Us;
 import GVB.classes.Config;
 import GVB.classes.Files_Usuario;
 import static com.sun.java.accessibility.util.AWTEventMonitor.addWindowListener;
+import java.awt.Color;
 
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
@@ -50,9 +48,14 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.BorderFactory;
+import javax.swing.DefaultComboBoxModel;
 
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import javax.swing.SpinnerListModel;
+import javax.swing.SpinnerModel;
+import javax.swing.event.ChangeListener;
 import javax.swing.table.TableModel;
 import javax.swing.table.TableRowSorter;
 
@@ -104,7 +107,8 @@ public class BLLControllerPaginador implements ActionListener, KeyListener, Mous
         _TXT,
         USUARIO,
         IMAGEN,
-        LOGOUT
+        LOGOUT,
+        carrito
 
     }
 
@@ -113,7 +117,7 @@ public class BLLControllerPaginador implements ActionListener, KeyListener, Mous
         Pag = (Paginador) Pagin;
 
     }
-    public static AutocompleteJComboBox combo = null;
+
     public static TableRowSorter<TableModel> sorter = new TableRowSorter<>(new SimpleTableModel_P());
 
     public void Iniciar() {
@@ -123,32 +127,42 @@ public class BLLControllerPaginador implements ActionListener, KeyListener, Mous
         Pag.setVisible(true);
         Pag.setResizable(false);
 
-        Pag.setIconImage(Toolkit.getDefaultToolkit().getImage("src/GVB/img/IconFast.jpg"));
+        Pag.setIconImage(Toolkit.getDefaultToolkit().getImage("src/GVB/img/photos/IconFast.jpg"));
 
         Pag.NoSelected.setVisible(false);
         Pag.TABLA.setModel(new SimpleTableModel_P());
         ((SimpleTableModel_P) Pag.TABLA.getModel()).cargar();
         Pag.TABLA.setFillsViewportHeight(true);
         Pag.TABLA.setRowSorter(sorter);
+
         
-try{
-    Files_Usuario.pintar(Pag.Imagen, Pag.Usuario);
-}catch(Exception e){
-    
-}
-if((ArrayListEF.us.getTipo().equals("user"))||(ArrayListEF.us.getTipo().equals("cliente"))){
-    Pag.Crear.setEnabled(false);
-    Pag.Eliminar.setEnabled(false);
-    Pag.Modificar.setEnabled(false);
-}
+
+        try {
+            Files_Usuario.pintar(Pag.Imagen, Pag.Usuario);
+        } catch (Exception e) {
+
+        }
+        if ((ArrayListEF.us.getTipo().equals("user")) || (ArrayListEF.us.getTipo().equals("cliente"))) {
+            Pag.Crear.setEnabled(false);
+            Pag.Eliminar.setEnabled(false);
+            Pag.Modificar.setEnabled(false);
+        }
+        if ((ArrayListEF.us.getTipo().equals("user"))) {
+            Pag.PaneCompra.setVisible(false);
+        }
+        if(ArrayListEF.us.getSueldoh()>0.0f){
+            Pag.puntos.setVisible(true);
+            Pag.puntos.setText("Usar puntos: "+ArrayListEF.us.getSueldoh()+Config.getMoneda());
+        }else{
+            Pag.puntos.setVisible(false);
+        }
         pagina.inicializa();
         pagina.initLinkBox();
-        
 
         addWindowListener(new WindowAdapter() {
             @Override
             public void windowClosing(WindowEvent e) {
-        
+
                 JOptionPane.showMessageDialog(null, "Saliendo de la aplicación");
                 Pag.dispose();
                 System.exit(0);
@@ -233,29 +247,30 @@ if((ArrayListEF.us.getTipo().equals("user"))||(ArrayListEF.us.getTipo().equals("
         this.Pag.buscador.setActionCommand("_BUSCADOR");
         this.Pag.buscador.addActionListener(this);
         this.Pag.buscador.addKeyListener(this);
-        
+
         this.Pag.Refresh.setActionCommand("_REFRESH");
         this.Pag.Refresh.addActionListener(this);
-        
-        
-        
+
         this.Pag.btnXml.setActionCommand("_XML");
         this.Pag.btnXml.addActionListener(this);
-        
+
         this.Pag.btnJson.setActionCommand("_JSON");
         this.Pag.btnJson.addActionListener(this);
-        
+
         this.Pag.btnTxt.setActionCommand("_TXT");
         this.Pag.btnTxt.addActionListener(this);
-        
-         this.Pag.Usuario.setName("USUARIO");
+
+        this.Pag.Usuario.setName("USUARIO");
         this.Pag.Usuario.addMouseListener(this);
-        
+
         this.Pag.Imagen.setName("IMAGEN");
         this.Pag.Imagen.addMouseListener(this);
 
         this.Pag.Logout.setName("LOGOUT");
         this.Pag.Logout.addMouseListener(this);
+        
+         this.Pag.carrito.setName("carrito");
+        this.Pag.carrito.addMouseListener(this);
     }
 
     @Override
@@ -283,10 +298,11 @@ if((ArrayListEF.us.getTipo().equals("user"))||(ArrayListEF.us.getTipo().equals("
 
             case _VOLVER:
                 this.Pag.dispose();
-                if(ArrayListEF.e.getTipo().equals("admin"))
-                             new BLLControllerPpal(new Ventana_ppal(),0).iniciar(0);
-                             else
-                                 new BLLControllerPpal(new Ventana_Us(),0).iniciar(0);
+                if (ArrayListEF.e.getTipo().equals("admin")) {
+                    new BLLControllerPpal(new Ventana_ppal(), 0).iniciar(0);
+                } else {
+                    new BLLControllerPpal(new Ventana_Us(), 0).iniciar(0);
+                }
                 break;
 
             case _MUESTRA:
@@ -318,10 +334,10 @@ if((ArrayListEF.us.getTipo().equals("user"))||(ArrayListEF.us.getTipo().equals("
                     this.Pag.NoSelected.setVisible(false);
                     BLLGraficoP.eliminador();
                     //Pag.dispose();
-                   // new BLLControllerPaginador(new Paginador()).Iniciar();
+                    // new BLLControllerPaginador(new Paginador()).Iniciar();
                     ((SimpleTableModel_P) Pag.TABLA.getModel()).cargar();
                     pagina.inicializa();
-        pagina.initLinkBox();
+                    pagina.initLinkBox();
                 } else {
                     this.Pag.NoSelected.setVisible(true);
                 }
@@ -332,9 +348,9 @@ if((ArrayListEF.us.getTipo().equals("user"))||(ArrayListEF.us.getTipo().equals("
                 break;
 
             case _ABOUT:
-                
+
                 Pag.dispose();
-                new BLLControllerPpal(new About(),1).iniciar(1);
+                new BLLControllerPpal(new About(), 1).iniciar(1);
                 break;
 
             case Forma_Json:
@@ -402,38 +418,37 @@ if((ArrayListEF.us.getTipo().equals("user"))||(ArrayListEF.us.getTipo().equals("
                 pagina.currentPageIndex = 1;
                 ((SimpleTableModel_P) this.Pag.TABLA.getModel()).filtrar();
                 break;
-                
+
             case _REFRESH:
                 ((SimpleTableModel_P) Pag.TABLA.getModel()).cargar();
                 pagina.inicializa();
-        pagina.initLinkBox();
+                pagina.initLinkBox();
                 break;
-                
-                
+
             case _XML:
                 int opc;
-                String[] eleccion={"ID", "Tipo"};
+                String[] eleccion = {"ID", "Tipo"};
                 BLLGraficoP.Saves(2);
-                
-                opc=Menus.menu2("Seleccione como desea ordenar los datos", eleccion);
+
+                opc = Menus.menu2("Seleccione como desea ordenar los datos", eleccion);
                 BLLBDProd.ImprimirID(opc);
                 break;
-                
+
             case _JSON:
                 int opc1;
-                String[] eleccion1={"ID", "Tipo"};
+                String[] eleccion1 = {"ID", "Tipo"};
                 BLLGraficoP.Saves(1);
-                
-                opc1=Menus.menu2("Seleccione como desea ordenar los datos", eleccion1);
+
+                opc1 = Menus.menu2("Seleccione como desea ordenar los datos", eleccion1);
                 BLLBDProd.ImprimirID(opc1);
                 break;
-                
+
             case _TXT:
                 int opc2;
-                String[] eleccion2={"ID", "Tipo"};
+                String[] eleccion2 = {"ID", "Tipo"};
                 BLLGraficoP.Saves(3);
-                
-                opc2=Menus.menu2("Seleccione como desea ordenar los datos", eleccion2);
+
+                opc2 = Menus.menu2("Seleccione como desea ordenar los datos", eleccion2);
                 BLLBDProd.ImprimirID(opc2);
         }
     }
@@ -450,7 +465,7 @@ if((ArrayListEF.us.getTipo().equals("user"))||(ArrayListEF.us.getTipo().equals("
 
     @Override
     public void keyReleased(KeyEvent e) {
-        switch (BLLControllerPaginador.Accion.valueOf(e.getComponent().getName())){
+        switch (BLLControllerPaginador.Accion.valueOf(e.getComponent().getName())) {
             case _BUSCADOR:
                 pagina.currentPageIndex = 1;
                 ((SimpleTableModel_P) this.Pag.TABLA.getModel()).filtrar();
@@ -464,7 +479,9 @@ if((ArrayListEF.us.getTipo().equals("user"))||(ArrayListEF.us.getTipo().equals("
         switch (BLLControllerPaginador.Accion.valueOf(e.getComponent().getName())) {
 
             case _TABLA:
-
+                
+                
+               
                 int n,
                  selection,
                  inicio,
@@ -477,36 +494,68 @@ if((ArrayListEF.us.getTipo().equals("user"))||(ArrayListEF.us.getTipo().equals("
                     selection = Paginador.TABLA.getSelectedRow();
                     selection1 = inicio + selection;
 
- 
-                    ArrayListPro.p = new Productos(Integer.parseInt( Pag.TABLA.getModel().getValueAt(selection1, 0).toString()));
+                    ArrayListPro.p = new Productos(Integer.parseInt(Pag.TABLA.getModel().getValueAt(selection1, 0).toString()));
                     BLLBDProd.buscarPorIDBLL();
-                    
+                    int i;
+//Se llena el spinner con el stock
+                    String[] cants=new String[ArrayListPro.p.getStock()+1];
+                    for (int j = 0; j <= ArrayListPro.p.getStock(); j++) {
+                        cants[j] = j + "";
+                    }
+                     SpinnerListModel CantModel = new SpinnerListModel(cants);
+                    Pag.cantidad.setModel(CantModel);
 
-                    MuestraSelected.setText(" Nombre= " + ArrayListPro.p.getNombre() + "\n" + " Precio= " + ArrayListPro.p.getPrecio()+ Config.getMoneda() + "\n" + " Tipo= " + ArrayListPro.p.getTipo() );
-                    MuestraSelected2.setText("     ID= " + ArrayListPro.p.getID() + "\n" + "     Stock= " + ArrayListPro.p.getStock()  + "\n" + "     Descripcion= " + ArrayListPro.p.getDescripcion() );
-try{
-    Files_Usuario.pintar_Pro(Pag.ImgPro);
-}catch(Exception ec){
-    
-}
+                    MuestraSelected.setText(" Nombre= " + ArrayListPro.p.getNombre() + "\n" + " Precio= " + ArrayListPro.p.getPrecio() + Config.getMoneda() + "\n" + " Tipo= " + ArrayListPro.p.getTipo());
+                    MuestraSelected2.setText("     ID= " + ArrayListPro.p.getID() + "\n" + "     Stock= " + ArrayListPro.p.getStock() + "\n" + "     Descripcion= " + ArrayListPro.p.getDescripcion());
+                    try {
+                        Files_Usuario.pintar_Pro(Pag.ImgPro);
+                    } catch (Exception ec) {
+
+                    }
                 }
                 break;
-                case USUARIO:
+            case USUARIO:
                 ArrayListEF.e = ArrayListEF.us;
                 BLLControllerVntEmp.mod = 11;
                 Pag.dispose();
                 new BLLControllerVntEmp(new Vnt_Empleados()).iniciar();
                 break;
-                    
-                case IMAGEN:
-                    Files_Usuario.pintar_guardar_imag(Pag.Imagen, 60, 60, 0);
-                    break;
-                    
-                case LOGOUT:
-                    ArrayListEF.us=null;
-                    Pag.dispose();
-                    new BLLControllerLogin(new Login(),2).iniciar(2);
-                    break;
+
+            case IMAGEN:
+                Files_Usuario.pintar_guardar_imag(Pag.Imagen, 60, 60, 0);
+                break;
+
+            case LOGOUT:
+                ArrayListEF.us = null;
+                Pag.dispose();
+                new BLLControllerLogin(new Login(), 2).iniciar(2);
+                break;
+                
+            case carrito:
+                if(new Integer(Pag.cantidad.getValue().toString())>0){
+                String msg="¿Desea usted comprar "+Pag.cantidad.getValue().toString()+" "+ArrayListPro.p.getNombre()+"?"+"\n"+"En caso de aceptar, el coste sería de "+(new Integer(Pag.cantidad.getValue().toString())*ArrayListPro.p.getPrecio())+
+                       Config.getMoneda()+ "\n"+"Se le enviaría un correo con la factura";
+                String[] boton={"Comprar", "Cancelar"};
+                        int opc;
+                        int res;
+                opc=Menus.menubasic(msg, "Comprar", boton);
+                if(opc==0){
+                    res=BLLGraficoPed.Comprar(new Integer (Pag.cantidad.getValue().toString()));
+                    if(res==-111){
+                        Pag.result.setText("Error en la compra");
+                        Pag.result.setBackground(Color.red);
+                    }else if(res==-11){
+                        Pag.result.setText("Error, no posee suficiente saldo");
+                        Pag.result.setBackground(Color.red);
+                    }else{
+                        BLLGraficoPed.Factura();
+                        Pag.result.setText("Compra realizada con éxito");
+                        Pag.result.setBackground(Color.red);
+                        BLLGraficoPed.aviso();
+                    }
+                }
+                }
+                break;
         }
 
     }
@@ -535,6 +584,9 @@ try{
             case _ELIMINAR:
                 this.Pag.Eliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GVB/img/stop.png")));
                 break;
+            case carrito:
+                this.Pag.carrito.setBorder(BorderFactory.createLineBorder(Color.black));
+                break;
         }
     }
 
@@ -552,6 +604,10 @@ try{
 
             case _ELIMINAR:
                 this.Pag.Eliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GVB/img/stop_No_S.png")));
+                break;
+                
+                case carrito:
+                this.Pag.carrito.setBorder(BorderFactory.createEmptyBorder());
                 break;
 
         }

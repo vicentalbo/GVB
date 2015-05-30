@@ -5,6 +5,8 @@ import java.util.ArrayList;
 
 import GVB.Modulos.GestionEmpleados.GestionEF.Modelo.Classe.ArrayListEF;
 import GVB.Modulos.GestionEmpleados.GestionEF.Modelo.Classe.EmpleadoFijo;
+import GVB.Modulos.GestionPedidos.Modelo.Classe.ArrayListPedidos;
+import GVB.Modulos.GestionPedidos.Modelo.Classe.Pedidos;
 
 import GVB.Modulos.GestionProd.GestionProductos.Modelo.Classe.ArrayListPro;
 import GVB.Modulos.GestionProd.GestionProductos.Modelo.Classe.Productos;
@@ -25,7 +27,7 @@ public class Config {
 
 		ArrayListEF.efi = new ArrayList<EmpleadoFijo>();
 		ArrayListPro.pro=new ArrayList<Productos>();
-		
+		ArrayListPedidos.ped=new ArrayList<Pedidos>();
 		
 	}
 

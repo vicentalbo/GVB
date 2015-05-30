@@ -35,7 +35,7 @@ public class Ventana_Us extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         btnPerf = new javax.swing.JButton();
         bntProd = new javax.swing.JButton();
-        btnAbout = new javax.swing.JButton();
+        btnPed = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -83,8 +83,9 @@ public class Ventana_Us extends javax.swing.JFrame {
         bntProd.setOpaque(false);
         jPanel1.add(bntProd, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 117, 80, 69));
 
-        btnAbout.setOpaque(false);
-        jPanel1.add(btnAbout, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, 81, 69));
+        btnPed.setText("Historial");
+        btnPed.setOpaque(false);
+        jPanel1.add(btnPed, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, 81, 69));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(204, 255, 255));
@@ -415,7 +416,7 @@ public class Ventana_Us extends javax.swing.JFrame {
     public javax.swing.JMenuItem MenuGuardar;
     public static javax.swing.JLabel Usuario;
     public static javax.swing.JButton bntProd;
-    private javax.swing.JButton btnAbout;
+    public static javax.swing.JButton btnPed;
     public static javax.swing.JButton btnPerf;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

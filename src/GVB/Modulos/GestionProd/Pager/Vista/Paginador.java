@@ -56,6 +56,13 @@ public class Paginador extends javax.swing.JFrame {
         Usuario = new javax.swing.JLabel();
         Logout = new javax.swing.JLabel();
         ImgPro = new javax.swing.JLabel();
+        PaneCompra = new javax.swing.JLayeredPane();
+        jLabel4 = new javax.swing.JLabel();
+        carrito = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        cantidad = new javax.swing.JSpinner();
+        result = new javax.swing.JLabel();
+        puntos = new javax.swing.JCheckBox();
         jLabel3 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
@@ -86,6 +93,7 @@ public class Paginador extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Paginacion");
         setBackground(new java.awt.Color(255, 255, 255));
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jPanel1.setOpaque(false);
@@ -103,6 +111,8 @@ public class Paginador extends javax.swing.JFrame {
         jScrollPane1.setViewportView(TABLA);
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 13, 646, 342));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, 670, 368));
 
         jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jPanel2.setOpaque(false);
@@ -149,6 +159,8 @@ public class Paginador extends javax.swing.JFrame {
         });
         jPanel2.add(ultimo, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 10, -1, -1));
 
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 390, 560, 43));
+
         jPanel4.setOpaque(false);
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
@@ -162,8 +174,11 @@ public class Paginador extends javax.swing.JFrame {
             .addGap(0, 25, Short.MAX_VALUE)
         );
 
+        getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 444, -1, -1));
+
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel1.setText("Filtrar por ID");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 500, 95, -1));
 
         VOLVER.setText("Volver");
         VOLVER.setToolTipText("Volver al menú principal");
@@ -173,6 +188,7 @@ public class Paginador extends javax.swing.JFrame {
                 VOLVERActionPerformed(evt);
             }
         });
+        getContentPane().add(VOLVER, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 493, 113, -1));
 
         MUESTRA.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "5", "10", "15", "20", "50", "100" }));
         MUESTRA.setOpaque(false);
@@ -181,9 +197,11 @@ public class Paginador extends javax.swing.JFrame {
                 MUESTRAActionPerformed(evt);
             }
         });
+        getContentPane().add(MUESTRA, new org.netbeans.lib.awtextra.AbsoluteConstraints(586, 413, 88, -1));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel2.setText("Mostrar entradas:");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(586, 390, 151, -1));
 
         Crear.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GVB/img/edit_No_S.png"))); // NOI18N
         Crear.setToolTipText("Crear producto");
@@ -205,6 +223,7 @@ public class Paginador extends javax.swing.JFrame {
                 CrearActionPerformed(evt);
             }
         });
+        getContentPane().add(Crear, new org.netbeans.lib.awtextra.AbsoluteConstraints(686, 40, -1, -1));
 
         Modificar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GVB/img/pencil_No_S.png"))); // NOI18N
         Modificar.setToolTipText("Editar producto");
@@ -226,6 +245,7 @@ public class Paginador extends javax.swing.JFrame {
                 ModificarActionPerformed(evt);
             }
         });
+        getContentPane().add(Modificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(686, 91, -1, -1));
 
         Eliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GVB/img/stop_No_S.png"))); // NOI18N
         Eliminar.setToolTipText("Eliminar producto");
@@ -247,10 +267,12 @@ public class Paginador extends javax.swing.JFrame {
                 EliminarActionPerformed(evt);
             }
         });
+        getContentPane().add(Eliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(686, 142, -1, -1));
 
         NoSelected.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         NoSelected.setForeground(java.awt.Color.red);
         NoSelected.setText("Producto no seleccionado");
+        getContentPane().add(NoSelected, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 500, 150, -1));
 
         MuestraSelected.setEditable(false);
         MuestraSelected.setColumns(20);
@@ -259,6 +281,8 @@ public class Paginador extends javax.swing.JFrame {
         MuestraSelected.setBorder(null);
         jScrollPane4.setViewportView(MuestraSelected);
 
+        getContentPane().add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 540, 310, 120));
+
         MuestraSelected2.setEditable(false);
         MuestraSelected2.setColumns(20);
         MuestraSelected2.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
@@ -266,16 +290,23 @@ public class Paginador extends javax.swing.JFrame {
         MuestraSelected2.setBorder(null);
         jScrollPane3.setViewportView(MuestraSelected2);
 
+        getContentPane().add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 540, 360, 120));
+        getContentPane().add(Proceds, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 500, 130, -1));
+
         buscador.setName("_BUSCADOR"); // NOI18N
+        getContentPane().add(buscador, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 500, 130, -1));
 
         Refresh.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GVB/img/refresh.jpg"))); // NOI18N
         Refresh.setOpaque(false);
+        getContentPane().add(Refresh, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 10, 20, 20));
 
         btnTxt.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GVB/img/photos/Txt.png"))); // NOI18N
         btnTxt.setOpaque(false);
+        getContentPane().add(btnTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 290, 50, 50));
 
         btnJson.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GVB/img/photos/Json.png"))); // NOI18N
         btnJson.setOpaque(false);
+        getContentPane().add(btnJson, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 240, 50, 50));
 
         btnXml.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GVB/img/photos/Xml.png"))); // NOI18N
         btnXml.setOpaque(false);
@@ -284,20 +315,57 @@ public class Paginador extends javax.swing.JFrame {
                 btnXmlActionPerformed(evt);
             }
         });
+        getContentPane().add(btnXml, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 190, 50, 50));
 
         Imagen.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         Imagen.setMaximumSize(new java.awt.Dimension(60, 60));
         Imagen.setPreferredSize(new java.awt.Dimension(60, 60));
+        getContentPane().add(Imagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 20, -1, -1));
 
         Usuario.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Usuario.setForeground(java.awt.Color.blue);
         Usuario.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(Usuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 90, 80, 10));
 
         Logout.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Logout.setForeground(java.awt.Color.blue);
         Logout.setText("Logout");
+        getContentPane().add(Logout, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 130, -1, -1));
+        getContentPane().add(ImgPro, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 550, 90, 100));
+
+        PaneCompra.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        PaneCompra.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel4.setText("Cantidad:");
+        PaneCompra.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, -1, 20));
+
+        carrito.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        carrito.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GVB/img/carritoIcon.jpg"))); // NOI18N
+        PaneCompra.add(carrito, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 100, 90));
+
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel5.setText("Compras");
+        PaneCompra.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 100, 20));
+
+        cantidad.setToolTipText("Limitado al Stock existente");
+        PaneCompra.add(cantidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 120, 40, -1));
+
+        getContentPane().add(PaneCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 370, 120, 150));
+
+        result.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        result.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        result.setText("Compra realizada con exito");
+        getContentPane().add(result, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 520, 180, -1));
+
+        puntos.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        puntos.setText("Usar puntos:");
+        puntos.setOpaque(false);
+        getContentPane().add(puntos, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 340, 130, -1));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GVB/img/fondo_degradado3.jpeg"))); // NOI18N
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 820, 671));
 
         jMenuBar1.setBackground(new java.awt.Color(255, 255, 255));
         jMenuBar1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 255, 153), 2));
@@ -466,158 +534,6 @@ public class Paginador extends javax.swing.JFrame {
         jMenuBar1.add(jMenu2);
 
         setJMenuBar(jMenuBar1);
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(740, 740, 740)
-                        .addComponent(Imagen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(260, 260, 260)
-                        .addComponent(Proceds, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(320, 320, 320)
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(20, 20, 20)
-                        .addComponent(ImgPro, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 670, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(586, 586, 586)
-                        .addComponent(MUESTRA, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(690, 690, 690)
-                        .addComponent(btnXml, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(586, 586, 586)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 560, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(400, 400, 400)
-                        .addComponent(NoSelected, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(110, 110, 110)
-                        .addComponent(buscador, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(690, 690, 690)
-                        .addComponent(btnJson, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(730, 730, 730)
-                        .addComponent(Usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(560, 560, 560)
-                        .addComponent(VOLVER, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(690, 690, 690)
-                        .addComponent(btnTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(686, 686, 686)
-                        .addComponent(Eliminar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(686, 686, 686)
-                        .addComponent(Crear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(750, 750, 750)
-                        .addComponent(Logout))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(680, 680, 680)
-                        .addComponent(Refresh, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(686, 686, 686)
-                        .addComponent(Modificar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addComponent(Imagen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(364, 364, 364)
-                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(31, 31, 31)
-                        .addComponent(Proceds, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(20, 20, 20)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(10, 10, 10)
-                                .addComponent(ImgPro, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(11, 11, 11)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 368, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(413, 413, 413)
-                        .addComponent(MUESTRA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(210, 210, 210)
-                        .addComponent(btnXml, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(390, 390, 390)
-                        .addComponent(jLabel2))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(390, 390, 390)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(500, 500, 500)
-                        .addComponent(NoSelected))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(500, 500, 500)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(500, 500, 500)
-                        .addComponent(buscador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(260, 260, 260)
-                        .addComponent(btnJson, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(90, 90, 90)
-                        .addComponent(Usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(493, 493, 493)
-                        .addComponent(VOLVER))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(310, 310, 310)
-                        .addComponent(btnTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(142, 142, 142)
-                        .addComponent(Eliminar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(40, 40, 40)
-                        .addComponent(Crear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(540, 540, 540)
-                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(130, 130, 130)
-                        .addComponent(Logout))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(Refresh, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(91, 91, 91)
-                        .addComponent(Modificar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -788,6 +704,7 @@ public class Paginador extends javax.swing.JFrame {
     public static javax.swing.JTextArea MuestraSelected;
     public static javax.swing.JTextArea MuestraSelected2;
     public javax.swing.JLabel NoSelected;
+    public static javax.swing.JLayeredPane PaneCompra;
     public static javax.swing.JTextField Proceds;
     public static javax.swing.JButton Refresh;
     public static javax.swing.JButton SIGUIENTE;
@@ -798,9 +715,13 @@ public class Paginador extends javax.swing.JFrame {
     public static javax.swing.JButton btnTxt;
     public static javax.swing.JButton btnXml;
     public static javax.swing.JTextField buscador;
+    public static javax.swing.JSpinner cantidad;
+    public static javax.swing.JLabel carrito;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
@@ -816,6 +737,8 @@ public class Paginador extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JPopupMenu.Separator jSeparator1;
     public static javax.swing.JButton primero;
+    public static javax.swing.JCheckBox puntos;
+    public static javax.swing.JLabel result;
     public static javax.swing.JButton ultimo;
     // End of variables declaration//GEN-END:variables
 }

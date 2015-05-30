@@ -40,7 +40,6 @@ public class Ventana_ppal extends javax.swing.JFrame {
         btnEmpleados = new javax.swing.JButton();
         btnProductos = new javax.swing.JButton();
         btnPedidos = new javax.swing.JButton();
-        btnReservas = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -64,24 +63,17 @@ public class Ventana_ppal extends javax.swing.JFrame {
         btnProductos.setMinimumSize(new java.awt.Dimension(100, 23));
         btnProductos.setOpaque(false);
         btnProductos.setPreferredSize(new java.awt.Dimension(100, 23));
-        getContentPane().add(btnProductos, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, 140, 60));
+        getContentPane().add(btnProductos, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 160, 140, 60));
 
         btnPedidos.setText("Pedidos");
         btnPedidos.setMaximumSize(new java.awt.Dimension(100, 23));
         btnPedidos.setMinimumSize(new java.awt.Dimension(100, 23));
         btnPedidos.setOpaque(false);
         btnPedidos.setPreferredSize(new java.awt.Dimension(100, 23));
-        getContentPane().add(btnPedidos, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 170, 140, 60));
-
-        btnReservas.setText("Reservas");
-        btnReservas.setMaximumSize(new java.awt.Dimension(100, 23));
-        btnReservas.setMinimumSize(new java.awt.Dimension(100, 23));
-        btnReservas.setOpaque(false);
-        btnReservas.setPreferredSize(new java.awt.Dimension(100, 23));
-        getContentPane().add(btnReservas, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 40, 140, 60));
+        getContentPane().add(btnPedidos, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 280, 140, 60));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GVB/img/fondo_degradado.jpg"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 670, 380));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 230, 380));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -99,7 +91,6 @@ public class Ventana_ppal extends javax.swing.JFrame {
     public static javax.swing.JButton btnEmpleados;
     public static javax.swing.JButton btnPedidos;
     public static javax.swing.JButton btnProductos;
-    public static javax.swing.JButton btnReservas;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

@@ -3,30 +3,31 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package GVB.Modulos.GestionEmpleados.GestionE.Modelo.Classe;
+package GVB.Modulos.GestionPedidos.Modelo.Classe;
 
-import GVB.Modulos.GestionEmpleados.GestionE.Modelo.BLL.BLL;
-import GVB.Modulos.GestionEmpleados.GestionE.Modelo.Classe.Empleado;
-import GVB.Modulos.GestionEmpleados.GestionEF.Modelo.BLL.EFBLLBD;
 
-import GVB.Modulos.GestionEmpleados.GestionEF.Modelo.Classe.ArrayListEF;
-import GVB.Modulos.GestionEmpleados.GestionEF.Modelo.Classe.EmpleadoFijo;
-import GVB.Modulos.GestionEmpleados.Pager.Controlador.BLLControllerPaginador;
-import static GVB.Modulos.GestionEmpleados.Pager.Controlador.BLLControllerPaginador.Pag;
-import GVB.Modulos.GestionEmpleados.Pager.Vista.Paginador;
-import GVB.Modulos.GestionEmpleados.Pager.Modelo.pagina;
+
+
+import static GVB.Modulos.GestionPedidos.Controlador.BLLControllerPedidos.Pag;
+import GVB.Modulos.GestionPedidos.Modelo.BLL.BLLBDPed;
+import GVB.Modulos.GestionPedidos.Modelo.Classe.Pedidos;
+import GVB.Modulos.GestionPedidos.Modelo.Classe.ArrayListPedidos;
+import GVB.Modulos.GestionPedidos.Modelo.pagina;
+
+
+
 import java.util.ArrayList;
-import javax.swing.JComboBox;
+
 import javax.swing.table.AbstractTableModel;
 
 /**
  *
  * @author Vinche
  */
-public class SimpleTableModel_E extends AbstractTableModel {
-    public static ArrayList<EmpleadoFijo> datos = new ArrayList();
-    public static ArrayList<EmpleadoFijo> datosaux = new ArrayList();
-    String[] columnas = {"DNI", "Nombre", "Teléfono", "Edad", "Saldo"};
+public class SimpleTableModel_Ped extends AbstractTableModel {
+    public static ArrayList<Pedidos> datos = new ArrayList();
+    public static ArrayList<Pedidos> datosaux = new ArrayList();
+    String[] columnas = {"ID", "DNI", "ID Producto", "Nombre", "Coste", "Cantidad"};
 
     ////////////////////estos métodos son necesarios para que jtable funcione/////////////////////
     @Override
@@ -51,31 +52,33 @@ public class SimpleTableModel_E extends AbstractTableModel {
     public Object getValueAt(int row, int col) {
 
         Object dev = null;
-        Empleado fila = (EmpleadoFijo) datos.get(row);
+        Pedidos fila = (Pedidos) datos.get(row);
 
         switch (col) {
             case 0:
-                dev = fila.getdNi();
+                dev = fila.getID();
                 break;
 
             case 1:
-                dev = fila.getNombre();
+                dev = fila.getDNI();
                 break;
 
             case 2:
 
-                dev = fila.getTelef();
+                dev = fila.getID_P();
 
                 break;
 
             case 3:
-                dev = fila.getEdad();
+                dev = fila.getNombre_P();
                 break;
             
             case 4:
-                dev = ((EmpleadoFijo) fila).getSueldoh();
+                dev = fila.getCoste();
                 break;
-            
+            case 5:
+                dev = fila.getCantidad();
+                break;
 
         }
         return dev;
@@ -90,48 +93,51 @@ public class SimpleTableModel_E extends AbstractTableModel {
     //Actualiza un objeto de una fila y columna
     @Override
     public void setValueAt(Object value, int row, int col) {
-        Empleado fila = (EmpleadoFijo) datos.get(row);
+        Pedidos fila = (Pedidos) datos.get(row);
 
         switch (col) {
             case 0:
-                fila.setdNi(value.toString());
+                fila.setID(new Integer(value.toString()));
                 break;
 
             case 1:
-                fila.setNombre(value.toString());
+                fila.setDNI(value.toString());
                 break;
 
             case 2:
-                fila.setTelef(value.toString());
+                fila.setID_P(new Integer(value.toString()));
                 break;
 
             case 3:
-                fila.setEdad(new Integer(value.toString()));
+                fila.setNombre_P(value.toString());
                 break;
             
             case 4:
-                ((EmpleadoFijo) fila).setSueldoh(Float.parseFloat(value.toString()));
+                fila.setCoste(new Float(value.toString()));
+                break;
+                case 5:
+                fila.setCantidad(new Integer(value.toString()));
                 break;
             
         }
         fireTableCellUpdated(row, col);
     }
 
-    public void addRow(Empleado usu) {
-        datos.add((EmpleadoFijo) usu);
+    public void addRow(Pedidos usu) {
+        datos.add(usu);
         fireTableDataChanged();
     }
 
     public void cargar() {
         datos.clear();
         datosaux.clear();
-        EFBLLBD.listAllEFBLL();
+        BLLBDPed.listAllPedBLL();
         
  
-        for (int i = 0; i <  ArrayListEF.efi.size(); i++) {
+        for (int i = 0; i <  ArrayListPedidos.ped.size(); i++) {
     
-           datos.add(ArrayListEF.efi.get(i));
-          datosaux.add(ArrayListEF.efi.get(i));
+           datos.add(ArrayListPedidos.ped.get(i));
+          datosaux.add(ArrayListPedidos.ped.get(i));
             try {
                 Thread.sleep(1); //1 milliseconds
             } catch (Exception e) {
@@ -143,9 +149,10 @@ public class SimpleTableModel_E extends AbstractTableModel {
     public void filtrar() {
        datos.clear();
        int cont=0;
-         String dni=Pag.buscador.getText();
+         String ID=Pag.buscador.getText();
         for (int i = 0; i < datosaux.size(); i++) {
-            if (datosaux.get(i).getdNi().toLowerCase().contains(dni.toLowerCase())) {
+            if (((datosaux.get(i).getID())+"").toLowerCase().contains(ID.toLowerCase())) {
+                
                 addRow(datosaux.get(i));
                 cont++;
             }
@@ -154,7 +161,7 @@ public class SimpleTableModel_E extends AbstractTableModel {
         pagina.initLinkBox();
     }
 
-    public Empleado buscar(String u) {
+    public Pedidos buscar(String u) {
         datos.clear();
         cargar();
 
@@ -168,7 +175,7 @@ public class SimpleTableModel_E extends AbstractTableModel {
         return null;
     }
 
-    public int buscaUsuario(Empleado u) {
+    public int buscaUsuario(Pedidos u) {
         datos.clear();
         cargar();
 

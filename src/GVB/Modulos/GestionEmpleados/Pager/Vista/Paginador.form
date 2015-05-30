@@ -548,7 +548,7 @@
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/GVB/img/edit_No_S.png"/>
         </Property>
-        <Property name="toolTipText" type="java.lang.String" value="Crear empleado"/>
+        <Property name="toolTipText" type="java.lang.String" value="Crear cliente"/>
         <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
           <Dimension value="[40, 40]"/>
         </Property>
@@ -580,7 +580,7 @@
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/GVB/img/pencil_No_S.png"/>
         </Property>
-        <Property name="toolTipText" type="java.lang.String" value="Editar empleado"/>
+        <Property name="toolTipText" type="java.lang.String" value="Editar cliente"/>
         <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
           <Dimension value="[40, 40]"/>
         </Property>
@@ -612,7 +612,7 @@
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/GVB/img/stop_No_S.png"/>
         </Property>
-        <Property name="toolTipText" type="java.lang.String" value="Eliminar empleado"/>
+        <Property name="toolTipText" type="java.lang.String" value="Eliminar cliente"/>
         <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
           <Dimension value="[40, 40]"/>
         </Property>
@@ -647,7 +647,7 @@
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="0" green="0" id="red" palette="1" red="ff" type="palette"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Empleado no seleccionado"/>
+        <Property name="text" type="java.lang.String" value="Cliente no seleccionado"/>
       </Properties>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>

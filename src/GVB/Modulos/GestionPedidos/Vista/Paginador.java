@@ -1,10 +1,9 @@
-package GVB.Modulos.GestionEmpleados.Pager.Vista;
-
-//BBDD-------
-//Usuaris i pelicules Ioan
-//Productes i pedidos Adrian
+package GVB.Modulos.GestionPedidos.Vista;
 
 
+
+
+import GVB.Modulos.GestionProd.Pager.Vista.*;
 import GVB.Modulos.GestionEmpleados.GestionE.Modelo.Classe.SimpleTableModel_E;
 import javax.swing.UIManager;
 
@@ -40,24 +39,20 @@ public class Paginador extends javax.swing.JFrame {
         VOLVER = new javax.swing.JButton();
         MUESTRA = new javax.swing.JComboBox();
         jLabel2 = new javax.swing.JLabel();
-        Crear = new javax.swing.JButton();
-        Modificar = new javax.swing.JButton();
-        Eliminar = new javax.swing.JButton();
-        NoSelected = new javax.swing.JLabel();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        MuestraSelected2 = new javax.swing.JTextArea();
         jScrollPane4 = new javax.swing.JScrollPane();
         MuestraSelected = new javax.swing.JTextArea();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        MuestraSelected2 = new javax.swing.JTextArea();
         Proceds = new javax.swing.JTextField();
         buscador = new javax.swing.JTextField();
         Refresh = new javax.swing.JButton();
-        ComboProceds = new javax.swing.JComboBox();
         btnTxt = new javax.swing.JButton();
         btnJson = new javax.swing.JButton();
         btnXml = new javax.swing.JButton();
         Imagen = new javax.swing.JLabel();
         Usuario = new javax.swing.JLabel();
         Logout = new javax.swing.JLabel();
+        ImgPro = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
@@ -95,6 +90,7 @@ public class Paginador extends javax.swing.JFrame {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         TABLA.setModel(new SimpleTableModel_E());
+        TABLA.setToolTipText("Click para seleccionar producto");
         TABLA.setName("_TABLA"); // NOI18N
         TABLA.setOpaque(false);
         TABLA.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -168,10 +164,10 @@ public class Paginador extends javax.swing.JFrame {
             .addGap(0, 25, Short.MAX_VALUE)
         );
 
-        getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 444, 534, -1));
+        getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 444, -1, -1));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel1.setText("Filtrar por DNI");
+        jLabel1.setText("Filtrar por ID");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 500, 95, -1));
 
         VOLVER.setText("Volver");
@@ -197,76 +193,14 @@ public class Paginador extends javax.swing.JFrame {
         jLabel2.setText("Mostrar entradas:");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(586, 390, 151, -1));
 
-        Crear.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GVB/img/edit_No_S.png"))); // NOI18N
-        Crear.setToolTipText("Crear cliente");
-        Crear.setMaximumSize(new java.awt.Dimension(40, 40));
-        Crear.setMinimumSize(new java.awt.Dimension(40, 40));
-        Crear.setName("_CREAR"); // NOI18N
-        Crear.setOpaque(false);
-        Crear.setPreferredSize(new java.awt.Dimension(40, 40));
-        Crear.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                CrearMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                CrearMouseExited(evt);
-            }
-        });
-        Crear.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CrearActionPerformed(evt);
-            }
-        });
-        getContentPane().add(Crear, new org.netbeans.lib.awtextra.AbsoluteConstraints(686, 40, -1, -1));
+        MuestraSelected.setEditable(false);
+        MuestraSelected.setColumns(20);
+        MuestraSelected.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        MuestraSelected.setRows(5);
+        MuestraSelected.setBorder(null);
+        jScrollPane4.setViewportView(MuestraSelected);
 
-        Modificar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GVB/img/pencil_No_S.png"))); // NOI18N
-        Modificar.setToolTipText("Editar cliente");
-        Modificar.setMaximumSize(new java.awt.Dimension(40, 40));
-        Modificar.setMinimumSize(new java.awt.Dimension(40, 40));
-        Modificar.setName("_MODIFICAR"); // NOI18N
-        Modificar.setOpaque(false);
-        Modificar.setPreferredSize(new java.awt.Dimension(40, 40));
-        Modificar.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                ModificarMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                ModificarMouseExited(evt);
-            }
-        });
-        Modificar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ModificarActionPerformed(evt);
-            }
-        });
-        getContentPane().add(Modificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(686, 91, -1, -1));
-
-        Eliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GVB/img/stop_No_S.png"))); // NOI18N
-        Eliminar.setToolTipText("Eliminar cliente");
-        Eliminar.setMaximumSize(new java.awt.Dimension(40, 40));
-        Eliminar.setMinimumSize(new java.awt.Dimension(40, 40));
-        Eliminar.setName("_ELIMINAR"); // NOI18N
-        Eliminar.setOpaque(false);
-        Eliminar.setPreferredSize(new java.awt.Dimension(40, 40));
-        Eliminar.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                EliminarMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                EliminarMouseExited(evt);
-            }
-        });
-        Eliminar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                EliminarActionPerformed(evt);
-            }
-        });
-        getContentPane().add(Eliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(686, 142, -1, -1));
-
-        NoSelected.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        NoSelected.setForeground(java.awt.Color.red);
-        NoSelected.setText("Cliente no seleccionado");
-        getContentPane().add(NoSelected, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 500, 150, -1));
+        getContentPane().add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 540, 310, 120));
 
         MuestraSelected2.setEditable(false);
         MuestraSelected2.setColumns(20);
@@ -275,16 +209,7 @@ public class Paginador extends javax.swing.JFrame {
         MuestraSelected2.setBorder(null);
         jScrollPane3.setViewportView(MuestraSelected2);
 
-        getContentPane().add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 540, 360, 120));
-
-        MuestraSelected.setEditable(false);
-        MuestraSelected.setColumns(20);
-        MuestraSelected.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
-        MuestraSelected.setRows(5);
-        MuestraSelected.setBorder(null);
-        jScrollPane4.setViewportView(MuestraSelected);
-
-        getContentPane().add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 540, 350, 120));
+        getContentPane().add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 540, 360, 120));
         getContentPane().add(Proceds, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 500, 130, -1));
 
         buscador.setName("_BUSCADOR"); // NOI18N
@@ -293,9 +218,6 @@ public class Paginador extends javax.swing.JFrame {
         Refresh.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GVB/img/refresh.jpg"))); // NOI18N
         Refresh.setOpaque(false);
         getContentPane().add(Refresh, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 10, 20, 20));
-
-        ComboProceds.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Usuarios Activos" }));
-        getContentPane().add(ComboProceds, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 470, 130, -1));
 
         btnTxt.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GVB/img/photos/Txt.png"))); // NOI18N
         btnTxt.setOpaque(false);
@@ -317,20 +239,21 @@ public class Paginador extends javax.swing.JFrame {
         Imagen.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         Imagen.setMaximumSize(new java.awt.Dimension(60, 60));
         Imagen.setPreferredSize(new java.awt.Dimension(60, 60));
-        getContentPane().add(Imagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 20, 60, 60));
+        getContentPane().add(Imagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 40, -1, -1));
 
         Usuario.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Usuario.setForeground(java.awt.Color.blue);
         Usuario.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        getContentPane().add(Usuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 90, 80, 10));
+        getContentPane().add(Usuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 110, 80, 10));
 
         Logout.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Logout.setForeground(java.awt.Color.blue);
         Logout.setText("Logout");
-        getContentPane().add(Logout, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 130, -1, -1));
+        getContentPane().add(Logout, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 130, -1, -1));
+        getContentPane().add(ImgPro, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 550, 90, 100));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GVB/img/fondo_degradado3.jpeg"))); // NOI18N
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 820, 670));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 820, 671));
 
         jMenuBar1.setBackground(new java.awt.Color(255, 255, 255));
         jMenuBar1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 255, 153), 2));
@@ -531,42 +454,6 @@ public class Paginador extends javax.swing.JFrame {
         
     }//GEN-LAST:event_TABLAMouseClicked
 
-    private void CrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CrearActionPerformed
-   
-    }//GEN-LAST:event_CrearActionPerformed
-
-    private void ModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ModificarActionPerformed
-      
-    }//GEN-LAST:event_ModificarActionPerformed
-
-    private void EliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EliminarActionPerformed
-     
-    }//GEN-LAST:event_EliminarActionPerformed
-
-    private void CrearMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CrearMouseEntered
-       
-    }//GEN-LAST:event_CrearMouseEntered
-
-    private void CrearMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CrearMouseExited
-             // TODO add your handling code here:
-    }//GEN-LAST:event_CrearMouseExited
-
-    private void ModificarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ModificarMouseEntered
-             // TODO add your handling code here:
-    }//GEN-LAST:event_ModificarMouseEntered
-
-    private void ModificarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ModificarMouseExited
-               // TODO add your handling code here:
-    }//GEN-LAST:event_ModificarMouseExited
-
-    private void EliminarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EliminarMouseEntered
-               // TODO add your handling code here:
-    }//GEN-LAST:event_EliminarMouseEntered
-
-    private void EliminarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EliminarMouseExited
-              // TODO add your handling code here:
-    }//GEN-LAST:event_EliminarMouseExited
-
     private void MenuGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuGuardarActionPerformed
 
     }//GEN-LAST:event_MenuGuardarActionPerformed
@@ -655,20 +542,16 @@ public class Paginador extends javax.swing.JFrame {
     public javax.swing.JMenuItem CONF_MONEDA_DOLAR;
     public javax.swing.JMenuItem CONF_MONEDA_EURO;
     public javax.swing.JMenuItem CONF_MONEDA_LIBRA;
-    public static javax.swing.JComboBox ComboProceds;
-    public javax.swing.JButton Crear;
-    public javax.swing.JButton Eliminar;
     public javax.swing.JMenuItem FormaJson;
     public javax.swing.JMenuItem FormaTxt;
     public javax.swing.JMenuItem FormaXml;
     public static javax.swing.JLabel Imagen;
+    public static javax.swing.JLabel ImgPro;
     public static javax.swing.JLabel Logout;
     public javax.swing.JComboBox MUESTRA;
     public javax.swing.JMenuItem MenuGuardar;
-    public javax.swing.JButton Modificar;
     public static javax.swing.JTextArea MuestraSelected;
     public static javax.swing.JTextArea MuestraSelected2;
-    public javax.swing.JLabel NoSelected;
     public static javax.swing.JTextField Proceds;
     public static javax.swing.JButton Refresh;
     public static javax.swing.JButton SIGUIENTE;
