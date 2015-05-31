@@ -5,25 +5,20 @@
  */
 package GVB;
 
-import GVB.Librerias.Funcions;
-import GVB.Modulos.GestionEmpleados.GestionE.Modelo.Classe.Empleado;
-import GVB.Modulos.GestionEmpleados.GestionEF.Modelo.BLL.EFBLLBD;
-import GVB.Modulos.GestionEmpleados.GestionEF.Modelo.Classe.ArrayListEF;
-import GVB.Modulos.GestionEmpleados.GestionEF.Modelo.Classe.EmpleadoFijo;
-import GVB.Modulos.GestionEmpleados.Pager.Vista.Paginador;
 import GVB.Modulos.GestionPedidos.Controlador.BLLControllerPedidos;
-import GVB.Modulos.GestionProd.GestionProductos.Modelo.BLL.BLLBDProd;
-import GVB.Modulos.GestionProd.GestionProductos.Modelo.Classe.ArrayListPro;
-import GVB.Modulos.GestionProd.GestionProductos.Modelo.Classe.Productos;
-import GVB.Modulos.GestionProd.GestionProductos.Modelo.DAO.DAOBDProd;
-import GVB.classes.Conexion;
-import GVB.classes.Fechas;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.Calendar;
-import javax.swing.JOptionPane;
+import GVB.Modulos.GestionPedidos.Vista.Paginador;
+import GVB.Modulos.GestionProd.GestionProductos.Controlador.BLLControllerVntPro;
+import GVB.Modulos.GestionProd.GestionProductos.Vista.Vnt_Productos;
+import GVB.Modulos.Menu.Controlador.BLLControllerPpal;
+import GVB.Modulos.Menu.Vista.About;
+
+
+
+
+
+
+
+
 
 
 /**
@@ -36,6 +31,6 @@ public class Prova {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-       new BLLControllerPedidos(new Paginador()).Iniciar();
+       new BLLControllerPpal(new About(),1).iniciar(1);
 }
 }

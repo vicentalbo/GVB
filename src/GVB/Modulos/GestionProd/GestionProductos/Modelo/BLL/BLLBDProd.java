@@ -47,7 +47,7 @@ public class BLLBDProd {
     }
 
      // modificar un cliente existente en la BD
-    public static void modificarProdBLL() {
+    public static boolean modificarProdBLL() {
         boolean ok;
         Connection _con;
 
@@ -58,10 +58,11 @@ public class BLLBDProd {
 
         ok = DAOBDProd.modificarProdDAO(_con);
         _conexion_DB.CerrarConexion(_con);
+        return ok;
     }
 
      // eliminar un cliente de la BD
-    public static void borrarProdBLL() {
+    public static boolean borrarProdBLL() {
         Connection _con;
         boolean ok;
 
@@ -71,6 +72,7 @@ public class BLLBDProd {
         
         ok = DAOBDProd.borrarProdDAO(_con);
         _conexion_DB.CerrarConexion(_con);
+        return ok;
     }
 
      //* buscar en la BD un cliente por su DNI

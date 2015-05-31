@@ -49,7 +49,7 @@ public class EFBLLBD {
     }
 
      // modificar un cliente existente en la BD
-    public static void modificarEFBLL() {
+    public static boolean modificarEFBLL() {
         boolean ok;
         Connection _con;
 
@@ -60,10 +60,11 @@ public class EFBLLBD {
 
         ok = EFDAOBD.modificarEFDAO(_con);
         _conexion_DB.CerrarConexion(_con);
+        return ok;
     }
 
      // eliminar un cliente de la BD
-    public static void borrarEFBLL() {
+    public static boolean borrarEFBLL() {
         Connection _con;
         boolean ok;
 
@@ -73,6 +74,7 @@ public class EFBLLBD {
         
         ok = EFDAOBD.borrarEFDAO(_con);
         _conexion_DB.CerrarConexion(_con);
+        return ok;
     }
 
      //* buscar en la BD un cliente por su DNI

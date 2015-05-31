@@ -46,7 +46,7 @@ public class Ventana_ppal extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnEmpleados.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GVB/img/maletin.png"))); // NOI18N
-        btnEmpleados.setText("Empleados");
+        btnEmpleados.setText("Usuarios");
         btnEmpleados.setMaximumSize(new java.awt.Dimension(100, 23));
         btnEmpleados.setMinimumSize(new java.awt.Dimension(100, 23));
         btnEmpleados.setOpaque(false);
