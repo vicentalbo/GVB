@@ -30,10 +30,7 @@ public class BLL {
             if (ArrayListPro.pro.isEmpty()) {
                 JOptionPane.showMessageDialog(null, "No hay productos creados para borrar", "Aviso",
                         JOptionPane.QUESTION_MESSAGE);
-           // }
-           // if (BLLGraficoP.pos == -1) {
-            //    JOptionPane.showMessageDialog(null, "El DNI no concuerda con ninguno de los empleados creados",
-           //             "Aviso", JOptionPane.QUESTION_MESSAGE);
+          
             } else {
                 
                 BLLBDProd.borrarProdBLL();
@@ -66,18 +63,15 @@ public class BLL {
         BLLBDProd.listAllProdBLL();
         if (Config.getSaves() == 1) {
             json.generajsonProd();
-            //json.generajsonEH();
-           // json.generajsonET();
+            
         }
         if (Config.getSaves() == 2) {
             xml.generaxmlProd();
-           // xml.generaxmlEH();
-            //xml.generaxmlET();
+           
         }
         if (Config.getSaves() == 3) {
             txt.generatxtProd();
-           // txt.generatxtEH();
-           // txt.generatxtET();
+           
         }
     } 
 }

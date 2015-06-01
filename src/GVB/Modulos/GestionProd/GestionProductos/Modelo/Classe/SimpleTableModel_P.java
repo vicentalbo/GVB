@@ -47,8 +47,12 @@ public class SimpleTableModel_P extends AbstractTableModel {
     public Object getValueAt(int row, int col) {
 
         Object dev = null;
-        Productos fila = (Productos) datos.get(row);
-
+        Productos fila;
+        try{
+         fila =  datos.get(row);
+        }catch(Exception e){
+             fila =  datos.get(row-1);
+        }
         switch (col) {
             case 0:
                 dev = fila.getID();

@@ -333,11 +333,13 @@ Pag.result.setVisible(false);
 
                     this.Pag.NoSelected.setVisible(false);
                     BLLGraficoP.eliminador();
-                    //Pag.dispose();
-                    // new BLLControllerPaginador(new Paginador()).Iniciar();
+                   
+                   
                     ((SimpleTableModel_P) Pag.TABLA.getModel()).cargar();
                     pagina.inicializa();
-                    pagina.initLinkBox();
+                   pagina.currentPageIndex=1;
+                       pagina.initLinkBox();
+                  
                 } else {
                     this.Pag.NoSelected.setVisible(true);
                 }
@@ -486,12 +488,12 @@ Pag.result.setVisible(false);
                  selection,
                  inicio,
                  selection1;
-                n = ((SimpleTableModel_P) Paginador.TABLA.getModel()).getRowCount();
+                n = ((SimpleTableModel_P) Pag.TABLA.getModel()).getRowCount();
 
                 if (n != 0) {
 
                     inicio = (pagina.currentPageIndex - 1) * pagina.itemsPerPage;
-                    selection = Paginador.TABLA.getSelectedRow();
+                    selection = Pag.TABLA.getSelectedRow();
                     selection1 = inicio + selection;
 
                     ArrayListPro.p = new Productos(Integer.parseInt(Pag.TABLA.getModel().getValueAt(selection1, 0).toString()));
