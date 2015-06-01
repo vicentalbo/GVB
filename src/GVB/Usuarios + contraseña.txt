@@ -1,0 +1,14 @@
+Administrador: 
+	Email:   vicent.albo@gmail.com
+	Usuario: vv
+	Pass:    1234
+
+Cliente:
+	Email:   testeo@gmail.com
+	Usuario: testeo
+	Pass:    1234
+
+Usuario:
+	Email:   testing@gmail.com
+	Usuario: testing
+	Pass:    1234

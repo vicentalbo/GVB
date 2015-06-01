@@ -120,11 +120,15 @@ Calendar fca = Calendar.getInstance();
 
                 ArrayListEF.e = (EmpleadoFijo) DAOEmp.IntroEmp(1, 0, ArrayListEF.e, nombre, DNI, telef, sueldo, f, fc, email, encpassword, estado, tipo, Avatar);
                 String message = "Se ha registrado exitosamente en nuestra aplicación" + "\n" + "Usuario: " + ArrayListEF.e.getUsuario() + "\n" + "Contraseña: " + password + "\n" + "\n" + "Gracias por usar la aplicación";
+                /*
                 Mail correo = new Mail("1erdaw2015@gmail.com", "villadaw", email, nombre, message);
                 String correoStr = correo.send();
                 if (correoStr.equals("")) {
                     Funcions.result("Se le ha enviado un email con los datos para verificar su cuenta");
                 }
+                */
+                    Funcions.result(message);
+                
                 BLLControllerVntEmp.veri = true;
             }
         }

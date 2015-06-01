@@ -371,7 +371,7 @@ this.VntEmp.User.setActionCommand("User");
                 if (mod > 0) {
                     VntEmp.dispose();
                    
-                    if(ArrayListEF.e.getTipo().equals("admin"))
+                    if(ArrayListEF.us.getTipo().equals("admin"))
                               new BLLControllerPaginador(new Paginador()).Iniciar();
                              else
                                  new BLLControllerPpal(new Ventana_Us(),0).iniciar(0);

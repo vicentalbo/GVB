@@ -135,7 +135,7 @@ public class BLLControllerPaginador implements ActionListener, KeyListener, Mous
         Pag.TABLA.setFillsViewportHeight(true);
         Pag.TABLA.setRowSorter(sorter);
 
-        
+Pag.result.setVisible(false);
 
         try {
             Files_Usuario.pintar(Pag.Imagen, Pag.Usuario);

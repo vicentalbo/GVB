@@ -94,7 +94,7 @@ int cont;
 class TimerListener implements ActionListener {
         public void actionPerformed(ActionEvent evt) {
             cont++;
-            //jLabel1.setText("nume es :"+cont);
+            
             St.jProgressBar1.setValue(cont);
             if(cont==120){
                 timer.stop();
@@ -150,7 +150,7 @@ class TimerListener implements ActionListener {
             Us.setTitle("Inicio");
             Us.setLocationRelativeTo(null);
             Us.setVisible(true);
-
+Us.setSize(400, 360);
             Us.setResizable(false);
             Image icono = Toolkit.getDefaultToolkit().getImage("src/GVB/img/FastBurger.jpg");
             Us.setIconImage(icono);
@@ -263,7 +263,7 @@ class TimerListener implements ActionListener {
     }
 
     public static void rellenador() {
-        Ab.jTextPane1.setText("Creado por" + "\n" + "Vicent Albert Borrell" + "\n" + "\n" + "Versión 1.0.0");
+        Ab.jTextPane1.setText("Creado por" + "\n" + "Vicent Albert Borrell" +"\n"+ "Contacto: vicent.albo@gmail.com"+"\n" + "\n" + "Versión 1.0.0");
     }
 
     @Override

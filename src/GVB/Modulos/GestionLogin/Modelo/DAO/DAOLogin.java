@@ -164,11 +164,14 @@ public class DAOLogin {
                     pass = Funcions.getCadenaAleatoria1(8);
                     encpass = Funcions.encriptarTokenMD5(pass);
                     message = "Su contraseña ha sido modificada con éxito, para entrar en la aplicación use esta:" + "\n" + pass + "\n" + "\n" + "Si desea cambiar su contraseña hágalo desde la opción de editar usuario" + "\n" + "haciendo click sobre su nombre, el cual está bajo su avatar";
+                    /*
                     Mail correo = new Mail("1erdaw2015@gmail.com", "villadaw", ArrayListEF.e.getEmail(), ArrayListEF.e.getNombre(), message);
                     String env = correo.send();
 
                     Funcions.result(env);
-                    ArrayListEF.e.setPassword(encpass);
+                    */
+                    Funcions.result(message);
+                            ArrayListEF.e.setPassword(encpass);
                     EFBLLBD.modificarEFBLL();
                     error = false;
                 } catch (Exception e) {

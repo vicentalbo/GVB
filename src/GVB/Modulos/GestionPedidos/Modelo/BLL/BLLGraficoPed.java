@@ -39,6 +39,7 @@ public class BLLGraficoPed {
     } 
     public static int Comprar(int cant){
         int err;
+        if(cant>0 && cant<ArrayListPro.p.getStock()){
         if(ArrayListEF.us.getSueldof()>= ArrayListPro.p.getPrecio()*cant){
         DAOGraficoPed.Comprar(cant);
         try{
@@ -49,7 +50,10 @@ public class BLLGraficoPed {
         }else{
             err=-11;
         }
+        
         return err;
+        }
+        return 0;
     }
     public static void Factura(){
         DAOGraficoPed.Factura();
